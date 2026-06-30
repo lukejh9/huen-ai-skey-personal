@@ -1,0 +1,28 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: ASTM A312,_P**,1344933
+Elbow_A312_Long: ASTM_A312,EL**,1344935
+weldolet_100x40: weldolet_100x40,TE**,1344937
+Manual Valve_DN25: Manual Valve_DN25,VV**,1344949
+Flange gasket_25A: Flange gasket_25A,_G,1344953
+Slip-On Flange_25A: Slip-On Flange 25A,FLSO,1344955
+Tee_ A312: A312,TE**,1352970
+Auto Ball Valve_40A: Auto Ball Valve_40A,VB**,1352982
+SBV20C-F-8N-KA-BF-BA-S6L: SBV20C-F-8N-KA-BF-BA-S6L,VB**,1352995
+Reducer_A312: A312,RE**,1353002
+Manual Valve_DN40: Manual Valve_DN40,VV**,1353015
+Tee_A312: A312,TE**,1353022
+Flange gasket_40A: Flange gasket_40A,_G,1353032
+Flange gasket_50A: Flange gasket_50A,_G,1353049
+Slip-On Flange_40A: Slip-On Flange 40A,FLSO,1353074
+Slip-On Flange_50A: Slip-On Flange 50A,FLSO,1353094
+5194K48_Quick Turn Tube Coupling for Air: 5194K48_Quick Turn Tube Coupling for Air,CO**,1353105
+Female_adapter_NPT_14: Female_adapter_NPT_14,CO**,1353106
+ball_valve_lok_14: ball_valve_lok_14,VB**,1353108
+Pipe Types: ASTM A269,_P**,1353109
+5194K37_316 Stainless Steel Socket Plug Quick Turn Tube Coupling for Air: 5194K37_316 Stainless Steel Socket Plug Quick Turn Tube Coupling for Air,KABW,1353111
+Tee_A269_Lok: A269,TE**,1353117
+Cap_A312: A312,KABW,1353141
+8E3B25-CDDBABEGADSAAASHA2Z1  ANSI#150 RF  25A: 8E3B25-CDDBABEGADSAAASHA2Z1  ANSI#150 RF  25A,NC**,1369704
+Manual 3Way Ball Valve DN40: Manual 3Way Ball Valve DN40 T01,TE**,1369748
+SBV20C-F-8N-EPBFBA-S6L: SBV20C-F-8N-EPBFBA-S6L,VB**,1369810
+PLUG_12: PLUG_12,KABW,1369811

@@ -1,0 +1,10 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: 01_SGP-Zn,_P**,276682
+SGP_ANSI150_FLANGE: SGP_ANSI150_FLANGE,FLSO,290279
+InLine_Filter_Step to Side: InLine_Filter_Step to Side,CR**,293207
+InLine_Filter_Under to Side: InLine_Filter_Under to Side,TE**,293225
+InLine_Filter_Parallel to Side: InLine_Filter_Parallel to Side,CR**,293241
+HE001_Bweld-L: HE001_Bweld-L,EL**,293585
+Screwed_Elbow: Screwed_Elbow,EL**,293793
+HT01_Bweld-L Reducer: HT01_Bweld-L,TE**,294101
+HR01_Butt: Concetric,RC**,294196

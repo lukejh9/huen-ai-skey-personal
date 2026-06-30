@@ -1,0 +1,22 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+TCM_PFT_T009_CarbonSteel_TeeReduced_FireProtection: Standard,TE**,1344936
+Pipe Types: TCM_PIP_T006_CarbonSteel_FireProtection,_P**,1344938
+SBC_ Grooved_ButterflyValve: Standard,VY**,1344942
+TCM_PFT_T004_CarbonSteel_Elbow_FireProtection: 90 ELBOW,EL**,1344957
+SBC_Elbow Long Radius_Butt Welded: 90 Elbow Long Radius_Butt Welded,EL**,1345009
+TCM_PFT_T004_CarbonSteel_Elbow_FireProtection: 45 ELBOW,EL**,1345047
+SBC_Reducer Concentric_Butt Welded: Reducer Concentric_Butt Welded,RC**,1345067
+TCM_NVA_T010_NonReturnValve: DN150,VV**,1345121
+TCM_NVA_T010_NonReturnValve: DN100,VV**,1345122
+TCM_PFT_T003_CarbonSteel_Elbow1D: 45 Degree SR Elbow,EL**,1345175
+ALM_Alarm_Check_Valve: 150Ø VALVE ,CK**,1345247
+SBC_Threadolet: Threadolet,THSC,1345260
+TCM_PFT_T004_CarbonSteel_Elbow3D: 22.5 ELBOW,EL**,1345284
+SBC_Threadolet: Weldolet,THSC,1345296
+SBC_Flange - Weld Neck - Steel - Class 150: Flange - WN - Class 150,FLWN,1345300
+SBC_Tee Branch Reduced_Butt Welded: Equal Tee - Butt Welded,TE**,1345328
+TCM_PFT_T004_CarbonSteel_Elbow_FireProtection: 22.5 ELBOW,EL**,1345480
+TCM_PFT_T004_CarbonSteel_Elbow3D: 45 ELBOW,EL**,1345488
+SBC_Butterfly Valve: BFV-150NB,VY**,1345596
+SBC_Flange - Blind - Class 150: Standard,FLBL,1345633
+SBC_Pipe Weld: Pipe Weld,WW,1345857

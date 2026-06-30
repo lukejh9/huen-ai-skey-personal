@@ -1,0 +1,91 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: Standard,_P**,5145784
+Flange-Weld Neck RF-ANSI150-DN350: 350,FLWN,5643603
+Elbow-Long Radius 90: 600,EL**,7043116
+Flange-Weld Neck RF-ANSI150-DN100: 100,FLWN,7302732
+Flow Meter With Sensor_DN450: 450,NC**,7756798
+Eccentric Reducer: 450x350,RE**,7793617
+Eccentric Reducer: 400x350,RE**,7793954
+Flange-Weld Neck RF-ANSI150-DN400: 400,FLWN,8410461
+Eccentric Reducer: 600x400,RE**,8412545
+Ball-Valves: DN 20,VB**,8546266
+Ball-Valves: DN 15,VB**,8546361
+Butterfly Valve_DN400: Butterfly Valve_DN400,VY**,8558544
+M_Branch Connection - Threaded - Generic: Standard,WTBW,8566527
+Tee-Equal: 25,TE**,8589031
+Ball-Valves-AL3600: DN 25,VB**,8590798
+Ball-Valves-AL3600: DN 15,VB**,8591170
+Elbow-Long Radius 90: 25,EL**,8802793
+L71-PipeAccessories-Safety Relief Valve: Safety Relief Valve,EL**,8812555
+Pressure_Gauge-AGF-Model_7500: Model 7500,KABW,8815626
+Tee-Reducing: 25x15,TE**,8946279
+Elbow-Long Radius 90: 15,EL**,8948725
+Cap-Pete's Plug_DN15: Cap-Pete's Plug_DN15,KABW,8961781
+Pipe Types: Nipple,NRSC,9018752
+Elbow-Long Radius 90: 20,EL**,9018758
+Cap-Hose Connector_DN20: Cap-Hose Connector_DN20,NC**,9018763
+TE-Temperature Element: TE-Temperature Element,01HG,9591545
+Butterfly Valve_DN200-No Flanges: Butterfly Valve_DN200-No Flanges,VY**,9681351
+Flange-Weld Neck RF-ANSI150-DN200: 200,FLWN,9681400
+Pipe Supports-Pre Insulated-Type II_DN600 updated version: DN 600 Rigid+Y+G,01HG,9725388
+Butterfly Valve_DN450: Butterfly Valve_DN450,VY**,9971357
+Butterfly Valve_DN300-No Flanges: Butterfly Valve_DN300-No Flanges,VY**,10018141
+Ball-Valves: DN 50,VB**,10089830
+Pipe Supports-Pre Insulated-Type II_DN300: DN 300 Rigid+Y+G,01HG,10694146
+Pipe Supports-Pre Insulated-Type II_DN400: DN 400 Rigid+Y+G,01HG,10700618
+SUC DIFF 12 X 10: SUC DIFF 12 X 10,NC**,10713548
+SUC DIFF 8 X 5: SUC DIFF 8 X 5,NC**,10715139
+M_Branch Connection - Welded - Generic: Standard,WTBW,11063329
+Quill Connection: Quill Connection,01HG,12286134
+Butterfly Valve_DN250-No Flanges: Butterfly Valve_DN250-No Flanges,VY**,12700263
+SUFF DIFF SUPPORT: SUFF DIFF SUPPORT,01HG,13780768
+Reducer: 200x100,RC**,14474845
+Coupling - Generic: Standard,CO**,14564959
+Butterfly Valve_DN200: Butterfly Valve_DN200,VY**,14710867
+Air Vent: Air Vent,KABW,14725908
+Flange-Weld Neck RF-PN16-DN300: DN 300,FLWN,14786257
+Dkn_Sluice Box: Standard,NC**,15141782
+Elbow - Generic: Standard,EL**,15145252
+Tee-Reducing: 80x50,TE**,15608611
+Elbow-Long Radius 90: 80,EL**,15608617
+Elbow-Long Radius 90: 50,EL**,15812395
+Transition - Generic: Standard,RC**,16650173
+Pipe Supports-Pre Insulated-Type II_DN450: DN 450 Rigid+Y+G,01HG,16650184
+Swagelok Tube Fitting 1.2 in Tube OD x 1.2 in: Swagelok Tube Fitting 1.2 in Tube OD x 1.2 in,01HG,17390206
+Tee-Equal: 10,TE**,17390229
+Ball Valve SS_DN10: Ball Valve SS_DN10,VB**,17390233
+Elbow-Long Radius 90: 10,EL**,17391872
+Elbow Long Radius - Butt Welded - CS: Standard,EL**,17394028
+Flexible Joint_DN100_280: 100 _280,KABW,18253092
+"End Cap: 12""",KABW,18713781
+"End Cap: 24""",KABW,18715162
+Butterfly Valve_DN600-No Flanges Test: Butterfly Valve_DN600-No Flanges Test,RC**,18715196
+Eccentric Reducer: 600x300,RE**,18715197
+Ball-Valves: DN 40,VB**,18715214
+Flexible Joint_DN250_265: 250_265,EX**,18735118
+Flexible Joint_DN125_225: 125_256,EX**,18736570
+Check Valve_DN100: DN100,CK**,18811106
+Elbow - Butt Welded - CS: Standard,EL**,18811649
+Tee Branch Reduced - Butt Welded - CS: Standard,TE**,18834063
+Reducer: 15x10,RC**,19319782
+Ball-Valves: DN 25,VB**,19446363
+Ball-Valves-AL3600: DN 20,VB**,19595776
+Tee-Equal: 20,TE**,19595789
+Flange_DN600: Flange_DN600,FLSO,19747135
+Flange_DN300: Flange_DN300,FLSO,19771128
+Flange_DN200: Flange_DN200,FLSO,19779156
+Flange_DN250: Flange_DN250,FLSO,19796019
+M_Coupling - Generic: Standard,CO**,19838305
+Flange_DN400: Flange_DN400,FLSO,19846139
+Butterfly Valve_DN400-No Flanges: Butterfly Valve_DN400-No Flanges,VY**,19849571
+Flexible Joint_DN200_340: 200,EX**,19890794
+Reducer: 300x200,RC**,19890797
+Check Valve_DN200-No Flanges: DN200,CK**,19890829
+Elbow-Long Radius 90: 300,EL**,19946259
+"CPL-B1300_Pre Insulated Pipe Support: CPL-B1300-12""-2.5""-B",01HG,20012031
+Butterfly Valve_DN2: Butterfly Valve_DN300 2,VY**,20012032
+Flow Meter_DN300: DN 300,NC**,20012043
+Flange-Weld Neck RF-ANSI150-DN300: 300,FLWN,20012046
+Flange_DN80: Flange_DN80,KABW,20074890
+Tee-Equal: 600,TE**,20086328
+Flange DN 300 - pipe accessories: 300,FLSO,20086340

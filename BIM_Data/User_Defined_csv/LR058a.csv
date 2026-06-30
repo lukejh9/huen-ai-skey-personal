@@ -1,0 +1,35 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: 16HF01B1,_P**,1871116
+Strömungsteiler: DN 50/20,CR**,1871120
+Pipe Types: 10HR04GH,_P**,1871124
+"10HR04GH T-Stück, Typ A: Standard",TE**,1871126
+Teilnetzende S: Standard,KABW,1871134
+Pipe Types: Sanpress Inox,_P**,1871140
+"10HR04GH Bogen 90°, Typ A: 1.5D",EL**,1871142
+Pipe Types: 16CA01B1,_P**,1871148
+Pipe Types: 10HR04GH PN16,_P**,1871173
+"KSB Membranventil SISTO-16 RGA - Rotguß Rilsan, DVGW-Wasser, PN16 Rp 3 4 #8vgs39o#: Standard",NC**,1871175
+"16CA01B1 Bogen 90°, Typ A: 1.5D",EL**,1871203
+Pipe Types: 10HR04GH PN10,_P**,1871236
+Bogen_Sanpress-Inox-SC_viega: var,EL**,1871238
+"16HF01B1 T-Stück, Typ A: Standard",TE**,1871248
+"16HF01B1 Bogen 90°, Typ A: 1.5D",EL**,1871252
+"KSB Membranventil SISTO-16 RGA - Rotguß Rilsan, DVGW-Wasser, PN16 Rp 1 2 #p8oa6ed#: Standard",NC**,1871258
+3-Wege-Mischer Mischweg rechts - Einschweißbar DN 20 - liNear Neutrale Bauteile #mqdbs2i#: Standard,TE**,1871259
+"Kugelhahn mit Flanschen - Baulänge F4, DN 15 PN 16 - liNear Neutrale Bauteile #60mh7a9#: Standard",NC**,1871264
+Pipe Types: 16HF01B1 with Flange PN40,FLSO,1871265
+Flansch DIN EN 1092-1 PN40: Standard,NC**,1871267
+"10HR04GH Bogen 45°, Typ A: 1.5D",EL**,1871308
+Flansch DIN EN 1092-1 PN10: Standard,NC**,1871314
+Flansch DIN EN 1092-1 PN16: Standard,NC**,1871324
+Pipe Types: 16CA01B1 with Flange PN40,FLSO,1871328
+"16CA01B1 Reduzierung, Typ A: Standard",RC**,1871343
+Strangregulierventil_Flansch - PN6 DN25 - LINEAR Neutrale Bauteile #dcqghva#: Standard,NC**,1871365
+Sikla Clamps Stabil1: Stabil D 3G mE 33 37 HCP,01HG,1871393
+Sikla Clamps Stabil1: Stabil D 3G mE 24 28 HCP,01HG,1871396
+Sikla Clamps Stabil1: Stabil D 3G M mE 108 115,01HG,1871403
+Sikla Clamps CHW1: Chilled Water Clamp LKS 19 28,01HG,1871421
+Sikla Clamps CHW1: Chilled Water Clamp LKS 19 114,01HG,1871432
+Sikla Clamps Stabil1: Stabil D 3G w Lining 53 58,01HG,1871435
+Sikla Clamps Stabil1: Stabil D 3G w Lining 33 37,01HG,1871438
+"Kugelhahn mit Flanschen - Baulänge F4, DN 25 PN 16 - LINEAR Neutrale Bauteile #gb7p976#: Standard",NC**,1871468

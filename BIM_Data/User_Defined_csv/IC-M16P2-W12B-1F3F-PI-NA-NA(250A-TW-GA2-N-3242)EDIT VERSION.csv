@@ -1,0 +1,19 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+"Pipe Types: Pipe, SPPW (GA2_Tap)",_P**,9155914
+"Ball Valve_Lever, SPP+PE LINED, 25A~150A: Ball Valve_Lever, SPP+PE LINED (GA2)_Gasket Thickness2",VB**,9155916
+"Flange, SPPW, 6A-600A: Flange_FF, SPPW (GA2)",FLSO,9155935
+"Flange, SPPW, 6A-600A: Flange_FF, SPPW (GA2_F10)",FLSO,9155941
+"Blind Flange, SPPW, 6A-600A: Blind Flange, SPPW (GA2)",FLBL,9155949
+"Tap, SPPW, 6A-600A: Tap, SPPW (GA2)",WTBW,10463583
+"Round Pipe Union_Cut_Dummy: Pipe_Cut, Dummy",CO**,11974035
+"Flange, STS, 6A-900A_SCH10S: Flange_RF, STS304TP (ST1)",01HG,12692005
+"Isolation Kit, SPPW, 6A-600A: Isolation Kit, SPPW (GA2)",NC**,12966215
+"Check Valve_Wafer Dual, STS 304TP, 200A-650A: Check Valve_Wafer Dual, STS 304TP (ST1)_IK",CK**,12971288
+"Butterfly Valve_Geared_Wafer, SPP+PE LINED, 200A~600A: Butterfly Valve_Geared_Wafer, SPP+PE LINED (GA2)_Gasket Thickness2",VY**,13094331
+"Pipe Types: Pipe, SPPW (GA2_Tee)",_P**,13194329
+"Flange, SPPW, 6A-600A: Flange_FFGB, SPPW (GA2)",FLSO,13194333
+"Reducer, SPPW, 20A-600A: Reducer, SPPW (GA2)",RC**,13194336
+"Flexible Joint_Rubber, SPPW: Flexible Joint_Rubber, SPPW (GA2)",EX**,13194400
+"PG - DIAPHRAGM (Flange): PG, STEEL (GA2)",KABW,13194583
+"Tee, SPPW, 6A-600A: Tee, SPPW (GA2)",TE**,13194584
+"CON_Swage, BW x SW, SPPW, 6A-50A: CON_Swage, BW x SW, SPPW (GA2)",RC**,13194588

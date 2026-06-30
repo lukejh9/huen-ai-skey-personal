@@ -1,0 +1,11 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: 08_VP(PVC),_P**,276674
+PVC_Tee: PVC_Tee,TE**,276684
+PVC_Elbow: PVC_Elbow,EL**,276692
+Pipe Types: 07_VP,_P**,286763
+Screwed_Elbow: Screwed_Elbow,EL**,286769
+V.P_Tee: V.P_Tee,TE**,286779
+VP_Flange_TS_ANSI: VP_Flange_TS_ANSI,FLSO,286793
+V.P_Elbow: V.P_Elbow,EL**,293116
+H-Boss Socket-Welding_3000: H-Boss Socket-Welding_3000,WTBW,298608
+PVC_Flange_TS_ANSI: PVC_Flange_TS_ANSI,FLSO,300826

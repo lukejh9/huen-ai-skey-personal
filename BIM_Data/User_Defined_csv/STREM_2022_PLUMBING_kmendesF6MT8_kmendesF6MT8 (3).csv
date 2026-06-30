@@ -1,0 +1,16 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: DOMESTIC HOT WATER PIPING,_P**,993006
+Elbow - Generic: STANDARD ELBOW FITTING,EL**,993096
+Tee - Generic: STANDARD TEE FITTING,TE**,993152
+Type L Hard Copper: Default,_P**,1039649
+90 Elbow CxC: Default,EL**,1040061
+Brazed Joint: Default,WW,1040065
+Cross CxCxCxC: Default,CR**,1040379
+Tee Straight CxCxC: Default,TE**,1040615
+PVC Coat Std Clevis Hanger: Default,KABW,1040880
+PVC Coated Riser Clamp: Default,01HG,1051537
+Pipe Types: CIP,_P**,1054396
+"ELL, 45 LR, Sch.40 CS, ASTM A-234 G WPB, BW: STANDARD ELBOW FITTING",EL**,1054710
+"BV, ASME B16.10, CL150 LG RF w-LEVER 83A-240: SS Ball Valve (0.25in-6.0in)",VB**,1055017
+"PRESSURE CONTROL VALVE, 150LB FLG: ACV4.00",CV**,1059191
+"REDUCER, CONC S-10S, A403-304L SS: Standard",RC**,1059380

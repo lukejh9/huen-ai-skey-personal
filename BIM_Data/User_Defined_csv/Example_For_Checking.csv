@@ -1,0 +1,64 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+GEN_VH_Papillon_Man_Reduc_Entre_Bride_PN10: BI104,NC**,1861333
+GEN_Bride_Tournante_EN_1092-1_TYPE 02A_PN10: BI104,NC**,1861334
+SZF_Clapet_Boule: SZF_Clapet_Boule,01HG,1895313
+GEN_Flange_Adaptor_RF-SW_EN_1092-1_PN10: BI104,FLSO,1906917
+Pipe Types: GEN_BI104_Inox 304L_3D,_P**,1906926
+GEN_VA_Papillon_Pneum_Secours_Entre_Bride_PN10: BI104,NC**,1906980
+GEN_Té_Acier_Inox_BW_EN_10253: BI104_Inox_304L,TE**,1908584
+SZF_VA_Guillotine_Pneum_Entre_Bride: SZF_VA_Guillotine_Pneum_Entre_Bride,NC**,2051875
+GEN_Coude_Inox_BW-EN_10253-3: BI104_Inox_304L,EL**,2164914
+SZF_XT_Bride_Tournante_Acier_Inox: Inox 304,NC**,2170716
+SZF_Compensateur_Dilatoflex: SZF_Compensateur_Dilatoflex,EX**,2178321
+SZF_Debitmetre_Compact_DN350_1200: SZF_Debitmetre_Compact_DN350_1200,NC**,2415586
+SZF_Té_Acier Inox1: Inox 304,TE**,2415604
+GEN_Réduction_CS-EX_Inox_BW_EN 10253-3: BI104_Inox_304L,RC**,2415606
+GEN_Coude_A_Section_3D_(R=1.5D)_BW-EN_13480: BI104_Inox_304L,EL**,2415656
+SZF_Manchette_Droite_B-BL: SZF_Manchette_Droite_B-BL,NC**,2416537
+GEN_Piquage_Acier_Inox: BI104_Inox_304L,WTBW,2416539
+SZF_Raccord_VJ_Quickfit: SZF_XT_Raccord_VJ_Quickfit,NC**,2416545
+GEN_Bouchon_Inox_SW_ASME_B16.11-#3000: BI104_Inox_304L,KABW,2480279
+GEN_VH_Boisseau_Man: BI104,NC**,2487360
+GEN_Raccord_Symetrique: BI104_Inox_304L,KABW,2622639
+GEN_XC_Clapet_Simple_Battant_FF_PN10: BI104,NC**,2626795
+GEN_Vanne_Pap_Pneum_entre_Bride: BI104,NC**,2628962
+GEN_Vanne_Pap_Man_Poignee_entre_Bride: BI104,NC**,3072384
+GEN_Debitmetre_Compact_DN25_DN300: BI104,NC**,3073038
+Pipe Types: GEN_BI242_Inox 316L_3D,_P**,3087422
+GEN_Coude_SW_ASME_B16_3000: BI104_Inox_304L,EL**,3088002
+Pipe Types: SZF_Acier Inox 316_3D,_P**,3088078
+Pipe Types: SZF_PVC - P,_P**,3089995
+GEN_Té_Acier_Inox_SW_ASME_B16.11-#3000: BI104_Inox_304L,TE**,3103180
+SZF_Coude 3D_Acier Inox: Inox 304,EL**,3383559
+GEN_WB_Manchette_Droite_B_BL: BI242_Inox_316L,NC**,3515712
+SZF_Té_Acier Inox: Inox 316,TE**,3586470
+GEN_Manchette_Eau_DN400: GEN_Manchette_Eau_DN400,TE**,3602643
+GEN_Manchette_Eau_DN250: GEN_Manchette_Eau_DN250,KABW,3606738
+SZF_Coude_PVCP: PVCP,EL**,3637244
+Pipe Types: SZF_Acier Inox 304_3D,_P**,3779680
+SZF_Té_Acier Inox: Inox 304,TE**,3779787
+Manomètre_Aiguilles_D100: Manomètre_Aiguilles_D100,KABW,3819042
+GEN_Union_Inox_SW_ASME B16.11-#3000: BI104_Inox_304L,CO**,3820137
+Sonde_MES_DN25_Bride_32: Sonde_MES_DN25_Bride_32,KABW,3824763
+GEN_Debitmetre_Compact_DN350_DN1200: BI104,NC**,3843528
+GEN_VH_Bille_Acier: BI104,NC**,3862692
+Transmetteur_de_Pression_DN25: Transmetteur_de_Pression_DN25,KABW,3863001
+SZF_Clapet_Filete: SZF_Clapet_Filete,NC**,3887712
+GEN_VH_Boisseau_Man: fermee,NC**,3888806
+SZF_Debitmetre_Ludion: SZF_Debitmetre_Ludion,NC**,3889926
+SZF_Electrovanne: SZF_Electrovanne,NC**,3890006
+SZF_Vanne_Bille_PVC: Fermee,NC**,3892757
+GEN_Réduction_Inox_SW_ASME_B16.11-3000: BI104_Inox_304L,01HG,4065778
+GEN_WB_Manchette_Droite_B_BL_Double_Collerette: BI242_Inox_316L,NC**,4400050
+SZF_Té_PVCP: PVCP,TE**,4578050
+SZF_XT_Bride_Tournante_PVCP: PVCP,NC**,4584613
+GEN_Vanne_Boisseau_Pneum: BI104,NC**,4591472
+SZF_Reducteur Pression Filete: SZF_Reducteur Pression Filete,NC**,4599794
+GEN_Vanne_Guillotine_Man_Entre_Bride: BI104,NC**,4687831
+Pipe Types: SZF_Acier Inox 304_5D,_P**,4687834
+SZF_Vanne_Guillotine_Man_Entre_Bride: SZF_Vanne_Guillotine_Man_Entre_Bride,NC**,4688915
+té_pied_de_biche_100_100: té_pied_de_biche_100_100,TE**,4689452
+SZF_Coude 5D_Acier Inox: Inox 304,EL**,4695257
+GEN_Bride_Tournante_EN_1092-1_TYPE 02A_PN10: BI242,NC**,4703513
+GEN_Coude_SW_ASME_B16_3000: BI242_Inox_316L,EL**,4703585
+GEN_Union_Inox_SW_ASME B16.11-#3000: BI242_Inox_316L,CO**,4703651

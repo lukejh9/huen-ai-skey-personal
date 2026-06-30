@@ -1,0 +1,96 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: STEAM S600_2-2,_P**,2182561
+Velan CS B-X064C-02 Gate Valve BWxBW: Velan CS,VT**,2289020
+Pipe Types: BW SCH 40 WALL ASTM A53 CARBON STEEL ERW,_P**,2292587
+weldbend cs sch40 90 long radius elbow bwxbw: Weldbend CS,EL**,2292675
+Weldbend CS Sch40 Cap BW: Weldbend CS,KABW,2297413
+Weldbend CS Sch40 Shop Weld Gap 0_0625: Weldbend CS,WW,2297472
+Weldbend CS Sch40 90 Short Radius Elbow BWxBW: Weldbend CS,EL**,2300076
+Pipe Types: STEAM S150_2,_P**,2305846
+velan cs class 800 2054b full port gate valve swxsw: Velan CS Class 800,VT**,2306191
+velan cs class 150 f-0064c-02 gate valve flgdxflgd: Velan CS Class 150,VT**,2318152
+generic pipe cs class150 hex bolt set astm a307 gr-b: Generic Pipe CS Class150,_B,2318200
+flexitallic ptfe class 150 table 1 style cg gasket: Flexitallic PTFE,_G,2318201
+wb cs rf weld neck flange 150 flgdxbw: WeldBend CS,FLWN,2318203
+"Strainers-Cast_Carbon_Flanged-Mueller_Steam-Class_150-781CC_Series: 781CC - 8""",TE**,2319341
+Pipe Types: WATER W150_1,_P**,2324581
+I_Cap - Generic_v2022.1.101: Standard,KABW,2324736
+velan cs class 800 2074w welded bonnet globe valve swxsw: Velan CS Class 800,VG**,2324795
+Anvil FS Class 3000 Flat Sock-O-Let SW x SW: Anvil FS,WTBW,2326313
+Weldbend CS Sch40 Straight Tee BWxBWxBW: Weldbend CS,TE**,2327434
+Ashcroft SS 45-1259-S-L-L-XNH Pressure Gauge MPT: Ashcroft SS,KABW,2328558
+velan cs class 150 f-0114-02 swing check valve flgdxflgd: Velan CS Class 150,CK**,2329283
+Weldbend CS Sch40 Reducing Tee BWxBWxBW: Weldbend CS,TE**,2333687
+Anvil FS Class 3000 2157 Cap SW: Anvil FS,KABW,2344172
+ACV_Standard_Series: ACV6.00,NC**,2353935
+ACV_Standard_Series: ACV4.00,NC**,2355266
+WeldBend CS RF Reducing Slip-On Flange 150 FLGDxSW: WeldBend CS,RC**,2382247
+I_Tee - Generic_v2022.1.101: Standard,TE**,2386345
+Anvil FS Class 3000 Sock-O-Let SW: Anvil FS Class 3000,WTBW,2386844
+ACV_Standard_Series: ACV10.00,NC**,2387652
+Weldbend CS Sch40 Eccentric Reducer BWxBW: Weldbend CS,RE**,2390405
+Weldbend CS Sch40 Concentric Reducer BWxBW: Weldbend CS,RC**,2392431
+Weldbend CS Sch40 Shop Weld Gap 0_125: Weldbend CS,WW,2396468
+Pipe Types: STEAM S600_2,_P**,2396750
+Pipe Types: GAS GNLP,_P**,2400883
+Plug valve small bore: Plug Valve,VY**,2409749
+Plug valve large bore: Flanged,VY**,2410690
+Crane SS 9633 Ball Valve SWxSW: Crane SS,VB**,2412427
+"Strainers-Cast_Carbon_Flanged-Mueller_Steam-Class_150-781CC_Series: 781CC - 10""",TE**,2413579
+Anvil FS Class 3000 2150 90 Elbow SW x SW: Anvil FS,EL**,2446237
+Flexible connector: TCHS-800-GR,EX**,2460576
+Weldbend CS Sch40 90 Reducing Elbow BWxBW: Weldbend CS,NC**,2476947
+Weldbend CS Sch40 Field Weld Gap 0_0625: Weldbend CS,WW,2478008
+"ESI - Safty Valve-Emerson 300_600: ESI - Safety Valve- 4"" x 6""",NC**,2478244
+Pipe Types: WATER W600_1-2,_P**,2482360
+weldbend cs sch80 90 long radius elbow bwxbw: Weldbend CS,EL**,2482387
+Pipe Types: WATER W600_1,_P**,2483741
+ESI-Post Support: ESI-Post Support,01HG,2489032
+Weldbend CS Sch80 Concentric Reducer BWxBW: Weldbend CS Sch80,RC**,2493329
+Bell And Gossett CI Class 150 Circuit Senser Flow Meter WFLGxWFLG: Bell And Gossett CI,FLSO,2495614
+wb cs ff weldneck flange sch80 600 flgdxbw: WeldBend CS Sch80,FLWN,2501300
+Flexitallic PTFE Class 600 Table 1 Style CG Gasket: Flexitallic PTFE,_G,2501402
+"ESI - Safty Valve-Emerson 300_600: ESI - Safety Valve- 6"" x 8""",NC**,2507851
+WB CS RF Weldneck Flange Sch80 600 FLGDxBW: WeldBend CS Sch80,FLWN,2508016
+Circular Post 01: Circular Post 01,01HG,2512146
+Pipe Types: WATER WRO 316L SS SCH 10,_P**,2513053
+Douglas Barwick SS316L A774 NPS 90 LR Elbow GA11 BWxBW: Douglas Barwick SS316L,EL**,2513058
+Alaskan Copper SS Field Weld Gap_0: Alaskan Copper SS,WW,2513065
+Velan SS-316 Class150 F-0AA13-A Torqseal Butterfly Valve FlgdxFlgd: Velan SS-316 Class150,VY**,2517854
+Ferguson CrMo Class 300 B7-D-L Stud Bolt Set: Ferguson CrMo Class 300,_B,2517888
+Ferguson SWG14F FNW Spiral-Wound 150 Gasket: Ferguson SS304,_G,2517889
+Alaskan Copper SS316L SK-3 Stub End Sch10S LJMxBW: Alaskan Copper SS316L,TE**,2517890
+Alaskan Copper SS Class 150 Lap Joint Flange Flgd x BW: Alaskan Copper SS,KABW,2517898
+CVI SS-316 Class 150 SD15-SSBS-J Check Valve WFLGxWFLG: CVI SS-316 Class 150,CK**,2521279
+Pipe Types: WATER WRO_1,_P**,2526320
+I_Pipe Spud - Basic_v2022.1.103: Standard,WTBW,2526323
+ACV_Standard_Series: ACV8.00,NC**,2529748
+VLN W-T1813-SSE6-W VTP-2000 Ball Valve SWxSW: Velan SS,VB**,2530811
+Cooper B_Line Fig B3100 Std Clevis Hanger: Cooper B_Line Steel,NC**,2532969
+anvil fs class 3000 2152 straight tee sw x sw x sw: Anvil FS,TE**,2539238
+Weldbend CS Sch80 Reducing Tee BWxBWxBW: Weldbend CS Sch80,TE**,2560326
+Velan CS Class 600 F-2074C-02 Globe Valve FlgdxFlgd: Velan CS Class 600,VG**,2562710
+Pipe Types: WATER MW2 304L SS SCH 10,_P**,2593557
+douglas barwick ssf304l a182 nps weld neck flange 150 flgdxbw: Douglas Barwick SSF304L,FLWN,2594514
+velan ss-316 l-0-31-0c-13 310c knife gate valve flgdxflgd: Velan SS-316,VT**,2601895
+douglas barwick ss304l a774 nps 90 lr elbow ga11 bwxbw: Douglas Barwick SS304L,EL**,2604467
+Douglas Barwick SS304L A774 NPS Tee GA11 BWxBWxBW: Douglas Barwick SS304L,TE**,2604469
+P1000T-GR UniStrut Pipe Hanger 1 5_8: Unistrut Hanger,_P**,2629630
+Weldbend CS Sch80 Cap BW: Weldbend CS,KABW,2630346
+barrel strainer family: barrel strainer family,KABW,2652448
+Weldbend CS Sch80 Straight Tee BWxBWxBW: Weldbend CS,TE**,2704385
+Weldbend CS Sch40 Mig Weld Gap 0_0625: Weldbend CS,WW,2759801
+Velan CS 2114P Swing Check Valve 600 BWxBW: Velan CS,CK**,2787983
+"ESI - Safty Valve-Emerson 300_600: ESI - Safety Valve- 8"" x 10""",NC**,2793183
+BWINC SS304L Tee BELLxBELLxBELL: Bestweld SS304L,TE**,2817084
+BWINC SS304L 90 Short Radius Elbow BELLxBELL: Bestweld SS304L,EL**,2817088
+ACV_Standard_Series: ACV2.00,NC**,2817111
+Pipe Types: WATER CWS2 304L SS SCH 10,_P**,2817222
+Weldbend CS Sch40 45 Long Radius Elbow BWxBW: Weldbend CS,EL**,2841178
+Weldbend CS Sch80 45 Long Radius Elbow BWxBW: Weldbend CS,EL**,2853050
+BWINC SS304L 45 Long Radius Elbow BELLxBELL: Bestweld SS304L,EL**,3101678
+Pipe Types: AIR IA1 304L SS SCH 10,_P**,3103956
+Anvil FS Class 3000 2156 Reducing Coupling: Anvil FS,RC**,3167191
+velan f-0064c-02ty full port gate valve 150 flgdxflgd: Velan CS,VT**,3175865
+Flange_Butterfly_Valve_Actuator: DN 200,VY**,3470272
+WeldBend CS SchSTD 90 LR Trimmed Elbow BWxBW: WeldBend CS SchSTD,EL**,3549273

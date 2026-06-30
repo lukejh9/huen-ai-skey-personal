@@ -1,0 +1,129 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: CPV-PROCESS/HDPE-INSULATED,_P**,5304246
+Pipe Types: CPV-DRAINAGE/HDPE-INSULATED,_P**,5413815
+Pipe Types: CPV-DRAINAGE/HDPE,_P**,5495830
+Pipe Types: CPV-PROCESS/HDPE,_P**,5844745
+CPV-PROGEF-546-BV-SDR11 Metric: DN25,NC**,5844747
+CPV-PROGEF-562-CV-SDR11 Metric: DN25,NC**,5844753
+CPV-Branch90Deg-ButtWelded-PE100: SINGLE,TE**,5844821
+"CPV-Elbow-ButtWelded-PE100: DN15 - DN50 (90º), DN15 - DN300 (45º), S5/SDR11 (PN10)",EL**,5844835
+Cap - Pop Up ID: WP,KABW,8810180
+CPV-63-PROGEF-LugStyle-Butterfly valve 578-GF: 63mm,VY**,10278289
+CPV-WYE-DR-ButtWelded-HDPE-FTOF: INSULATED,TE**,12732508
+CPV-Vent-TopHat: Standard,KABW,12767772
+Pipe Types: CPV-CAT5/PE100-INSULATED,_P**,12922193
+CPV-WYE-DR-ButtWelded-HDPE: Standard,TE**,19544714
+Plumbing_Joints_ACQUATECHNIK_FLANGIA_FLANGE: Standard,KABW,20915111
+"CPV-Bend-ButtWelded-PE100: DN15 - DN500 (90º), DN350 - DN500 (45º), S5/SDR11 (PN10)",EL**,21378057
+CPV-Branch90Deg-ButtWelded-PE100: INSULATED,TE**,21561084
+CPV-Bend-ButtWelded-HDPE: INSULATED,EL**,22505047
+CPV-90-PROGEF-LugStyle-Butterfly valve 578-GF: 90mm,VY**,22536751
+"CPV-Bend-ButtWelded-PE100: DN15 - DN500 (90º), DN350 - DN500 (45º), S5/SDR11 (PN10)-INSULATED",EL**,22537077
+CPV-Branch90Deg-Ins-ButtWelded-PE100: Standard,TE**,22537161
+"CPV-Bend-ButtWelded-PE100: DN40 - DN500 (90º), DN350 - DN500 (45º), S8.3/SDR17.6 (PN6)-INSULATED",EL**,22537177
+"CPV-Bend-ButtWelded-PE100: DN40 - DN500 (90º), DN350 - DN500 (45º), S8.3/SDR17.6 (PN6)",EL**,22537287
+Pipe Types: CPV-PROCESS/HDPE Flanges,FLSO,22537292
+"CPV-Elbow-ButtWelded-PE100: DN40 - DN300 (45º), S8.3/SDR17.6 (PN6)-INSULATED",EL**,22537501
+"CPV-Reducer-ButtWelded-PE100: DN32 - DN500, S8.3/SDR17.6 (PN6)-INSULATED",RC**,22537697
+Pipe Types: CPV-CAT5/PE100,_P**,22540257
+Pipe Types: Carbon Steel - Threaded & Butt Welded,WW,22540261
+CDL_Pipe Accessory_Valve_Isolator: 20mm,VV**,22540263
+Reducer Concentric - Butt Welded - CS1: Standard,RC**,22540342
+MEP_PipeValve_CheckValve_RelianceWaterControls_FloguardDoubleCheckValve: FLOW230001 - 15mm Mini Double Check Valve,CK**,22540344
+CPV-AlbionValves_PipeAccessories_SolenoidOperatedValve_SLP-NO: SLP-25,VV**,22540441
+Reducer Concentric - Butt Welded - HDPE: Standard,RC**,22540569
+Socket - Threaded - GMI: Standard,CO**,22540579
+Branch 88.5 Deg Swept-Entry - Butt Welded - HDPE: Standard,TE**,22540587
+"CPV-Elbow-ButtWelded-PE100: DN15 - DN50 (90º), DN15 - DN300 (45º), S5/SDR11 (PN10)-INSULATED",EL**,22540597
+CPV-SiteJoint: CPV-SJ-InsTransition,NC**,22612401
+CPV-Bend-ButtWelded-HDPE: SINGLE,EL**,22612429
+CPV-Branch+RED90Deg-ButtWelded-PE100: INSULATED,TE**,23445075
+CPV-Flange-Ins-ButtWelded-PE100-1: CPV-Flange-Ins-ButtWelded-PE100-1,01HG,23992782
+Pipe Types: CPV-PROCESS/HDPE-INSULATED- WATER TANKS,_P**,24756145
+CPV-WYE-DR-ButtWelded-HDPE-FTOF: SINGLE,TE**,24965776
+Flex Pipe Round: Flex - Round,NC**,24979362
+CPV-TEE-ButtWelded-HDPE: SINGLE,TE**,24997271
+MEP_PipeValve_CheckValve_RelianceWaterControls_FloguardDoubleCheckValve: FLOW230003 - 22mm Mini Double Check Valve,CK**,25404358
+"Crane_PipeAccessory_Valve_PressureReducing_D1716: 1/2""",VV**,25404571
+Reducer Straight - Soldered - CU: Standard,RC**,25404879
+Elbow - Threaded - GMI: Standard,EL**,25405563
+CPV-SiteJoint: CPV-SJ-EF-SiteJoint,WW,25446471
+Cap - Butt Welded - CS: Standard,KABW,25466125
+CPV-125-PROGEF-LugStyle-Butterfly valve 578-GF1: 125mm GF,VY**,25527597
+CPV-CAP-Screwed-HDPE: Standard,KABW,25646901
+CPV-BMJoint-Insulated: Generic,WW,25686379
+CPV-WYE-DR-ButtWelded-HDPE-FTOF: Standard,TE**,25735673
+CPV-SiteJoint: CPV-SJ-FLGullyConnection,FLSO,25827397
+"CPV-Reducer-ButtWelded-PE100-v2: SDR17.6, DN100 - DN600 - SINGLE SKIN",RC**,25862776
+"CPV-Reducer-ButtWelded-PE100: DN32 - DN500, S8.3/SDR17.6 (PN6)",RC**,25865721
+CPV-SiteJoint: CPV-SJ-MechConnection-WP,WW,25876515
+CPV-BMJoint: Generic,WW,25995951
+"CPV-Reducer-ButtWelded-PE100-v2: SDR11, DN100 - DN500 - SINGLE SKIN",RC**,25997164
+CPV-SiteJoint: CPV-SJ-DrainageTrap,WW,26102682
+CPV-RED-Butt Welded-HDPE: Standard,RC**,26145995
+"CPV-Adaptor-FBSP-SocketWelded-PE100: DN15 - DN50, Brass",CO**,26316427
+Belimo 012017 D680NL EN: Belimo 012017 D680NL EN,NC**,26370865
+CPV-SiteJoint: CPV-SJ-MechConnection-PW,WW,26396139
+CPV-BMJoint-Insulated: CPV-BMJoint-Insulated-1074,WW,26500662
+"CPV-FlangeButtWelded-PE100-GF: DN40 - DN350, S8.3/SDR17.6 (PN6)",FLSO,26766376
+"CPV-FlangeButtWelded-PE100-GF: DN15 - DN350, S5/SDR11 (PN10)",FLSO,26894048
+CPV-ME-Drainage-Meter-v1: CPV-ME-Drainage-Meter-v1,NC**,26904981
+"CPV-AdaptorSeat-ButtWelded-PE100: DN32 - DN500, S8.3/SDR17.6 (PN6)-INSULATED",RC**,26913978
+"CPV-Reducer-ButtWelded-PE100: DN15 - DN500, S5/SDR11 (PN10)-INSULATED",RC**,26983084
+CPV-110-PROGEF-LugStyle-Butterfly valve 578-GF: 110mm,VY**,27008119
+CPV-TEE-ButtWelded-HDPE: INSULATED,TE**,27008948
+CPV-STABIN-ButtWelded-HDPE: INSULATED,TE**,27013377
+Belimo 012017 D650NL EN: Belimo 012017 D650NL EN,NC**,27044480
+CPV-Valve-Apaptor-ButtWelded-PE100: AAV,RC**,27079670
+CPV-Valve-Apaptor-ButtWelded-PE100: Standard,RC**,27082046
+CPV-Valve-Apaptor-ButtWelded-PE100: Drain Valve,RC**,27082833
+Pipe-Valve-Crane-D171AC_Compression_DZR_Ball_Valve: 22mm,VB**,27087791
+Pipe-Valve-Crane-D171AC_Compression_DZR_Ball_Valve: 15mm,VB**,27131811
+M_Separator_Air_MEPcontent_Spirotech_SpiroTop AB: 050,KABW,27132153
+"PIF_ecoFIT EF transition coupler mt (u)_GF: PE/steel, DN15 - DN50",NC**,27164913
+CPV-Pipe-Valve-Crane-D171AC_Compression_DZR_Ball_Valve: 15mm,VB**,27312690
+M_Separator_Air_MEPcontent_Spirotech_SpiroTop AB: 050_030,KABW,27312815
+CPV-Pipe-Valve-Crane-D171AC_Compression_DZR_Ball_Valve: 22mm,VB**,27313059
+CPV-Valve-Apaptor-ButtWelded-PE100: Sensor,VV**,27429636
+CPV-Sensor-MBSP-SS: CPV-Sensor-MBSP-SS,KABW,27429647
+CPV-TH_FixBox: Standard,NC**,27489839
+"CPV-Flanged_Camlock-Steel: DN40 - DN350, S8.3/SDR17.6 (PN6)",KABW,27501865
+PIA_PROGEF man lugstyle butterfly valve 578 -ha lev w rat set_GF: DN200,VY**,27533800
+"CPV-Bend-ButtWelded-PE100-Segmented: DN40 - DN500 (90º), DN350 - DN500 (45º), S8.3/SDR17.6 (PN6)-INSULATED",EL**,27533846
+"CPV-Reducer-ButtWelded-PE100: DN15 - DN500, S5/SDR11 (PN10)",RC**,27769334
+CPV-EF transition coupler loose nut (u)_GF: DN20 - DN50,NC**,27849763
+CPV-TEE-S-COMBO-0.5FBSP-ButtWelded-PE100: MBSP-INSULATED,TE**,28249068
+CPV-TEE-S-COMBO-0.5FBSP-ButtWelded-PE100: FBSP-INSULATED,TE**,28249473
+CPV-TEE-S-COMBO-2 MBSP-ButtWelded-PE100: INSULATED,TE**,28249543
+CPV-TEE-S-COMBO-0.75MBSP-ButtWelded-PE100: INSULATED,TE**,28250440
+CPV-TEE-S-COMBO-1 MBSP-ButtWelded-PE100: INSULATED,TE**,28250595
+CPV-TEE-S-COMBO-2 FBSP-ButtWelded-PE100: INSULATED,TE**,28250675
+Pipe Types: CPV-DRAINAGE/PE100,_P**,28251251
+CPV_UVFilter_CGA_ECL-210-4_530_N14_Revit: CPV_UVFilter_CGA_ECL-210-4_530_N14_Revit,NC**,28290178
+CPV-Belimo 012017 R305040S4 EN: CPV-Belimo 012017 R305040S4 EN,TE**,28311939
+CPV-STEE-ButtWelded-HDPE: INSULATED,TE**,28327876
+CPV-PROGEF-546-BV-SDR11 Metric: DN32,NC**,28453110
+CPV-Belimo-Pressure Independent Control Valve: EP065F+KMP,CV**,28551659
+Belimo 012017 D6100NL EN: Belimo 012017 D6100NL EN,NC**,28558283
+CPV-Arrow_ED202_65mm-Double-Check-Valve: DN65,CK**,28565549
+CPV-ME-Flow-Meter-v2: CPV-ME-Flow-Meter-v2,NC**,28570224
+CPV-Apaptor-Threaded-ButtWelded-PE100: Standard,WW,28581539
+JEG_StourFlex_Braided Pump Connector: JP23VS-50,EX**,28591297
+"CPV-Genebre-Strainer-Flanged: 3""",FLSO,28609119
+CPV-160-PROGEF-LugStyle-Butterfly valve 578-GF: 160mm,VY**,28618722
+CPV-CAP-BLANKING_DISC-PE100: Standard,KABW,28645057
+CPV-75-PROGEF-LugStyle-Butterfly valve 578-GF: 75mm,VY**,28671049
+Coupling - DI: Standard,CO**,28686274
+CPV_Orifice Plate 90mm: CPV_Orifice Plate 90mm,NC**,28690019
+CPV-ADP-0.75FBSP-ButtWelded-PE100: INSULATED,RC**,28719131
+CPV-ADP-E-0.75FBSP-ButtWelded-PE100: INSULATED,RE**,28721120
+CPV-PROGEF-PP-Wafer Check Valve Type 369 -w V4A spring (SS316)_GF: DN80,CK**,28729588
+CPV-Pipe-Valve-Crane-D171AC_Compression_DZR_Ball_Valve: 28mm,VB**,28751269
+CPV-CRN15_International: CRN 15-7_50_97846391,NC**,28818934
+CPV-Pipe-Valve-Crane-D171AC_Compression_DZR_Ball_Valve: 54mm,VB**,28912066
+CPV-PROGEF-546-BV-SDR11 Metric: DN50,NC**,28920208
+CPV-ADP-0.75FBSP-ButtWelded-PE100: SINGLE,RC**,28969609
+CPV-Valve-Apaptor-ButtWelded-PE100: Filter Drain,RC**,29002406
+CPV-TEE-S-COMBO-0.5FBSP-ButtWelded-PE100: MBSP-SINGLE,TE**,29016822
+"CPV-Saddle-EF: 225, Outlet 63",TE**,29055231
+CPV-Apaptor-Threaded-ButtWelded-PE100: EXT Tanks,RC**,29094450

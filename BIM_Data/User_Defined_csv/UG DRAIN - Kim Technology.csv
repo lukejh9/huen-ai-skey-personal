@@ -1,0 +1,31 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: PP PN 3.2,_P**,1623761
+ex_PP_Elbow-Plain: Standard,EL**,1624267
+ex_PP_Tee Branch Reduced-Plain: Standard,TE**,1625146
+ex_PP_Reducer-Plain: Standard,RC**,1635564
+ex_Termination fitting w IPS connection: 160 mm,NC**,1656333
+ex_Trench w terminal._center_connection: 400x400x350,KABW,1661785
+ex_Trench w terminal_one side: 400x400x350,KABW,1662107
+ex_Trench w terminal_one side_1: 450x450x410,KABW,1673869
+ex_Termination fitting w IPS connection: 200 mm,NC**,1674168
+ex_Termination fitting w IPS connection: 50mm,NC**,1677499
+Pipe Types: PP PN 6,_P**,1747245
+ex_PP_Tee Branch Reduced-Plain: Standard 2 TL,TE**,1748826
+ex_Termination fitting w IPS connection: 400 mm,NC**,1751121
+ex_Trench w terminal_one side: 450x450x350,KABW,1764224
+ex_Trench w terminal._center_connection: 450x450x350,KABW,1769011
+ex_SS_Flange with Pressed Collar-Lap Joint-PN 10: Standard,FLSO,1789103
+ex_Termination fitting w IPS connection: 250 mm,NC**,1800802
+ex_PP_Socket-Plain: Standard,CO**,1842147
+Butterfly Valve - 50-300 mm: 400 mm,VY**,2084359
+Ball Valve - 50-150 mm1: 50 mm,VB**,2084360
+ex_SS_Elbow-Welded: 0.5,EL**,2084363
+ex_M_RubberJoint-Flexible_Double-Bellow_PN16_M: DN400,EX**,2084367
+Pipe Types: MW-Stainless Steel,_P**,2084368
+Sight Glass: 50 mm,SG**,2084374
+Branch Takeoff - Generic1: Standard,WTBW,2084383
+ex_SS_Blind_Flange: Standard,FLBL,2084385
+ex_Inline-Strainer: DN 400mm,FI**,2084388
+Flange - Slip-on - Steel - PN 40: Standard,FLSO,2084389
+ex_Termination fitting w IPS connection1: 400 mm,NC**,2084393
+ex_Low point Leak Detection port: ex_Low point Leak Detection port,TE**,2084422
