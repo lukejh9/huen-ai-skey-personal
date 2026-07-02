@@ -1,0 +1,1222 @@
+{
+  "Id": 320797,
+  "FamilyName": "ARS - Bolts",
+  "TypeName": "var",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "Undefined",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "IsCustom",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "0cwdXxbkz4RBf87$kAi2Fl",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Comments",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "ARS - Bolts: var",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "ARS - Bolts",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "var",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "322169",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "4775",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "K",
+      "Value": "100",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "D",
+      "Value": "140",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Diameter",
+      "Value": "32 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Single Line Mark",
+      "Value": "112",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "L",
+      "Value": "18",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "d1",
+      "Value": "78",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "f1",
+      "Value": "2",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Number of Bolts",
+      "Value": "4",
+      "StorageType": "Integer",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "04 Bolts Flange",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "08 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "12 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "16 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "C2",
+      "Value": "18",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "H2",
+      "Value": "42",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "N1",
+      "Value": "56",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "A",
+      "Value": "42",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "L auxiliar",
+      "Value": "2",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "20 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "24 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "L auxiliar 2",
+      "Value": "2",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "28 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "32 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "36 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "40 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "44 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "48 Bolts Flange",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "L auxiliar 3",
+      "Value": "2",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 01 to 04",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "With Bolts",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt Size",
+      "Value": "16",
+      "StorageType": "Integer",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt Gap",
+      "Value": "36",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt Length",
+      "Value": "70",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 05 to 08",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 09 to 12",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 13 to 16",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 17 to 20",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 21 to 24",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 25 to 28",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 29 to 32",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 33 to 36",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 37 to 40",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 41 to 44",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolts 45 to 48",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Accessory Length",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Accessory Length Adjusted",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt Offset",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "With Gasket",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Full Description",
+      "Value": "Welding neck flange ø32mm - PN16 - type 11 - Type B1 - DIN EN 1092-1 - CARBON STEEL",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Zauner Part Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Nominal Size",
+      "Value": "ø32mm",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "ZNR_Sheet_Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "ZNR_Line Number",
+      "Value": "GA.01.RL0406.01",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "K Coefficient Table",
+      "Value": "Regular 45, 90 and 180 Elbow",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "0cwdXxbkz4RBf87$kAi2oB",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Description",
+      "Value": "Welding neck flange - PN16 - type 11 - Type B1 - DIN EN 1092-1 - CARBON STEEL",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "Pipework Fittings",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "23.60.30.11.14",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "ARS - Bolts",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "var",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Size Table",
+      "Value": "EN 1092-1 PN16 Type 11 Type B1 - Carbon Steel",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 01",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 02",
+      "Value": "2",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 03",
+      "Value": "3",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 04",
+      "Value": "4",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 05",
+      "Value": "5",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 06",
+      "Value": "6",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 07",
+      "Value": "7",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 08",
+      "Value": "8",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 09",
+      "Value": "9",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 10",
+      "Value": "10",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 11",
+      "Value": "11",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 12",
+      "Value": "12",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 13",
+      "Value": "13",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 14",
+      "Value": "14",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 15",
+      "Value": "15",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 16",
+      "Value": "16",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 17",
+      "Value": "17",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 18",
+      "Value": "18",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 19",
+      "Value": "19",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 20",
+      "Value": "20",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 21",
+      "Value": "21",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 22",
+      "Value": "22",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 23",
+      "Value": "23",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 24",
+      "Value": "24",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 25",
+      "Value": "25",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 26",
+      "Value": "26",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 27",
+      "Value": "27",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 28",
+      "Value": "28",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 29",
+      "Value": "29",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 30",
+      "Value": "30",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 31",
+      "Value": "31",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 32",
+      "Value": "32",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 33",
+      "Value": "33",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 34",
+      "Value": "34",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 35",
+      "Value": "35",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 36",
+      "Value": "36",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 37",
+      "Value": "37",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 38",
+      "Value": "38",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 39",
+      "Value": "39",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 40",
+      "Value": "40",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 41",
+      "Value": "41",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 42",
+      "Value": "42",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 43",
+      "Value": "43",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 44",
+      "Value": "44",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 45",
+      "Value": "45",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 46",
+      "Value": "46",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 47",
+      "Value": "47",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Bolt 48",
+      "Value": "48",
+      "StorageType": "Integer",
+      "GroupName": "Segments and Fittings",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Spec",
+      "Value": "CARBON STEEL",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Standard",
+      "Value": "DIN EN 1092-1",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Item Properties",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ZNR_Item Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ZNR_Skey",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Material",
+      "Value": "Carbon Steel Pipe - P235GH (1.0345)",
+      "StorageType": "ElementId",
+      "GroupName": "Materials and Finishes",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Connector Type",
+      "Value": "Flange/Welded",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "PN Rating",
+      "Value": "var",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

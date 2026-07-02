@@ -1,0 +1,26 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: 07_VP,_P**,682227
+Pipe Types: 13_VP-FRP,_P**,682231
+HE01_Bweld-L: HE01_Bweld-L,EL**,682247
+Pipe Types: 01_SGP-Zn,_P**,682248
+Pipe Types: 04_SUS304TP,_P**,682348
+Pipe Types: 03_SGP-Zn,_P**,682356
+Pipe Types: 12_STPG410(S),_P**,682408
+VP(PVC)_Elbow: VP(PVC)_Elbow,EL**,682418
+Pipe Types: 09_STPG410,_P**,682438
+HE01_Bweld-L1: HE01_Bweld-L 2,EL**,682948
+HR01_Butt: Concetric,RC**,683032
+HT01_Bweld-L Reducer: HT01_Bweld-L,TE**,683034
+Pipe Types: 14_SGP+TL,_P**,683210
+Ball Valve_15A-25A_A1: 20 mm,VB**,683833
+Glove Valve_50A-200A_FIG.150SCJS: 50 mm,VV**,683842
+HF_STEEL FLANGE_SOP: SUS FLANGE-10K,FLSO,683892
+HE03_Sweld: HE03_Sweld,EL**,711598
+HT03_Sweld: HT03_Sweld,TE**,711602
+HT01_Bweld-L Reducer1: HT01_Bweld-L 2,TE**,711616
+Pipe Types: 08_VP(PVC),_P**,725091
+HE01_Bweld-L1: HE01_Bweld-L,EL**,725103
+Pipe Types: 10_STPG410(S),_P**,725109
+HT01_Bweld-L Reducer1: HT01_Bweld-L,TE**,725137
+HR01_Butt1: Concetric 2,RC**,725155
+Glove Valve_15A-40A_FIG.150SPB: 20 mm,VV**,748473

@@ -1,0 +1,21 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: SS - 10 - Tee SW,_P**,2467964
+IPC - Flange - Lap Joint SS - Sch 10: Standard,FLSO,2468163
+"IPC - Valve - BA-5-FL: 1.5""",VV**,2468226
+IPC - Elbow - SS - SW 150: Standard,EL**,2726844
+IPC - Gasket - Taskline: Standard,_G,2958605
+Pipe Types: CS - 40 - Olets,_P**,3053537
+"Suction Diffuser - 2.5-8 Inch - Flanged: 8""x8""",EL**,3053601
+IPC - Flange - Slip-on - CS - Class 150: Standard,FLSO,3053669
+"IPC - Valve - BFV: 8""",VV**,3053671
+"IPC - Flex Conn: 8""x12""",EX**,3053672
+"IPC - Flex Conn: 6""x11""",EX**,3053704
+"IPC - Valve - BFV: 6""",VV**,3053709
+"IPC - Check Valve: 6""",CK**,3053740
+IPC - Flange - Weld Neck - Steel - Class 150: Standard,FLWN,3053741
+Pipe Types: SS - 10 - Tee,_P**,3274691
+IPC - Elbow - BW: SS S10,EL**,3274864
+"IPC - Valve - BA-5-FL: 6""",VV**,3275769
+IPC - Gasket - Flexitallic: Standard,_G,3275807
+IPC - Tee - SS - Reducing S10: Standard,TE**,3277113
+"IPC - Valve - BA-5-FL: 4""",VV**,3277268

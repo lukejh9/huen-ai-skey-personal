@@ -1,0 +1,29 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+CHANNEL 100x50x5x7.1: CHANNEL 100x50x5x7.5,01HG,5584625
+"Pipe Types: Pipe, PVDF, Tee",_P**,5604438
+"Pipe Types: Pipe, PP, Tee",_P**,5604676
+Elbow_PVDF_OD20-315: PP,EL**,5614239
+Elbow_PVDF_OD20-315: PVDF,EL**,5628154
+Tee_PVC: PP,TE**,5706950
+Reducer_PVC: PP,RC**,5707139
+Flange_(STUB)_PVDF: PP,TESO,5709208
+Agru Diaphragm Flange valve 20A-140A: diaphragm,VV**,5709297
+Flange_(STUB)_PVDF: PVDF,TESO,5813903
+Tee_PVC: PVDF,TE**,5893439
+Reducer_PVC: PVDF,RC**,5893528
+T-Diaphragm Valve_15A_100A: PVDF,TE**,6201989
+T-Diaphragm Valve_OD140_OD160: T-Diaphragm Valve_OD140_OD160,TE**,6285178
+Butterfly_Valve-100A_UPW: PP,VY**,6341859
+Butterfly_Valve-125A_UPW: PP,VY**,6373658
+Restrained_OD32-OD225: PVDF,NC**,6851250
+Flange_(STUB)_PVDF_Nozzle: PP,TESO,6935363
+Flange_(STUB)_PVDF_Nozzle: PVDF,TESO,6950618
+ㅁ40x60 system channel-1: ㅁ40x60 system channel-1,01HG,7372529
+INSTRUMENTATION_90: PP,TE**,7442546
+INSTRUMENTATION: VP,TE**,7442997
+ㅁ40x60 system channel: ㅁ40x60 system channel,01HG,7586252
+ㅁ40x40 system channel: ㅁ40x40 system channel,01HG,7586255
+ㄷ50x50 channel-1: ㄷ50x50 channel-1,01HG,7977706
+Butterfly_Valve-80A_UPW: PP,VY**,8179677
+"Socket_PVC #80_15A-600A: Socket, A1R(PVC #80)",CO**,8294046
+Agru Diaphragm Flange valve 20A-140A_Nozzle: diaphragm,VV**,8344144

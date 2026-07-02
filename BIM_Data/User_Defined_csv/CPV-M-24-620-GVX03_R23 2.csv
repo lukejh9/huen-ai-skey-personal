@@ -1,0 +1,34 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: CPV-Pipes-Hiline-PEP.XXX.SDR11 Single_Pipe,_P**,15419051
+CPV_PipeFittings_Pressure_Elbow_PEPB.020-315.EXX-SX: Single Pipe,EL**,15419053
+CPV_PipeFittings_Pressure_Branch_PEPB.020-1000.TXXX-SX: Single Pipe,TE**,15419061
+CPV_PipeFittings_Pressure_Stub&Flange_PEPB.020-1000.PXX: PN16,TESO,15419065
+CraneFS_ButterflyValve_FullyLuggedLeverOperated_F628-R22: DN100,VY**,15419069
+CPV_PipeFittings_ButtWeldThreadedAdaptor_PEPB.020-110.BRXX: MBSP 0.5 - 1/2 Inch,RC**,15419070
+CSA-DN100-PRV: Valve_DN133_Type02,VV**,15419072
+Pipe-Valve-Hattersley-820_PN16_Strainer: 100mm,VV**,15419073
+CPV_PipeFittings_ButtWeldThreadedAdaptor_PEPB.020-110.BRXX: MBSP 1 Inch,RC**,15419097
+CPV_PipeFittings_ButtWeldThreadedAdaptor_PEPB.020-110.SSXX: MBSP 0.5 - 1/2 Inch,RC**,15419107
+CPV_PipeFittings_ButtWeldThreadedAdaptor_PEPB.020-110.SSXX: FBSP 0.75 - 3/4 Inch,RC**,15419111
+CPV_PipeFittings_ButtWeldThreadedAdaptor_PEPB.020-110.SSXX: MBSP 1 Inch,RC**,15419117
+d6100wl(0)-1-1: D6100WL,NC**,15419125
+ev100f+bac (0): EV100F+BAC (0),NC**,15419167
+"SITRANS_FM-MAG_5100_W_DN100: JS90 2,5-G1-02 SMART+ Vane-Wheel Single-Jet Dry Water Meter",NC**,15419177
+Pipe Types: CPV-Pipes-Hiline-HDPE.XXX.DC,_P**,15451705
+CPV_PipeFittings_Drainage_Bend_HDPE.040-160.X--: PIP 30mm Insulated,EL**,15451980
+Pipe Types: CPV-Pipes-Hiline-PEP.XXX.SDR11 PIP_S2,_P**,15474535
+CPV_PipeFittings_Pressure_Elbow_PEPB.020-315.EXX-SX: S2-PIP Insulated,EL**,15474858
+CPV_PipeFittings_ButtWeldThreadedAdaptor_PEPB.020-110.BRXX: MBSP 0.75 - 3/4 Inch,RC**,15477699
+CraneFS_ButterflyValve_FullyLuggedLeverOperated_F628-R22: DN80,VY**,15477726
+CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC: S2-PIP Insulated,_P**,15479160
+CPV_PipeFittings_Pressure_Branch_PEPB.020-1000.TXXX-SX: S2-PIP Insulated,TE**,15482428
+CPV_PipeFittings_Pressure_Branch_PEPB.020-1000.TXXX-SX: S1-PIP Insulated,TE**,15484634
+CPV_PipeFittings_Pressure_Reducer_PEPB.020-1000.RXX_X: S1-PIP Insulated,RC**,15484668
+Pipe Types: CPV-Pipes-Hiline-PEP.XXX.SDR11 PIP_S1,_P**,15485499
+CPV_PipeFittings_Pressure_Reducer_PEPB.020-1000.RXX_X: Single Pipe,RC**,15491757
+CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC: Single Pipe,_P**,15492201
+CPV_PipeAccessories_BV_OM_CraneFS-DC171AC_STE.020-063.BV-: 32mm - DN28,_P**,15508661
+CPV_PipeAccessories_BV_OM_CraneFS-DC171AC_STE.020-063.BV-: 25mm - DN22,_P**,15518704
+CPV_PipeFittings_Pressure_Reducer_PEPB.020-1000.RXX_X: S2-PIP Insulated,RC**,15541756
+CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC: S1-PIP Insulated,_P**,15559800
+CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC: Insulation Transition,NC**,15560589

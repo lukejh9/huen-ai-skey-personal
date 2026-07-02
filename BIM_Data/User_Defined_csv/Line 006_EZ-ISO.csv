@@ -1,0 +1,13 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Klinger BFV Pneumatic - DN200 AP160_Vertical: Klinger BFV Pneumatic - DN200,NC**,1345074
+E&H Flowmåler DN200_vertical - 10W2H - UH0A1AG4A4AA: E&H Flowmåler DN200 - 10W2H - UH0A1AG4A4AA,NC**,1345075
+- ELBOW 3D 90deg EN 10253-4 EN 10217-7 z=1.0 1.4307: Default,EL**,1345077
+- PIPE ISO 1127-S1 TC-1 EN 10217-7 z=1.0 1.4307: Default,_P**,1345102
+(Joints) Stainless Steel 304L Field Weld - 0mm Gap: Default,WW,1345113
+(Joints) Gasket - EPDM - PN10: Default,_G,1345115
+- LOOSE FLANGE PN10 EN1092-1/02 EN 10222-5 1.4307: Default,FLSO,1345121
+(Joints) Bolt-Nut-Washer - PN10 Raised Face: Default,_B,1345124
+- PRESSED COLLAR PN10 EN 1092-1/37 EN 10222-5 1.4404: Default,NC**,1345131
+- ELBOW 3D 45deg EN 10253-4 EN 10217-7 z=1.0 1.4307: Default,EL**,1345159
+- REDUCER KONC. EN 10253-4 EN 10028-7/EN 10217-7 z=1.0 1.4307: Default,RC**,1345167
+Hilti_INS_pipeshoe_MP-PS L_BRA: MP-PS L2-2,01HG,1345179

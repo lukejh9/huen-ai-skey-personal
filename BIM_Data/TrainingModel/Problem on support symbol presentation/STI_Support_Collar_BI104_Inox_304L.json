@@ -1,0 +1,614 @@
+{
+  "Id": 4396118,
+  "FamilyName": "STI_Support_Collar",
+  "TypeName": "BI104_Inox_304L",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [],
+  "InstanceParameters": [
+    {
+      "Name": "Overall Size",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "Undefined",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "007XpV4351ghDTMKG57RuQ",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Area",
+      "Value": "0.02 m²",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "STI_NEW Prelim",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "LVL +31.50m",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "624",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "STI_Support_Collar: BI104_Inox_304L",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "STI_Support_Collar",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "BI104_Inox_304L",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "4180234",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Moves With Nearby Elements",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "-6050",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "LVL +31.50m",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Mark",
+      "Value": "3826",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SZF_DN",
+      "Value": "25 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "X",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "W",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "ØD",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Y",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "F",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "B",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "C",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "H",
+      "Value": "150",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "T",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "A",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Rayon",
+      "Value": "13",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "H_min",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Ext_TUBE",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "E",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "G",
+      "Value": "0.00°",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "G_180",
+      "Value": "180.00°",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "DN80 - DN200",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "DN250 - DN500",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "DN600 - DN900",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "DN1000 - DN2000",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Visibility",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "G_Cust",
+      "Value": "0.00°",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "H_Cust",
+      "Value": "150",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "EZ_SPEC",
+      "Value": "BI104",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "EZ_LINE NO",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "ØD_Ext",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Pipe tag",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Piping class",
+      "Value": "BI104",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ISO_SHEET_NO",
+      "Value": "1",
+      "StorageType": "String",
+      "GroupName": "Construction",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "3bzWV8Sj51P8fIl5cU24l_",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "6431",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "STI_Support_Collar",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "BI104_Inox_304L",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "SZF_CH",
+      "Value": "0 daN",
+      "StorageType": "Double",
+      "GroupName": "Construction",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SZF_DES",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SZF_MAT",
+      "Value": "SZF_Peint_Bleu_Moyen_Mat",
+      "StorageType": "ElementId",
+      "GroupName": "Materials and Finishes",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ifcExportAs",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SZF_TAB",
+      "Value": "Supports_ Primaires_Colliers_Inox",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "EZ_SCODE",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

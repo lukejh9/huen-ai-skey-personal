@@ -1,0 +1,20 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+TA 500: TA 500-25,NC**,1374893
+Klinger BFV Gear - DN300 - vertical: Klinger BFV Gear - DN300,NC**,1374894
+TA 500: TA 500-15,NC**,1374895
+Spirotop Automatic Air Vent PN10: Spirotop 1/2  110°C 10bar AB050,KABW,1374896
+Klinger CHV Kontraventil - DN200 PN10-16 - DP Wafer - vertical (1): Klinger - CHV Kontraventil - DN200 PN10-16,NC**,1374897
+- PIPE ISO 1127-S1 TC-1 EN 10217-7 z=1.0 1.4307: Default,_P**,1374898
+- REDUCER KONC. EN 10253-4 EN 10028-7/EN 10217-7 z=1.0 1.4307: Default,RC**,1374900
+- ELBOW 3D 90deg EN 10253-4 EN 10217-7 z=1.0 1.4307: Default,EL**,1374906
+(Joints) Stainless Steel 304L Field Weld - 0mm Gap: Default,WW,1374908
+- NIPPLE (Branch) EN 10241-316 BW-THRD. ISO 7/1 1.4307: Default,WTBW,1374916
+(Joints) Gasket - EPDM - PN10: Default,_G,1374922
+- LOOSE FLANGE PN10 EN1092-1/02 EN 10222-5 1.4307: Default,FLSO,1374924
+(Joints) Bolt-Nut-Washer - PN10 Raised Face: Default,_B,1374926
+- PRESSED COLLAR PN10 EN 1092-1/37 EN 10222-5 1.4404: Default,NC**,1374928
+- WELDRING NECK PN10 EN 1092-1/35 EN 10028-7 1.4404: Default,WW,1374934
+(Joints) Gasket - EPDM - PN16: Default,_G,1374944
+- LOOSE FLANGE PN16 EN1092-1/02 EN 10222-5 1.4307: Default,FLSO,1374946
+(Joints) Bolt-Nut-Washer - PN16 Raised Face: Default,_B,1374948
+BlankCap_Storz: Blank cap Storz DN25,KABW,1374956

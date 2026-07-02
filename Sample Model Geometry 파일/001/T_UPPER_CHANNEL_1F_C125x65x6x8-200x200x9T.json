@@ -1,0 +1,10 @@
+{
+  "Id": 2000462,
+  "FamilyName": "T_UPPER_CHANNEL_1F",
+  "TypeName": "C125x65x6x8-200x200x9T",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

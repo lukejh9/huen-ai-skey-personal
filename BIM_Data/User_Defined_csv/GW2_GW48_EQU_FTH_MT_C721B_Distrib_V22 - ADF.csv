@@ -1,0 +1,47 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: AXI_Acier Inoxydable 304L,_P**,7974479
+AXI_ACIER_Coude 3D: ACIER Inox,EL**,8069009
+Acier_Fond_bombé: EN 10253-1 - S235_Acier inox,KABW,8146577
+AXI_VPL_Vanne-Papillon_Bride Collerette ou Plate: VPL,NC**,8193160
+AXI_ACIER_Fond-Bombe-Piquage_Soude: ACIER Inox,RC**,8202689
+AXI_ACIER_Piquage: Acier inox,WTBW,8229277
+Pipe Types: AXI_Acier Inoxydable 304L (Té),_P**,8277010
+AXI_ACIER_Réduction: ACIER INOX,RC**,8927133
+AXI_VQL_Vanne-Reglage_Bride: VQL,NC**,8935061
+AXI_FT_Debitmetre_Bride: CPM,NC**,8936191
+AXI_ACIER_Bride-Plate_Soude: ACIER Inox,KABW,9190200
+AXI_ACIER_Bride plate soudée: ACIER Inox,NC**,9316545
+AXI_ACIER_Té-Egal-Reduit_Soude: Acier Inox,TE**,9457619
+AXI_ACIER_Fond Bombé: ACIER Inox,KABW,9462906
+AXI_ACIER_PN10_Bride plate Tournante ou Soudée: ACIER Inox,NC**,9538038
+AXI_VPM_Vanne-Papillon-Motorisee_Bride: VPM,NC**,9624572
+AXI_RBS_Robinet-Boisseau-Spherique_Visse: RBS,NC**,9624608
+AXI_VQL_Vanne-Equilibrage_Visse: VQL,NC**,9625337
+AXI_ACIER_Bride-Pleine_Soude: ACIER Inox,KABW,9656947
+AXI_MTV_Manchon_Antivibratile_Bride: MTV,NC**,9794023
+AXI_PUR_Purgeur-Grand-Debit_Visse: DN20,KABW,9842253
+AXI_Berceau Canalisation: Berceau DN300 Calo EC + Collier,01HG,9889423
+AXI_Berceau Canalisation: Berceau DN350 Calo EG + Collier,01HG,9889588
+AXI_Berceau Canalisation: Berceau DN400 Calo EG + Collier,01HG,9890303
+AXI_Berceau Canalisation: Berceau DN350 Calo EC + Collier,01HG,9890613
+AXI_Berceau Canalisation: Berceau DN700 + Collier,01HG,9891163
+AXI_Berceau Canalisation: Berceau DN700 Calo EG + Collier,01HG,9906127
+AXI_Berceau Canalisation: Berceau DN500 Calo EG + Collier,01HG,9906129
+AXI_Berceau Canalisation: Berceau DN450 Calo EC + Collier,01HG,9906130
+AXI_Berceau Canalisation: Berceau DN300 Calo EG + Collier,01HG,9910325
+AXI_Berceau Canalisation: Berceau DN600 Calo EG + Collier,01HG,9915807
+AXI_Berceau Canalisation: Berceau DN250 Calo EG + Collier,01HG,9947142
+AXI_Berceau Canalisation: Berceau DN500 Calo EC + Collier,01HG,10116413
+AXI_MEP_Fonte_Culotte simple: SMU S,01HG,10409455
+AXI_MEP_PVC Bat_Reduction concentrique_RCA_V17: Standard,01HG,10409457
+AXI_ACIER_Réduction1: ACIER INOX,01HG,10409643
+AXI_ACIER_Coude 3D1: ACIER Inox 2,EL**,10409651
+AXI_ACIER_Té-Egal-Reduit_Soude1: Acier Inox,TE**,10409663
+AXI_ACIER_Union_Soude: Acier Noir,CO**,10409693
+AXI_ACIER_Fond Bombé1: ACIER Inox 2,KABW,10409880
+AXI_ACIER_Piquage1: Acier inox 2,WTBW,10411037
+AXI_V2V_Vanne 2 Voies Segment Sphérique: XV,NC**,10411043
+AXI_RBS_Robinet-Boisseau-Spherique_Visse1: RBS 2,NC**,10411083
+AXI_MTV_Manchon_Antivibratile_Bride1: MTV 2,NC**,10412376
+AXI_ACIER_PN16_Bride plate Tournante ou Soudée: ACIER Inox,NC**,10412404
+AXI_FT_Debitmetre_Bride1: FT,NC**,10412422

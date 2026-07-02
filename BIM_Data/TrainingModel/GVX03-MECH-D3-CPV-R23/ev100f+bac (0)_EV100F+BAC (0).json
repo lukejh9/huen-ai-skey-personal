@@ -1,0 +1,1025 @@
+{
+  "Id": 15419167,
+  "FamilyName": "ev100f+bac (0)",
+  "TypeName": "EV100F+BAC (0)",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": -116.41328453536195,
+        "Y": -7.264538645405695,
+        "Z": 0.83330327905489709
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -1.0
+      },
+      "Radius": 0.16404199475065617
+    },
+    {
+      "Origin": {
+        "X": -116.41328453536195,
+        "Y": -7.264538645405695,
+        "Z": 2.3884213892911177
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 1.0
+      },
+      "Radius": 0.16404199475065617
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "100 mmø-100 mmø",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "Undefined",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "Hydronic Supply",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Maximum Size",
+      "Value": "100 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Minimum Size",
+      "Value": "100 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Pressure Drop",
+      "Value": "0.0 Pa",
+      "StorageType": "Double",
+      "GroupName": "Mechanical - Flow",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "100 mmø-100 mmø",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "1L6Ss9amTAExQxQ56l3jaY",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "00-GROUND FLOOR",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "ev100f+bac (0): EV100F+BAC (0)",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "ev100f+bac (0)",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "EV100F+BAC (0)",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "15387214",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "359",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "00-GROUND FLOOR",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Mark",
+      "Value": "3990ppppppppppppppp",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "2MiYS7UyjEhBvSS24LJcaA",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Model",
+      "Value": "EV100F+BAC (0)",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Manufacturer",
+      "Value": "BELIMO EMEA",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "442",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "ev100f+bac (0)",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "EV100F+BAC (0)",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "2.010.00.13 Sprache der Datei",
+      "Value": "DEU",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.14 Kennungen der Projektländer, für die die Datei gültig ist",
+      "Value": "CH",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.450.00.3 Variant / Variant type / Accessories-name",
+      "Value": "schutzlackiert",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.30 Nenndruck",
+      "Value": "16",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.33 Mindest-Betriebstemperatur TB",
+      "Value": "-10 °C",
+      "StorageType": "Double",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.36 Regelcharakteristik der Armatur",
+      "Value": "1",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.38 Einbaulage   ",
+      "Value": "1",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.39 Armaturentyp über Funktion berechnen",
+      "Value": "0",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.40 zulässige Medien ",
+      "Value": "2",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.41 Handverstellung am Ventil vorhanden",
+      "Value": "0",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.13 Presettable/insert",
+      "Value": "0",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.25 Mass (net)",
+      "Value": "46.00 kg",
+      "StorageType": "Double",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.27 Nennweitensystem",
+      "Value": "DN",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.28 Nennmaß",
+      "Value": "100",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.29 Nenndrucksystem",
+      "Value": "PN",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.10 Beschreibungs-/Ergänzungstext zur Bestellnummer",
+      "Value": "Elektr. 2-Weg-PI-RKH Belimo Energy Valve™, AC/DC 24 V, BACnet/IP, BACnet MS/TP, Modbus TCP, Modbus RTU, MP-Bus, Cloud, 2...10 V, DN 100, Flansch, PN 16, ps 1600 kPa, V'nom 20 l/s, Mediumstemperatur -10...120°C [14...248°F], Glykolüberwachung",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.14 Mengeneinheiten",
+      "Value": "PCE",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.15 Menge pro Verpackungseinheit",
+      "Value": "1",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.16 Name der Verpackungseinheit",
+      "Value": "PCE",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.3 Producer order number",
+      "Value": "EV100F+BAC",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.4 DATANORM number",
+      "Value": "EV100F+BAC",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.7 Media- connection number",
+      "Value": "199",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.2 Sheet number of the guideline",
+      "Value": "2",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.3 Date of issuance (month) of guideline",
+      "Value": "200111",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.4 Manufacturer name",
+      "Value": "Belimo",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.6 Web address of the manufacturer",
+      "Value": "www.belimo.eu",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.7 Comment",
+      "Value": "-",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.110.00.4 Product indentification",
+      "Value": "EV..F+BAC, 2-Weg Druckunabhängiger Regelkugelhahn, Flansch",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.4 Type of valve assembly",
+      "Value": "14",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.5 Nominal diameter DN",
+      "Value": "100",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.7 Permissible operating temperature TB",
+      "Value": "120 °C",
+      "StorageType": "Double",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.8 Permissible operating pressure PB",
+      "Value": "1600000.0 Pa",
+      "StorageType": "Double",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.9 Max. permissible pressure difference over valve",
+      "Value": "340000.0 Pa",
+      "StorageType": "Double",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.100.00.4 Product indentification",
+      "Value": "Absperr- und Regelarmaturen",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.200.00.3 Variant / Variant type / Accessories-name",
+      "Value": "2-Wege",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.300.00.3 Variant / Variant type / Accessories-name",
+      "Value": "Flansch",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.400.00.3 Variant / Variant type / Accessories-name",
+      "Value": "Grauguss",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.11 Index des Startdatensatzes 960 Medienangaben",
+      "Value": "654",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.12 Stand des Herstellerkatalogs",
+      "Value": "20200101",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.710.12.3 Art der Maße",
+      "Value": "1",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.710.12.8 Mass (net)",
+      "Value": "46.00 kg",
+      "StorageType": "Double",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.460.00.3 Variant / Variant type / Accessories-name",
+      "Value": "EN-GJL-250 (GG 25)",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.12 Housing structural shape index from record type 200",
+      "Value": "100",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.17 Unit D of setting in record type 710.04",
+      "Value": "Prozent",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.810.00.8 Comment",
+      "Value": "EV100F+BAC, 2-Weg Regelkugelhahn, DN100, PN16, 360-1200 l/min., Antrieb stetig, Flansch",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.010.00.5 Revision date of file",
+      "Value": "20211202",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.110.00.3 Sort number for display sequence",
+      "Value": "93",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.110.00.5 Main groups of wares",
+      "Value": "EV..F+BAC, 2-Weg Druckunabhängiger Regelkugelhahn, Flansch",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.110.00.6 Product classification",
+      "Value": "Druckunabhängig",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.110.00.7 Creation date",
+      "Value": "Regelkugelhahn mit sensorgeführter Durchfluss- oder Leistungsregelung, Leistungs- und Energiemonitoringfunktion",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.110.00.8 Comment",
+      "Value": "20150107",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.710.04.3 Reference value (V)",
+      "Value": "20.0 L/s",
+      "StorageType": "Double",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.710.04.5 Setting D (numeric)",
+      "Value": "100",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.710.04.6 Step size of setting D",
+      "Value": "1",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.700.00.3 Sort number for display sequence",
+      "Value": "3",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.800.00.4 Comment",
+      "Value": "EV100F+BAC, 2-Weg Regelkugelhahn, DN100, PN16, 360-1200 l/min., Antrieb stetig, Flansch",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.100.00.3 Sort number for display sequence",
+      "Value": "4",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.100.00.7 Creation date",
+      "Value": "20120802",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "2.100.00.8 Comment",
+      "Value": "Wasser- Anwendung (Regelventile, Absperr- und Umschaltventile)",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "MIdent",
+      "Value": "{$CADENAS_DATA/23d-libs/belimo/2/absperr-20und20regelarmaturen20fuer20rohrleitungen/ev2020f2bbac2c202-weg20druckunabhaengiger20regelkugelhahn2c20flansch2c20ps3d1600kpa.prj},226 {STYP=ASS},{VTYP=3D},{NB=EV100F+BAC (0)},{LINA=EV100F+BAC (0)},{NN=Belimo Energy Valve™, Electr. 2-way PI-CCV EPIV},{DATE=09.08.2024 10:41:13},{GEOMDATE=22.07.2024 07:42:30},{VERSION=},{LINEID=30},{WBVAR=LOD},{WBNUMERIC=LOD}  {NB=EV100F+BAC (0)},{LINA=EV100F+BAC (0)},{KT=DUMMY},{SA010ID04=Belimo},{SA810ID03=EV100F+BAC},{PREVIEW=../../png/pic_eu_ev_fplusbac_4c.png},{LOD=0},{SA810ID10=Elektr. 2-Weg-PI-RKH Belimo Energy Valve™, AC/DC 24 V, BACnet/IP, BACnet MS/TP, Modbus TCP, Modbus RTU, MP-Bus, Cloud, 2...10 V, DN 100, Flansch, PN 16, ps 1600 kPa, V'nom 20 l/s, Mediumstemperatur -10...120°C [14...248°F], Glykolüberwachung},{SA700ID28=100},{SA700ID30=16},{SA700ID06=127.000},{SA700ID04=Selbsttätiges druckunabhängiges Regelventil},{SA700ID26=EV100F+BAC, Elektr. 2-Weg-PI-RKH Belimo Energy Valve™},{SA700ID07=120},{SA700ID08=16},{SA700ID40=Wasser mit Glykol bis max. 50% vol.},{SA700ID41=Nein},{SA700ID42=50},{SA200ID03=2-Wege},{SA300ID03=Flansch},{SA400ID03=Grauguss},{SA450ID03=schutzlackiert},{SA010ID02=2},{DEEPLINK=EV100FBAC},{SA810ID91=EV100F+BAC},{SA700ID05=100},{SA100ID04=Absperr- und Regelarmaturen},{SA110ID04=EV..F+BAC, 2-Weg Druckunabhängiger Regelkugelhahn, Flansch},{SA110ID05=Druckunabhängig},{SA460ID03=EN-GJL-250 (GG 25)},{SA700ID09=3400},{SA700ID33=-10},{SA700ID36=keine},{SA700ID13=Nein},{SA700ID25=46.00},{SA810ID04=EV100F+BAC},{SA810ID06=MIN},{SA010ID03=200111},{SA010ID05=20211202},{LOD_DEU=0,'Low',1,'High'},{LOD_3DB=EV100F+BAC_0},{SA960ID03=0622},{SA960ID04=1A},{LOD_=0,'Low',1,'High'},{SA960ID05=ev_f+bac_4c},{SA960ID06=jpg},{SA960ID07=EV..F+BAC},{SA010ID01=010},{SA010ID06=www.belimo.eu},{SA010ID07=-},{SA010ID11=654},{SA010ID12=20200101},{SA010ID13=DEU},{SA010ID14=CH},{SA100ID01=100},{SA100ID02=4},{SA100ID03=4},{SA100ID07=20120802},{SA100ID08=Wasser- Anwendung (Regelventile, Absperr- und Umschaltventile)},{SA110ID01=110},{SA110ID02=9},{SA110ID03=93},{SA110ID06=Regelkugelhahn mit sensorgeführter Durchfluss- oder Leistungsregelung, Leistungs- und Energiemonitoringfunktion},{SA110ID07=20150107},{SA200ID01=200},{SA200ID02=100},{SA300ID01=300},{SA300ID02=6},{SA400ID01=400},{SA400ID02=3},{SA450ID01=450},{SA450ID02=100},{SA700ID01=700},{SA700ID02=113},{SA700ID03=3},{SA700ID04_=14},{SA700ID12=100},{SA700ID13_=0},{SA700ID17=Prozent},{SA800ID01=800},{SA800ID02=3},{SA800ID04=EV100F+BAC, 2-Weg Regelkugelhahn, DN100, PN16, 360-1200 l/min., Antrieb stetig, Flansch},{SA810ID01=810},{SA810ID02=113},{SA810ID07=199},{SA810ID08=EV100F+BAC, 2-Weg Regelkugelhahn, DN100, PN16, 360-1200 l/min., Antrieb stetig, Flansch},{SA970ID01=970},{SA970ID02=141},{SA970ID03=EV100F+BAC},{SA970ID04=symcadenas2wayenergyvalveold},{SA970ID05=QUAD},{SA970ID06=-369},{SA970ID07=-115},{SA970ID08=-115},{SA970ID09=1},{SA970ID10=0},{SA970ID11=0},{SA970ID12=0},{SA970ID13=1},{SA970ID14=0},{SA970ID15=544},{SA970ID16=230},{SA970ID17=366.6},{SA700ID27=DN},{SA700ID29=PN},{SA700ID31=6900},{SA700ID36_=1},{SA700ID38=1},{SA700ID39=0},{SA700ID40_=2},{SA700ID41_=0},{SA810ID14=PCE},{SA810ID15=1},{SA810ID16=PCE},{SA460ID01=460},{SA460ID02=1},{CATEGORY5=Ventile},{CATEGORY2=Systeme},{SYMCADENAS2WAYENERGYVALVEOLD=../../../_pool_/1d/8f/ev2020f2bbac2c202-weg20druckunabhaengiger20regelkugelhahn2c20flansch2c20ps3d1600kpa_1.dwg},{DC=AT,BE,CH,DE,ES,FI,FR,FZE,IE,IT,NL,NO,PL,SE,TR,UK},{SA810ID89=}",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "NB",
+      "Value": "EV100F+BAC (0)",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "NN",
+      "Value": "Belimo Energy Valve™, Electr. 2-way PI-CCV EPIV",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "NBSYN",
+      "Value": "$SA810ID91. ($LOD.)",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "LINA",
+      "Value": "EV100F+BAC (0)",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "CATALOG",
+      "Value": "BELIMO EMEA",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "PREVIEW",
+      "Value": "../../png/pic_eu_ev_fplusbac_4c.png",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "LOD",
+      "Value": "Low",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SA700ID06",
+      "Value": "127",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SA700ID04",
+      "Value": "pressure-independent control valve (dynamic flow rate/volume flow regulator, pressure-balanced control valve, volume flow and temperature regulator) a)(A dynamic volume flow regulator maintains a constant flow rate regardless of the applied pressure differential.)",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SA700ID26",
+      "Value": "EV125F+KBAC, Electr. 2-way PI-CCV Belimo Energy Valve™ fail-safe",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SA700ID40",
+      "Value": "Wasser mit Glykol bis max. 50% vol.",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SA700ID41",
+      "Value": "No",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SA700ID42",
+      "Value": "50",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "ARTICLENO",
+      "Value": "NB",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "BOMINFO",
+      "Value": "LINA",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "CREATOR",
+      "Value": "CADENAS GmbH",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

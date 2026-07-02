@@ -1,0 +1,45 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: 16CA01B1,_P**,7359956
+"16CA01B1 Bogen 45°, Typ A: 1.5D",EL**,7359958
+"16CA01B1 Bogen 90°, Typ A: 1.5D",EL**,7359962
+"16CA01B1_T-Stück, Typ A: Standard",TE**,7359979
+Flansch DIN EN 1092-1 PN16: Standard Stahl,NC**,7359984
+"16CA01B1 Reduzierung, Typ A: Standard",RC**,7360008
+16CA01B1 Reduzierung exzentrisch: Standard,RE**,7360018
+Pipe Types: 16CA01B1 with Flange PN40,FLSO,7360038
+Flange - Blind - Steel - PN 16: Standard,FLBL,7360046
+Spirax Sarco DN50 PA001: Spirax Sarco DN50 PA001,NC**,7360072
+Spirax Sarco DN50 PA002: Spirax Sarco DN50 PA002,CR**,7360073
+Dampfmengenmesser F001: Dampfmengenmesser F001,NC**,7360080
+Pipe Types: 16CA01B1 with Flange PN16,FLSO,7360100
+Schmutzfänger DN100: Schmutzfänger DN100,NC**,7360113
+Pipe Types: 16HF01B1,_P**,7360134
+Pipe Types: 16CA01B1 Tap,_P**,7360208
+Flansch DIN EN 1092-1 PN40: Standard Stahl,NC**,7360237
+Non-return flap - DN 50 PN 16 - LINEAR Neutrale Bauteile #kqkdk48#: Standard,NC**,7360240
+"Kugelhahn mit Flanschen - Baulänge F4, DN 15 PN 16 - liNear Neutrale Bauteile #60mh7a9#: Standard",NC**,7360292
+Flansch- Blindflanschpaar: PN 16,FLBL,7360328
+Manometer mit Druckknopfhahn - Gewinde: Allgemein,IDPL,7360329
+Rückschlagklappe - DN 20 PN 16 - LINEAR Neutrale Bauteile #3d69ash#: Standard,NC**,7360384
+16CA01B1-Elbow: Standard,EL**,7360432
+QuickEM-DN15: DN15,NC**,7360495
+Entleerungsventil: Entleerungsventil,KABW,7360510
+Flange - Blind - Steel - PN 16 mit Anschweißende: Standard,RC**,7360511
+Faltenbalgventil DN32: Faltenbalgventil DN32,NC**,7360556
+Faltenbalgventil DN100: Faltenbalgventil DN100,NC**,7360560
+Faltenbalgventil DN25: Faltenbalgventil DN25,NC**,7360561
+Faltenbalgventil DN50: Faltenbalgventil DN50,NC**,7360562
+Faltenbalgventil DN15: Faltenbalgventil DN15,NC**,7360565
+Faltenbalgventil DN20: Faltenbalgventil DN20,NC**,7360567
+Faltenbalgventil DN40: Faltenbalgventil DN40,NC**,7360571
+QuickEM-horizontal-DN40: DN40,NC**,7360635
+Faltenbalgventil DN80: Faltenbalgventil DN80,NC**,7360670
+"16HF01B1 Bogen 90°, Typ A: 1.5D",EL**,7360680
+pbr_Schmutzfänger - Flansch_1900: Standard,NC**,7360690
+_Stahl_CAx Verbinder: Schweißverbindung,NC**,7360721
+M_Branch Connection - Welded - Generic: Standard,WTBW,7360795
+Rückschlagklappe - DN 80 PN 16 - LINEAR Neutrale Bauteile #gh1gmvj#: Standard,NC**,7360830
+Pipe Shoe LC1: Pipe Shoe LC HV 150 DN 100 4 HCP,01HG,7360866
+Sikla Clamps Stabil1: Stabil D 3G M mE 108 115,01HG,7360873
+Sikla Clamps Stabil1: Stabil D 3G w Lining 138 144,01HG,7360874
+Pipe Shoe LA: Pipe Shoe LA HV 150 DN 15 1 2 HCP,01HG,7360875

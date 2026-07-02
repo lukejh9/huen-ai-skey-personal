@@ -1,0 +1,26 @@
+﻿FamilyAndTypeName,ItemKey,RevitId
+Pipe Types: Material_Stahl_geschweißt,_P**,2277469
+Pipe Types: Material_Stahl_geschweißt _ Gepflanscht,_P**,2360925
+XXX_Allgemein_Te_reduzierend: Standard,TE**,2526158
+Pipe Types: Material_ABS,_P**,2644255
+Enddeckel Stahl: Standard,KABW,2644989
+XXX_Bogen ABS: Standard,EL**,2647829
+Flange DIN EN 1092-1 PN16: Standard,FLSO,2649340
+XXX_Übergang Stahl: Standard,RC**,2651547
+Rückschlagklappe allgemein - Flansch: Standard,NC**,2653994
+Rohrbogen-DIN2605-Bauart 3: Standard,EL**,2716687
+BlindFlange DIN EN 1092-1 PN16: Standard,FLBL,2738404
+XXX_Allgemein_Te: Standard,TE**,3023765
+Pipe Types: Material_Stahl_stutzenverbindung,_P**,3111687
+M_Branch Connection - Welded - Generic: Standard,WW,3116549
+Gas-Kugelhahn CS: DN 50,NC**,3116659
+XXX_T-Stück ABS: Standard,TE**,3118078
+XXX_Übergang ABS: Standard,RC**,3220732
+Kompensator Gummi Zwei Flansche CS: Kompensator Gummi Zwei Flansche DN80,NC**,3231673
+Pipe Types: CS03 - Flanschverbindung,_P**,3672013
+Knife Gate Valve WB14E (Manuell) CS: Knife Gate Valve WB14E (Manuell) DN 150,VT**,3672015
+Kompensator Gummi Zwei Flansche CS: Kompensator Gummi Zwei Flansche DN150,NC**,3672016
+Pipe Types: CS03 - Flanschverbindung - Stutzen,_P**,3672017
+Pipe Types: CS03 - Stutzen,_P**,3672019
+Flange DIN EN 1092-1 PN16 CS03: Standard,FLSO,3672022
+M_Branch Connection - Welded - Generic CS03: Standard,WTBW,3672030
