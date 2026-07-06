@@ -240,6 +240,16 @@ def run_pipeline():
     print(f"  모델 저장 위치           : {MODEL_DIR}")
     print("=" * 65)
 
+
+    importance_df = pd.DataFrame({
+        "Feature": model.booster_.feature_name(),
+        "Gain": model.booster_.feature_importance(importance_type="gain")
+    })
+
+    importance_df = importance_df.sort_values("Gain", ascending=False)
+
+    print(importance_df)
+
     return {
         "cv_accuracy": mean_acc,
         "cv_std":      std_acc,
