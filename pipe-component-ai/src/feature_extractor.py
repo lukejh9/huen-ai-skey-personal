@@ -23,6 +23,7 @@ Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
     geo_aspect_xz        : bbox_x / bbox_z
     geo_aspect_yz        : bbox_y / bbox_z
     geo_compactness      : volume / (surface_area^1.5)  (형상 밀집도)
+    geo_density          : geo face count / geo volume
 
   [커넥터 (Connector)]
     conn_count           : 커넥터 수
@@ -30,11 +31,8 @@ Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
     conn_radius_std      : Radius 표준편차 (m)
     conn_radius_max      : Radius 최대값 (m)
     conn_radius_min      : Radius 최솟값 (m)
-    conn_radius_range    : max - min
     conn_distance        : 첫 두 커넥터 간 거리 (2개 이상일 때, m)
     conn_angle_deg       : 두 커넥터 방향 벡터 사이 각도 (degree)
-    conn_same_axis       : 두 커넥터가 동일 축 여부 (0/1)
-    conn_is_inline       : 두 커넥터가 인라인 (같은 방향 반대, 동축) 여부 (0/1)
 
 Revit 내부 단위 변환:
   길이 : feet → meter  (* 0.3048)
@@ -174,6 +172,7 @@ def extract_features(data: dict) -> dict:
     sa = feat["geo_surface_area"]
     vol = feat["geo_volume"]
     feat["geo_compactness"] = vol / (sa ** 1.5 + _EPS)
+    feat["geo_density"] = feat["geo_face_count"] / feat["geo_volume"] if feat["geo_volume"] > 0 else 0
 
     # ── 커넥터 피처 ────────────────────────────
     connectors = data.get("Connectors", [])
@@ -187,7 +186,6 @@ def extract_features(data: dict) -> dict:
         feat["conn_radius_std"]   = _std(radii)
         feat["conn_radius_max"]   = max(radii)
         feat["conn_radius_min"]   = min(radii)
-        feat["conn_radius_range"] = max(radii) - min(radii)
     else:
         feat["conn_radius_mean"]  = 0.0
         feat["conn_radius_std"]   = 0.0
@@ -202,19 +200,13 @@ def extract_features(data: dict) -> dict:
         angle_deg = _angle_between_deg(c0["Direction"], c1["Direction"])
 
         # 동축(same_axis): 두 방향 벡터가 평행 (0° 또는 180°)
-        same_axis = int(angle_deg < 10.0 or angle_deg > 170.0)
         # 인라인: 동축 + 반대 방향 (각도 ≈ 180°)
-        is_inline = int(angle_deg > 170.0)
     else:
         dist      = 0.0
         angle_deg = 0.0
-        same_axis = 0
-        is_inline = 0
 
     feat["conn_distance"]  = dist
     feat["conn_angle_deg"] = angle_deg
-    feat["conn_same_axis"] = same_axis
-    feat["conn_is_inline"] = is_inline
 
     return feat
 
@@ -265,17 +257,15 @@ NUMERIC_FEATURE_COLS = [
     "geo_aspect_xz",
     "geo_aspect_yz",
     "geo_compactness",
+    "geo_density",
     # 커넥터
     "conn_count",
     "conn_radius_mean",
     "conn_radius_std",
     "conn_radius_max",
     "conn_radius_min",
-    "conn_radius_range",
     "conn_distance",
     "conn_angle_deg",
-    "conn_same_axis",
-    "conn_is_inline",
 ]
 
 # 피처 그룹 (Ablation study 용)
@@ -284,11 +274,12 @@ FEATURE_GROUPS = {
         "geo_surface_area", "geo_volume", "geo_solid_count", "geo_face_count",
         "geo_bbox_x", "geo_bbox_y", "geo_bbox_z", "geo_bbox_diag",
         "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_compactness",
+        "geo_density",
     ],
     "connector": [
         "conn_count", "conn_radius_mean", "conn_radius_std",
-        "conn_radius_max", "conn_radius_min", "conn_radius_range",
-        "conn_distance", "conn_angle_deg", "conn_same_axis", "conn_is_inline",
+        "conn_radius_max", "conn_radius_min",
+        "conn_distance", "conn_angle_deg",
     ],
     "metadata": [
         "meta_max_size_mm", "meta_min_size_mm",
