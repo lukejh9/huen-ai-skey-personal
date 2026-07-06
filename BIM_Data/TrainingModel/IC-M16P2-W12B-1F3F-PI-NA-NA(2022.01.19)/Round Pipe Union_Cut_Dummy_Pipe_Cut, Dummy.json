@@ -1,0 +1,425 @@
+{
+  "Id": 14830752,
+  "FamilyName": "Round Pipe Union_Cut_Dummy",
+  "TypeName": "Pipe_Cut, Dummy",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": 422.57217847769158,
+        "Y": 385.82677165338072,
+        "Z": 82.750984251971815
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 1.0
+      },
+      "Radius": 0.032808398950131233
+    },
+    {
+      "Origin": {
+        "X": 422.57217847769158,
+        "Y": 385.82677165338072,
+        "Z": 82.750984251971815
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -1.0
+      },
+      "Radius": 0.032808398950131233
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "20 mm-20 mm",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "NAOH",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "Hydronic Supply",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "NAOH 1",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Maximum Size",
+      "Value": "20 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Minimum Size",
+      "Value": "20 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "20 mm-20 mm",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "16ittHcxXDZORAP7zA0MZt",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "3F",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "Round Pipe Union_Cut_Dummy: Pipe_Cut, Dummy",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "Round Pipe Union_Cut_Dummy",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "Pipe_Cut, Dummy",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "4942647",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "722.5",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "3F",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "NomDia",
+      "Value": "20",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "NomRad",
+      "Value": "10",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Line Length",
+      "Value": "20",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "3rwERNyjf0E9oeyX45yV6I",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "371",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "Round Pipe Union_Cut_Dummy",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "Pipe_Cut, Dummy",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "SK_ITEM",
+      "Value": "Cut Dummy",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Y/N",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

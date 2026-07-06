@@ -1,0 +1,689 @@
+{
+  "Id": 3216013,
+  "FamilyName": "TPF_BRIDA DIN PP PN10",
+  "TypeName": "TPF-BRIDA DIN PP_PN10",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": -62.467437179015533,
+        "Y": 180.44241745410366,
+        "Z": 28.6044816904788
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -1.0
+      },
+      "Radius": 0.041010498687664043
+    },
+    {
+      "Origin": {
+        "X": -62.467437179015533,
+        "Y": 180.44241745410372,
+        "Z": 28.702906887329192
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 1.0
+      },
+      "Radius": 0.041010498687664043
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "25 mmø-25 mmø",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "IC.AGUA.Impulsión",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "Hydronic Supply",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "IC.AGUA.Impulsión 718",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Maximum Size",
+      "Value": "25",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Minimum Size",
+      "Value": "25",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Pressure Drop",
+      "Value": "0.0 Pa",
+      "StorageType": "Double",
+      "GroupName": "Mechanical - Flow",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "25ø-25ø",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "IsCustom",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "1RZIY4PrD8pegE5ZuluqXy",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "Fase 1",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "Nivel 2",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "TPF_BRIDA DIN PP PN10: TPF-BRIDA DIN PP_PN10",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "TPF_BRIDA DIN PP PN10",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "TPF-BRIDA DIN PP_PN10",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "3204359",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "-31",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "Nivel 2",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Custom",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Construction",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "DN",
+      "Value": "25",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Nut.Type",
+      "Value": "M12",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Rod.Length",
+      "Value": "90",
+      "StorageType": "Double",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Rod.Number",
+      "Value": "4",
+      "StorageType": "Double",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Rod.Regulation",
+      "Value": "A4, DIN976",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Rod.Type",
+      "Value": "M12",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Washer.Number",
+      "Value": "8",
+      "StorageType": "Double",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Washer.Regulation",
+      "Value": "A4, DIN 125",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Washer.Type",
+      "Value": "M12",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Nut.Number",
+      "Value": "8",
+      "StorageType": "Double",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Nut.Regulation",
+      "Value": "A4,  DIN 934",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "AEAS_CLS-ObjetoCodigo",
+      "Value": "AO.01.04.07.02.00",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "AEAS_CLS-ObjetoDescripcion",
+      "Value": "Brida",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "AEAS_CLS-ProcesoDescripcion",
+      "Value": "IDAM / IDAS-Osmosis Inversa",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "AEAS_CLS-TuberiaMaterialDescripcion",
+      "Value": "PRFV (Poliéster Reforzado con Fibra de Vidrio)",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "AEAS_CLS-VersionClasificador",
+      "Value": "v01",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "AEAS_CLS-ProcesoCodigo",
+      "Value": "AP.03.03.00.00.00",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "TAG_LINEA",
+      "Value": "SA-400-PRFV-A-R 35-04",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_PRJ-Estado",
+      "Value": "ObraNueva",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_PRJ-FuenteInformacion",
+      "Value": "NoAplica",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_PRJ-UnidadObra",
+      "Value": "N/A",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "EZ_EXCLUIR_BOM",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "EZ_LINE NO",
+      "Value": "SA-400-PRFV-A-R 35-04",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Espesor",
+      "Value": "30",
+      "StorageType": "Double",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Símbolo.Anchura",
+      "Value": "20",
+      "StorageType": "Double",
+      "GroupName": "Graphics",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Conexión.DE",
+      "Value": "57",
+      "StorageType": "Double",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "DI",
+      "Value": "32",
+      "StorageType": "Double",
+      "GroupName": "Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "ACU_PRJ-UnidadObraCapitulado",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_PRJ-UnidadObraTipoMedicion",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "0nCIyTO4P4pRKD9qd9b8bv",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "TPF_BRIDA DIN PP PN10",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "TPF-BRIDA DIN PP_PN10",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "AEAS_CLS-TuberiaMaterialCodigo",
+      "Value": "AM.04.02.00.00.00",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_AUX-Circularidad",
+      "Value": "NA",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_AUX-DetecInterferenciasPrioridad",
+      "Value": "C",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_IDE-Disciplina",
+      "Value": "COP_CBP",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_IDE-RecursoMantenimiento",
+      "Value": "N",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "ACU_IDE-Tipo",
+      "Value": "Brida_PP_PN10",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Material",
+      "Value": "Plastic.GRP",
+      "StorageType": "ElementId",
+      "GroupName": "Materials and Finishes",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "TC.Brida",
+      "Value": "TPF_LT_Flange_PRFV_PN10",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "TC.Tornillería",
+      "Value": "TPF_LT_Screws_PN-10",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

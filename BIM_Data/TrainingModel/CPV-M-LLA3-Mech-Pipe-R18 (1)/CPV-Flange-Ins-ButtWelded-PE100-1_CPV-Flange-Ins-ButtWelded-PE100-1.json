@@ -1,0 +1,478 @@
+{
+  "Id": 23992782,
+  "FamilyName": "CPV-Flange-Ins-ButtWelded-PE100-1",
+  "TypeName": "CPV-Flange-Ins-ButtWelded-PE100-1",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "Undefined",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "1hh39zNTT7hQVOJv9_sRmp",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "GROUND FLOOR",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "55498",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "CPV-Flange-Ins-ButtWelded-PE100-1: CPV-Flange-Ins-ButtWelded-PE100-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "CPV-Flange-Ins-ButtWelded-PE100-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "CPV-Flange-Ins-ButtWelded-PE100-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "23963668",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "6437.4 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "GROUND FLOOR",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "MC_installation_elevation_abs",
+      "Value": "6437.4 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "MC_installation_elevation",
+      "Value": "6437.4 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "R3",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "R4",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "R1",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Rr1",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Ro1",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "t1",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "L1",
+      "Value": "50 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "L",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "connection_diameter1",
+      "Value": "160 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "connection_diameter2",
+      "Value": "160 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "DN1",
+      "Value": "160 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "DN2",
+      "Value": "160 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "F_THK",
+      "Value": "80 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "F_OD",
+      "Value": "40 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "2fLZWFobn44xTST_L_XIzd",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "61305",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "CPV-Flange-Ins-ButtWelded-PE100-1",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "CPV-Flange-Ins-ButtWelded-PE100-1",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Lookup Table Name",
+      "Value": "CPV-Flange-Buttwelded-PE100",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

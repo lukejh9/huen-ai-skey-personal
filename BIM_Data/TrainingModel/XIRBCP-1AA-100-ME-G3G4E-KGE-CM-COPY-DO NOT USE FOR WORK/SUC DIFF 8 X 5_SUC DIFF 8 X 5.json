@@ -1,0 +1,521 @@
+{
+  "Id": 10715139,
+  "FamilyName": "SUC DIFF 8 X 5",
+  "TypeName": "SUC DIFF 8 X 5",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": -150.4572679162082,
+        "Y": 961.51158044061333,
+        "Z": 154.42823633098141
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 1.0
+      },
+      "Radius": 0.32808398950131235
+    },
+    {
+      "Origin": {
+        "X": -149.49270098155475,
+        "Y": 961.51158044061333,
+        "Z": 153.52600070946414
+      },
+      "Direction": {
+        "X": 1.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Radius": 0.20505249343832022
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "Ignore Flow Analysis",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Mechanical - Flow",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Critical Path",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Mechanical - Flow",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "200 mmø-125 mmø",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "HWS",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "Hydronic Supply",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "HWS 43",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Maximum Size",
+      "Value": "200 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Minimum Size",
+      "Value": "125 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Pressure Drop",
+      "Value": "0.0 Pa",
+      "StorageType": "Double",
+      "GroupName": "Mechanical - Flow",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "200 mmø-125 mmø",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "38wXxvJbf6KRcr1yOgpG8U",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "Main Model",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Volume",
+      "Value": "234.61 m³",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Area",
+      "Value": "835 m²",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Comments",
+      "Value": "BCP-1AA-HWS-03",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "BCP - LEVEL UUA",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "SUC DIFF 8 X 5: SUC DIFF 8 X 5",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "SUC DIFF 8 X 5",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "SUC DIFF 8 X 5",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "10715137",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "8160.525",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "BCP - LEVEL UUA",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Mark",
+      "Value": "24086",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Location",
+      "Value": "Boiler Module",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Item Name",
+      "Value": "Suction Diffuser",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Equipment Tag",
+      "Value": "BC1-SD116-1-00",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Phase",
+      "Value": "1",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Clearance Zone",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Specification",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SSID",
+      "Value": "N/A",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Package Name",
+      "Value": ";<ADD02_BB07>;",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Status",
+      "Value": "N/A",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Submittal No.",
+      "Value": "104",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0.000",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Keynote",
+      "Value": "15000",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Accessories",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "38wXxvJbf6KRcr1yOgpGFS",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "Fill Valves for Liquid Services",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "23.65.55.14.11.11",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "SUC DIFF 8 X 5",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "SUC DIFF 8 X 5",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Connector 1",
+      "Value": "200.000",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Connector 2",
+      "Value": "125.000",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

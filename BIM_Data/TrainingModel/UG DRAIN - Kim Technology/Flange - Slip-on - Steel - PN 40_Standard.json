@@ -1,0 +1,537 @@
+{
+  "Id": 2084389,
+  "FamilyName": "Flange - Slip-on - Steel - PN 40",
+  "TypeName": "Standard",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": -431.81550777864948,
+        "Y": 126.37294424132679,
+        "Z": 334.23955532474446
+      },
+      "Direction": {
+        "X": -1.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Radius": 0.65616797900262469
+    },
+    {
+      "Origin": {
+        "X": -431.5596022668384,
+        "Y": 126.37294424132679,
+        "Z": 334.23955532474446
+      },
+      "Direction": {
+        "X": 1.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Radius": 0.65616797900262469
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "PD_UG",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "400 mmø-400 mmø",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "P_PD_SS",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "Hydronic Supply",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "PD_UG 2",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Maximum Size",
+      "Value": "400 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Minimum Size",
+      "Value": "400 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Pressure Drop",
+      "Value": "0.0 Pa",
+      "StorageType": "Double",
+      "GroupName": "Mechanical - Flow",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "400 mmø-400 mmø",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "0PEvI3z0D9C98__IRfYWB2",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Volume",
+      "Value": "0.02 m³",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "LEVEL 1 FFL (+105.010)",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "1568",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "Flange - Slip-on - Steel - PN 40: Standard",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "Flange - Slip-on - Steel - PN 40",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "Standard",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "1505289",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "-3134",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "LEVEL 1 FFL (+105.010)",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Radius",
+      "Value": "200 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Diameter",
+      "Value": "400 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Flange Outside Diameter",
+      "Value": "660 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Flange Outside Radius",
+      "Value": "330 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Flange Thickness",
+      "Value": "50 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Raised Face Diameter",
+      "Value": "535 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Raised Face Radius",
+      "Value": "268 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Raised Face Thickness",
+      "Value": "4 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Neck Diameter",
+      "Value": "478 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Neck Radius",
+      "Value": "239 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Length",
+      "Value": "78 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Tick Size",
+      "Value": "264 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "PIPE_PRIMARY LINE NUMBER",
+      "Value": "400-PD-PP3-1972-6000-NI",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "0iUqcm3O1DOgFlSW8Q3ASk",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "986",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "Flange - Slip-on - Steel - PN 40",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "Standard",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Lookup Table Name",
+      "Value": "Flange - Slip-on - Steel - PN 40",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "EZ_SCODE",
+      "Value": "SF",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "EZ_SPEC",
+      "Value": "A2A",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

@@ -1,0 +1,1433 @@
+{
+  "Id": 5156788,
+  "FamilyName": "M_Transition - SS 316",
+  "TypeName": "Standard",
+  "Geometry": {
+    "Solid": [
+      {
+        "SurfaceArea": 0.039748545663949475,
+        "Volume": 0.00058363469819647652,
+        "ComputeCentroid": {
+          "X": -526.236703067539,
+          "Y": 1223.6066365114405,
+          "Z": 137.7941383486355
+        },
+        "Faces": [
+          {
+            "FaceNormal": {
+              "X": 8.8986776606350615E-15,
+              "Y": -5.1376024598935756E-15,
+              "Z": 1.0
+            },
+            "Origin": {
+              "X": -526.23670238283989,
+              "Y": 1223.6066452822211,
+              "Z": 137.85028658485169
+            },
+            "XVector": {
+              "X": 0.86602757332762348,
+              "Y": -0.49999624222214689,
+              "Z": -1.0275282144242561E-14
+            },
+            "YVector": {
+              "X": 0.49999624222214689,
+              "Y": 0.86602757332762348,
+              "Z": -3.3200352637790208E-29
+            },
+            "Area": 0.005963475345423911,
+            "EdgeLoops": [
+              [
+                {
+                  "ApproximateLength": 0.13408986409638235,
+                  "Tessellate": [
+                    {
+                      "X": -526.25860182455153,
+                      "Y": 1223.5687139564207,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.22536612888564,
+                      "Y": 1223.5643385407898,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.19877105703972,
+                      "Y": 1223.5847458405096,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.19439564140885,
+                      "Y": 1223.6179815361754,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.21480294112848,
+                      "Y": 1223.6445766080212,
+                      "Z": 137.85028658485169
+                    }
+                  ],
+                  "CurveType": "Arc",
+                  "AsCurve": {
+                    "Center": {
+                      "X": -526.23670238284,
+                      "Y": 1223.6066452822211,
+                      "Z": 137.85028658485166
+                    },
+                    "Normal": {
+                      "X": -1.7620759365679924E-13,
+                      "Y": -3.0546098396183808E-14,
+                      "Z": 0.99999999999999978
+                    },
+                    "Radius": 0.043799212598424828,
+                    "XDirection": {
+                      "X": -0.49999624222214684,
+                      "Y": -0.86602757332762337,
+                      "Z": -1.1455689814808051E-13
+                    },
+                    "YDirection": {
+                      "X": 0.86602757332762337,
+                      "Y": -0.49999624222214684,
+                      "Z": 1.3732770032385794E-13
+                    },
+                    "ApproximateLength": 0.1375992845322288,
+                    "Length": 0.1375992845322288,
+                    "Period": 6.28318530717958,
+                    "Tessellate": [
+                      {
+                        "X": -526.25860182455153,
+                        "Y": 1223.5687139564209,
+                        "Z": 137.85028658485166
+                      },
+                      {
+                        "X": -526.22536612888564,
+                        "Y": 1223.5643385407898,
+                        "Z": 137.85028658485166
+                      },
+                      {
+                        "X": -526.19877105703972,
+                        "Y": 1223.5847458405096,
+                        "Z": 137.85028658485166
+                      },
+                      {
+                        "X": -526.19439564140885,
+                        "Y": 1223.6179815361754,
+                        "Z": 137.85028658485166
+                      },
+                      {
+                        "X": -526.21480294112848,
+                        "Y": 1223.6445766080212,
+                        "Z": 137.85028658485166
+                      }
+                    ]
+                  }
+                },
+                {
+                  "ApproximateLength": 0.13408986409642434,
+                  "Tessellate": [
+                    {
+                      "X": -526.21480294112848,
+                      "Y": 1223.6445766080212,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.24803863679438,
+                      "Y": 1223.6489520236521,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.27463370864029,
+                      "Y": 1223.6285447239325,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.27900912427117,
+                      "Y": 1223.5953090282667,
+                      "Z": 137.85028658485169
+                    },
+                    {
+                      "X": -526.25860182455153,
+                      "Y": 1223.5687139564207,
+                      "Z": 137.85028658485169
+                    }
+                  ],
+                  "CurveType": "Arc",
+                  "AsCurve": {
+                    "Center": {
+                      "X": -526.23670238284,
+                      "Y": 1223.6066452822211,
+                      "Z": 137.85028658485169
+                    },
+                    "Normal": {
+                      "X": -1.7620759365679841E-13,
+                      "Y": -3.0546098396182332E-14,
+                      "Z": 0.99999999999999989
+                    },
+                    "Radius": 0.043799212598425771,
+                    "XDirection": {
+                      "X": 0.49999624222214406,
+                      "Y": 0.866027573327625,
+                      "Z": 1.1455689814807836E-13
+                    },
+                    "YDirection": {
+                      "X": -0.866027573327625,
+                      "Y": 0.49999624222214406,
+                      "Z": -1.3732770032385832E-13
+                    },
+                    "ApproximateLength": 0.13759928453223177,
+                    "Length": 0.13759928453223177,
+                    "Period": 6.28318530717958,
+                    "Tessellate": [
+                      {
+                        "X": -526.21480294112848,
+                        "Y": 1223.6445766080212,
+                        "Z": 137.85028658485169
+                      },
+                      {
+                        "X": -526.24803863679438,
+                        "Y": 1223.6489520236523,
+                        "Z": 137.85028658485169
+                      },
+                      {
+                        "X": -526.27463370864029,
+                        "Y": 1223.6285447239325,
+                        "Z": 137.85028658485169
+                      },
+                      {
+                        "X": -526.27900912427117,
+                        "Y": 1223.5953090282667,
+                        "Z": 137.85028658485169
+                      },
+                      {
+                        "X": -526.25860182455153,
+                        "Y": 1223.5687139564209,
+                        "Z": 137.85028658485169
+                      }
+                    ]
+                  }
+                }
+              ]
+            ],
+            "Triangulate": {
+              "Vertices": [
+                {
+                  "X": -526.25860595703125,
+                  "Y": 1223.5687255859375,
+                  "Z": 137.85028076171875
+                },
+                {
+                  "X": -526.225341796875,
+                  "Y": 1223.5643310546875,
+                  "Z": 137.85028076171875
+                },
+                {
+                  "X": -526.19879150390625,
+                  "Y": 1223.584716796875,
+                  "Z": 137.85028076171875
+                },
+                {
+                  "X": -526.19439697265625,
+                  "Y": 1223.6180419921875,
+                  "Z": 137.85028076171875
+                },
+                {
+                  "X": -526.21478271484375,
+                  "Y": 1223.64453125,
+                  "Z": 137.85028076171875
+                },
+                {
+                  "X": -526.248046875,
+                  "Y": 1223.64892578125,
+                  "Z": 137.85028076171875
+                },
+                {
+                  "X": -526.274658203125,
+                  "Y": 1223.6285400390625,
+                  "Z": 137.85028076171875
+                },
+                {
+                  "X": -526.27899169921875,
+                  "Y": 1223.5953369140625,
+                  "Z": 137.85028076171875
+                }
+              ],
+              "Triangles": [
+                {
+                  "Index0": 0,
+                  "Index1": 5,
+                  "Index2": 6
+                },
+                {
+                  "Index0": 0,
+                  "Index1": 4,
+                  "Index2": 5
+                },
+                {
+                  "Index0": 6,
+                  "Index1": 7,
+                  "Index2": 0
+                },
+                {
+                  "Index0": 1,
+                  "Index1": 2,
+                  "Index2": 4
+                },
+                {
+                  "Index0": 3,
+                  "Index1": 4,
+                  "Index2": 2
+                },
+                {
+                  "Index0": 4,
+                  "Index1": 0,
+                  "Index2": 1
+                }
+              ]
+            }
+          },
+          {
+            "FaceNormal": {
+              "X": -8.8986776606350615E-15,
+              "Y": 5.1376024598935756E-15,
+              "Z": -1.0
+            },
+            "Origin": {
+              "X": -526.23670238283989,
+              "Y": 1223.6066452822211,
+              "Z": 137.72561466884119
+            },
+            "XVector": {
+              "X": 0.86602757332762348,
+              "Y": -0.49999624222214689,
+              "Z": -1.0275282144242561E-14
+            },
+            "YVector": {
+              "X": -0.49999624222214689,
+              "Y": -0.86602757332762348,
+              "Z": 3.3200352637790208E-29
+            },
+            "Area": 0.0034085027654809346,
+            "EdgeLoops": [
+              [
+                {
+                  "ApproximateLength": 0.10048212967508144,
+                  "Tessellate": [
+                    {
+                      "X": -526.2534492785893,
+                      "Y": 1223.577638517246,
+                      "Z": 137.72561466884119
+                    },
+                    {
+                      "X": -526.27019642606467,
+                      "Y": 1223.606645136887,
+                      "Z": 137.72561466884119
+                    },
+                    {
+                      "X": -526.25344953031538,
+                      "Y": 1223.635651901862,
+                      "Z": 137.72561466884119
+                    },
+                    {
+                      "X": -526.2199554870906,
+                      "Y": 1223.6356520471961,
+                      "Z": 137.72561466884119
+                    }
+                  ],
+                  "CurveType": "Arc",
+                  "AsCurve": {
+                    "Center": {
+                      "X": -526.23670238284,
+                      "Y": 1223.6066452822211,
+                      "Z": 137.72561466884119
+                    },
+                    "Normal": {
+                      "X": 1.7620759365679841E-13,
+                      "Y": 3.0546098396182332E-14,
+                      "Z": -0.99999999999999989
+                    },
+                    "Radius": 0.03349404322506537,
+                    "XDirection": {
+                      "X": 0.49999624222214406,
+                      "Y": 0.866027573327625,
+                      "Z": 1.1455689814807836E-13
+                    },
+                    "YDirection": {
+                      "X": 0.866027573327625,
+                      "Y": -0.49999624222214406,
+                      "Z": 1.3732770032385832E-13
+                    },
+                    "ApproximateLength": 0.10522464013488426,
+                    "Length": 0.10522464013488426,
+                    "Period": 6.28318530717958,
+                    "Tessellate": [
+                      {
+                        "X": -526.25344927858941,
+                        "Y": 1223.577638517246,
+                        "Z": 137.72561466884119
+                      },
+                      {
+                        "X": -526.27019642606479,
+                        "Y": 1223.606645136887,
+                        "Z": 137.72561466884119
+                      },
+                      {
+                        "X": -526.25344953031538,
+                        "Y": 1223.635651901862,
+                        "Z": 137.72561466884119
+                      },
+                      {
+                        "X": -526.2199554870906,
+                        "Y": 1223.6356520471961,
+                        "Z": 137.72561466884119
+                      }
+                    ]
+                  }
+                },
+                {
+                  "ApproximateLength": 0.10048212967508144,
+                  "Tessellate": [
+                    {
+                      "X": -526.2199554870906,
+                      "Y": 1223.6356520471961,
+                      "Z": 137.72561466884119
+                    },
+                    {
+                      "X": -526.20320833961523,
+                      "Y": 1223.6066454275551,
+                      "Z": 137.72561466884119
+                    },
+                    {
+                      "X": -526.21995523536452,
+                      "Y": 1223.57763866258,
+                      "Z": 137.72561466884119
+                    },
+                    {
+                      "X": -526.2534492785893,
+                      "Y": 1223.577638517246,
+                      "Z": 137.72561466884119
+                    }
+                  ],
+                  "CurveType": "Arc",
+                  "AsCurve": {
+                    "Center": {
+                      "X": -526.23670238284,
+                      "Y": 1223.6066452822211,
+                      "Z": 137.72561466884119
+                    },
+                    "Normal": {
+                      "X": 1.7620759365679924E-13,
+                      "Y": 3.0546098396183808E-14,
+                      "Z": -0.99999999999999978
+                    },
+                    "Radius": 0.033494043225066383,
+                    "XDirection": {
+                      "X": -0.49999624222214684,
+                      "Y": -0.86602757332762337,
+                      "Z": -1.1455689814808051E-13
+                    },
+                    "YDirection": {
+                      "X": -0.86602757332762337,
+                      "Y": 0.49999624222214684,
+                      "Z": -1.3732770032385794E-13
+                    },
+                    "ApproximateLength": 0.10522464013488746,
+                    "Length": 0.10522464013488746,
+                    "Period": 6.28318530717958,
+                    "Tessellate": [
+                      {
+                        "X": -526.2199554870906,
+                        "Y": 1223.6356520471961,
+                        "Z": 137.72561466884119
+                      },
+                      {
+                        "X": -526.20320833961523,
+                        "Y": 1223.6066454275551,
+                        "Z": 137.72561466884119
+                      },
+                      {
+                        "X": -526.21995523536464,
+                        "Y": 1223.57763866258,
+                        "Z": 137.72561466884119
+                      },
+                      {
+                        "X": -526.25344927858941,
+                        "Y": 1223.577638517246,
+                        "Z": 137.72561466884119
+                      }
+                    ]
+                  }
+                }
+              ]
+            ],
+            "Triangulate": {
+              "Vertices": [
+                {
+                  "X": -526.25347900390625,
+                  "Y": 1223.57763671875,
+                  "Z": 137.72561645507813
+                },
+                {
+                  "X": -526.27020263671875,
+                  "Y": 1223.606689453125,
+                  "Z": 137.72561645507813
+                },
+                {
+                  "X": -526.25347900390625,
+                  "Y": 1223.6356201171875,
+                  "Z": 137.72561645507813
+                },
+                {
+                  "X": -526.219970703125,
+                  "Y": 1223.6356201171875,
+                  "Z": 137.72561645507813
+                },
+                {
+                  "X": -526.20318603515625,
+                  "Y": 1223.606689453125,
+                  "Z": 137.72561645507813
+                },
+                {
+                  "X": -526.219970703125,
+                  "Y": 1223.57763671875,
+                  "Z": 137.72561645507813
+                }
+              ],
+              "Triangles": [
+                {
+                  "Index0": 1,
+                  "Index1": 2,
+                  "Index2": 0
+                },
+                {
+                  "Index0": 0,
+                  "Index1": 2,
+                  "Index2": 5
+                },
+                {
+                  "Index0": 4,
+                  "Index1": 5,
+                  "Index2": 2
+                },
+                {
+                  "Index0": 4,
+                  "Index1": 2,
+                  "Index2": 3
+                }
+              ]
+            }
+          }
+        ],
+        "Edges": [
+          {
+            "ApproximateLength": 0.10048212967508144,
+            "Tessellate": [
+              {
+                "X": -526.2199554870906,
+                "Y": 1223.6356520471961,
+                "Z": 137.72561466884119
+              },
+              {
+                "X": -526.20320833961523,
+                "Y": 1223.6066454275551,
+                "Z": 137.72561466884119
+              },
+              {
+                "X": -526.21995523536452,
+                "Y": 1223.57763866258,
+                "Z": 137.72561466884119
+              },
+              {
+                "X": -526.2534492785893,
+                "Y": 1223.577638517246,
+                "Z": 137.72561466884119
+              }
+            ],
+            "CurveType": "Arc",
+            "AsCurve": {
+              "Center": {
+                "X": -526.23670238284,
+                "Y": 1223.6066452822211,
+                "Z": 137.72561466884119
+              },
+              "Normal": {
+                "X": 1.7620759365679924E-13,
+                "Y": 3.0546098396183808E-14,
+                "Z": -0.99999999999999978
+              },
+              "Radius": 0.033494043225066383,
+              "XDirection": {
+                "X": -0.49999624222214684,
+                "Y": -0.86602757332762337,
+                "Z": -1.1455689814808051E-13
+              },
+              "YDirection": {
+                "X": -0.86602757332762337,
+                "Y": 0.49999624222214684,
+                "Z": -1.3732770032385794E-13
+              },
+              "ApproximateLength": 0.10522464013488746,
+              "Length": 0.10522464013488746,
+              "Period": 6.28318530717958,
+              "Tessellate": [
+                {
+                  "X": -526.2199554870906,
+                  "Y": 1223.6356520471961,
+                  "Z": 137.72561466884119
+                },
+                {
+                  "X": -526.20320833961523,
+                  "Y": 1223.6066454275551,
+                  "Z": 137.72561466884119
+                },
+                {
+                  "X": -526.21995523536464,
+                  "Y": 1223.57763866258,
+                  "Z": 137.72561466884119
+                },
+                {
+                  "X": -526.25344927858941,
+                  "Y": 1223.577638517246,
+                  "Z": 137.72561466884119
+                }
+              ]
+            }
+          },
+          {
+            "ApproximateLength": 0.13408986409638235,
+            "Tessellate": [
+              {
+                "X": -526.25860182455153,
+                "Y": 1223.5687139564207,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.22536612888564,
+                "Y": 1223.5643385407898,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.19877105703972,
+                "Y": 1223.5847458405096,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.19439564140885,
+                "Y": 1223.6179815361754,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.21480294112848,
+                "Y": 1223.6445766080212,
+                "Z": 137.85028658485169
+              }
+            ],
+            "CurveType": "Arc",
+            "AsCurve": {
+              "Center": {
+                "X": -526.23670238284,
+                "Y": 1223.6066452822211,
+                "Z": 137.85028658485166
+              },
+              "Normal": {
+                "X": -1.7620759365679924E-13,
+                "Y": -3.0546098396183808E-14,
+                "Z": 0.99999999999999978
+              },
+              "Radius": 0.043799212598424828,
+              "XDirection": {
+                "X": -0.49999624222214684,
+                "Y": -0.86602757332762337,
+                "Z": -1.1455689814808051E-13
+              },
+              "YDirection": {
+                "X": 0.86602757332762337,
+                "Y": -0.49999624222214684,
+                "Z": 1.3732770032385794E-13
+              },
+              "ApproximateLength": 0.1375992845322288,
+              "Length": 0.1375992845322288,
+              "Period": 6.28318530717958,
+              "Tessellate": [
+                {
+                  "X": -526.25860182455153,
+                  "Y": 1223.5687139564209,
+                  "Z": 137.85028658485166
+                },
+                {
+                  "X": -526.22536612888564,
+                  "Y": 1223.5643385407898,
+                  "Z": 137.85028658485166
+                },
+                {
+                  "X": -526.19877105703972,
+                  "Y": 1223.5847458405096,
+                  "Z": 137.85028658485166
+                },
+                {
+                  "X": -526.19439564140885,
+                  "Y": 1223.6179815361754,
+                  "Z": 137.85028658485166
+                },
+                {
+                  "X": -526.21480294112848,
+                  "Y": 1223.6445766080212,
+                  "Z": 137.85028658485166
+                }
+              ]
+            }
+          },
+          {
+            "ApproximateLength": 0.10048212967508144,
+            "Tessellate": [
+              {
+                "X": -526.2534492785893,
+                "Y": 1223.577638517246,
+                "Z": 137.72561466884119
+              },
+              {
+                "X": -526.27019642606467,
+                "Y": 1223.606645136887,
+                "Z": 137.72561466884119
+              },
+              {
+                "X": -526.25344953031538,
+                "Y": 1223.635651901862,
+                "Z": 137.72561466884119
+              },
+              {
+                "X": -526.2199554870906,
+                "Y": 1223.6356520471961,
+                "Z": 137.72561466884119
+              }
+            ],
+            "CurveType": "Arc",
+            "AsCurve": {
+              "Center": {
+                "X": -526.23670238284,
+                "Y": 1223.6066452822211,
+                "Z": 137.72561466884119
+              },
+              "Normal": {
+                "X": 1.7620759365679841E-13,
+                "Y": 3.0546098396182332E-14,
+                "Z": -0.99999999999999989
+              },
+              "Radius": 0.03349404322506537,
+              "XDirection": {
+                "X": 0.49999624222214406,
+                "Y": 0.866027573327625,
+                "Z": 1.1455689814807836E-13
+              },
+              "YDirection": {
+                "X": 0.866027573327625,
+                "Y": -0.49999624222214406,
+                "Z": 1.3732770032385832E-13
+              },
+              "ApproximateLength": 0.10522464013488426,
+              "Length": 0.10522464013488426,
+              "Period": 6.28318530717958,
+              "Tessellate": [
+                {
+                  "X": -526.25344927858941,
+                  "Y": 1223.577638517246,
+                  "Z": 137.72561466884119
+                },
+                {
+                  "X": -526.27019642606479,
+                  "Y": 1223.606645136887,
+                  "Z": 137.72561466884119
+                },
+                {
+                  "X": -526.25344953031538,
+                  "Y": 1223.635651901862,
+                  "Z": 137.72561466884119
+                },
+                {
+                  "X": -526.2199554870906,
+                  "Y": 1223.6356520471961,
+                  "Z": 137.72561466884119
+                }
+              ]
+            }
+          },
+          {
+            "ApproximateLength": 0.13408986409642434,
+            "Tessellate": [
+              {
+                "X": -526.21480294112848,
+                "Y": 1223.6445766080212,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.24803863679438,
+                "Y": 1223.6489520236521,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.27463370864029,
+                "Y": 1223.6285447239325,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.27900912427117,
+                "Y": 1223.5953090282667,
+                "Z": 137.85028658485169
+              },
+              {
+                "X": -526.25860182455153,
+                "Y": 1223.5687139564207,
+                "Z": 137.85028658485169
+              }
+            ],
+            "CurveType": "Arc",
+            "AsCurve": {
+              "Center": {
+                "X": -526.23670238284,
+                "Y": 1223.6066452822211,
+                "Z": 137.85028658485169
+              },
+              "Normal": {
+                "X": -1.7620759365679841E-13,
+                "Y": -3.0546098396182332E-14,
+                "Z": 0.99999999999999989
+              },
+              "Radius": 0.043799212598425771,
+              "XDirection": {
+                "X": 0.49999624222214406,
+                "Y": 0.866027573327625,
+                "Z": 1.1455689814807836E-13
+              },
+              "YDirection": {
+                "X": -0.866027573327625,
+                "Y": 0.49999624222214406,
+                "Z": -1.3732770032385832E-13
+              },
+              "ApproximateLength": 0.13759928453223177,
+              "Length": 0.13759928453223177,
+              "Period": 6.28318530717958,
+              "Tessellate": [
+                {
+                  "X": -526.21480294112848,
+                  "Y": 1223.6445766080212,
+                  "Z": 137.85028658485169
+                },
+                {
+                  "X": -526.24803863679438,
+                  "Y": 1223.6489520236523,
+                  "Z": 137.85028658485169
+                },
+                {
+                  "X": -526.27463370864029,
+                  "Y": 1223.6285447239325,
+                  "Z": 137.85028658485169
+                },
+                {
+                  "X": -526.27900912427117,
+                  "Y": 1223.5953090282667,
+                  "Z": 137.85028658485169
+                },
+                {
+                  "X": -526.25860182455153,
+                  "Y": 1223.5687139564209,
+                  "Z": 137.85028658485169
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": -526.23670238283989,
+        "Y": 1223.6066452822211,
+        "Z": 137.85028658485172
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 1.0
+      },
+      "Radius": 0.032808398950131233
+    },
+    {
+      "Origin": {
+        "X": -526.23670238283989,
+        "Y": 1223.6066452822211,
+        "Z": 137.72561466884122
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": -1.0
+      },
+      "Radius": 0.016404199475065617
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "20 mmø-10 mmø",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "CDS",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "Hydronic Return",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "CDS 26",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Maximum Size",
+      "Value": "20 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Minimum Size",
+      "Value": "10 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "20 mmø-10 mmø",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OffsetHeight",
+      "Value": "5.0000 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "OffsetWidth",
+      "Value": "5.0000 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "2r$$4Nt5v18gmjoJ1LuHsa",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Volume",
+      "Value": "0.00 m³",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Area",
+      "Value": "0 m²",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Comments",
+      "Value": "cws",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "BASEMENT 2_FFL40.5",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "M_Transition - SS 316: Standard",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "M_Transition - SS 316",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "Standard",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "5664537",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "1479",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "BASEMENT 2_FFL40.5",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Mark",
+      "Value": "CH-3FFF",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Radius 1",
+      "Value": "5 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Diameter 1",
+      "Value": "10 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Fitting Outside Diameter 1",
+      "Value": "20 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Fitting Outside Radius 1",
+      "Value": "10 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Tick Size 1",
+      "Value": "8 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Radius 2",
+      "Value": "10 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Diameter 2",
+      "Value": "20 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Fitting Outside Diameter 2",
+      "Value": "27 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Tick Size 2",
+      "Value": "11 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Length",
+      "Value": "38 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Fitting Outside Radius 2",
+      "Value": "13 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Max Nominal Diameter 12",
+      "Value": "20 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Width Offset",
+      "Value": "3048 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Height Offset",
+      "Value": "3048 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Visibility 1",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Visibility 2",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Visibility 3",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "EZ_LINE NO",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "K Coefficient Table",
+      "Value": "Reducer/Coupling/Union/Increaser",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "3zroPFVDf7VwmmbAxDuOOM",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "Pipework Fittings",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "23.60.30.11.14",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "661",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "M_Transition - SS 316",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "Standard",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Lookup Table Name",
+      "Value": "M_Transition - Welded - Generic",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}

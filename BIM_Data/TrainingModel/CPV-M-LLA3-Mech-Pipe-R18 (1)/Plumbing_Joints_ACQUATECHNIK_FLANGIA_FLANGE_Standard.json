@@ -1,0 +1,1100 @@
+{
+  "Id": 20915111,
+  "FamilyName": "Plumbing_Joints_ACQUATECHNIK_FLANGIA_FLANGE",
+  "TypeName": "Standard",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": -1062.8734178287953,
+        "Y": 21.47975474239627,
+        "Z": 1.4210854715202004E-14
+      },
+      "Direction": {
+        "X": 0.99848909745053793,
+        "Y": 0.054950179912441645,
+        "Z": 0.0
+      },
+      "Radius": 0.16404199475065617
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "System Abbreviation",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Overall Size",
+      "Value": "100 mmø",
+      "StorageType": "String",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Insulation Thickness",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Insulation",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Type",
+      "Value": "Undefined",
+      "StorageType": "ElementId",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Classification",
+      "Value": "Undefined",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "System Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Maximum Size",
+      "Value": "100 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Minimum Size",
+      "Value": "100 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Use Annotation Scale",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Graphics",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Size",
+      "Value": "100 mmø",
+      "StorageType": "String",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "2wNc_WXWHE1w$ceVeipQ6Y",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Demolished",
+      "Value": "None",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Phase Created",
+      "Value": "Construction",
+      "StorageType": "ElementId",
+      "GroupName": "Phasing",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Host Id",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "GROUND FLOOR",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "55498",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family and Type",
+      "Value": "Plumbing_Joints_ACQUATECHNIK_FLANGIA_FLANGE: Standard",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Family",
+      "Value": "Plumbing_Joints_ACQUATECHNIK_FLANGIA_FLANGE",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type",
+      "Value": "Standard",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Id",
+      "Value": "20915109",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Elevation from Level",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Level",
+      "Value": "GROUND FLOOR",
+      "StorageType": "ElementId",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "MC_installation_elevation_abs",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "MC_installation_elevation",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "CODE",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "SP",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "DI",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "DE",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Weight",
+      "Value": "0.00 kg",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Weight_massa",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "CONF",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "SCA",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "RE",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "RI",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "RE1",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "F",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "NF",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "DF",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Raggio nominale",
+      "Value": "50 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Diametro nominale",
+      "Value": "100 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Diametro esterno flangia",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Raggio esterno flangia",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Spessore flangia",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Diametro superficie in rilievo",
+      "Value": "92 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Raggio superficie in rilievo",
+      "Value": "46 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Spessore superficie in rilievo",
+      "Value": "2 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Diametro mozzo",
+      "Value": "78 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Raggio mozzo",
+      "Value": "39 mm",
+      "StorageType": "Double",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Altezza mozzo",
+      "Value": "24 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Dimensione contrassegno",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "NF'",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "F1",
+      "Value": "2 mm",
+      "StorageType": "Double",
+      "GroupName": "Dimensions",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Service Scope",
+      "Value": "CPV - BCWS CAT 5",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "CPV-AREA",
+      "Value": "A2",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "Default Elevation",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "Constraints",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Image",
+      "Value": "ACQUATECHNIK_FLANGE_FLANGES 810.tif",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Category",
+      "Value": "Pipe Fittings",
+      "StorageType": "ElementId",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Loss Method",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "Mechanical",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Export Type to IFC",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Type IfcGUID",
+      "Value": "2wNc_WXWHE1w$ceVeipQ6S",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Design Option",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Model",
+      "Value": "FLANGES",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Manufacturer",
+      "Value": "Aquatechnik group spa",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Comments",
+      "Value": "FLANGES",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "URL",
+      "Value": "http://www.aquatechnik.it/prodotto.asp?ID_PRODOTTO=7",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Description",
+      "Value": "Fitting to weld",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Code Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Title",
+      "Value": "Pipework Fittings",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass Number",
+      "Value": "23.60.30.11.14",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Assembly Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Edited by",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Workset",
+      "Value": "53462",
+      "StorageType": "Integer",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Family Name",
+      "Value": "Plumbing_Joints_ACQUATECHNIK_FLANGIA_FLANGE",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Type Name",
+      "Value": "Standard",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Model_2",
+      "Value": "FLANGES",
+      "StorageType": "String",
+      "GroupName": "Text",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Description_2",
+      "Value": "Fitting to weld",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Developer 01",
+      "Value": "www.bimobject.com",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Material Join",
+      "Value": "flangia",
+      "StorageType": "ElementId",
+      "GroupName": "Materials and Finishes",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "CSV table",
+      "Value": "ACQUATECHNIK_FLANGE_FLANGES",
+      "StorageType": "String",
+      "GroupName": "Other",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "BIMobject category",
+      "Value": "Joints",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "COBIe Type Category",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Design country",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "EAN code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Edition number",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Nominal height",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "IFC Classification",
+      "Value": "Pipe Fitting",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Installation instructions",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Youtube clip",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Manufacturer country",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Manufacturer name",
+      "Value": "Aquatechnik",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Masterformat 2014 Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Masterformat 2014 Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Material main",
+      "Value": "Polypropylene",
+      "StorageType": "String",
+      "GroupName": "Materials and Finishes",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Material secondary",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "Materials and Finishes",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "NBS Reference Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "NBS Reference Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "OmniClass Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "OmniClass Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Product certification",
+      "Value": "http://www.aquatechnik.it/download.asp?ID_CATEGORIA=3&ID_PRODOTTO=7",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Product data url",
+      "Value": "https://bimobject.com/aquatechnik/product/Flange",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Product family",
+      "Value": "Fusio-technik",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Product group",
+      "Value": "Flange",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Product Guid",
+      "Value": "973e57ca-6536-448c-9c4b-a03f258ba1a3",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Date of publishing",
+      "Value": "10/31/2016",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "QR code",
+      "Value": "http://bimobject.com/aquatechnik/product/Flange",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region Africa",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region Antarctica",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region Asia",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region Europe",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region Middle East",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region North America",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region Oceania",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Region South America",
+      "Value": "All",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Product SKU",
+      "Value": "Flange",
+      "StorageType": "String",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Technical description",
+      "Value": "http://www.aquatechnik.it/download.asp?ID_CATEGORIA=1&ID_PRODOTTO=7",
+      "StorageType": "String",
+      "GroupName": "Identity Data",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniclass 1.4 Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniclass 1.4 Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniclass 2015 Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniclass 2015 Name",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniclass 2.0 Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniclass 2.0 Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniformat II Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Uniformat II Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "UNSPSC Code",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "IFC Parameters",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Weight Net (Kg)",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Nominal width",
+      "Value": "0",
+      "StorageType": "Double",
+      "GroupName": "General",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "Thumbnail": "System.Drawing.Bitmap"
+}
