@@ -15,7 +15,6 @@
 181117_WUXI C2F PIPING,VLD8MS-VC-EP-316L+VCR_VLD8MS-VC-EP-316L+VCR.json,VLD8MS-VC-EP-316L+VCR,VLD8MS-VC-EP-316L+VCR,NC**
 181117_WUXI C2F PIPING,VLD8MS-VC-EP-316L_VLD8MS-VC-EP-316L.json,VLD8MS-VC-EP-316L,VLD8MS-VC-EP-316L,NC**
 181117_WUXI C2F PIPING,VRD4MSI-VC-EP-316L+VCR_VRD4MSI-VC-EP-316L+VCR.json,VRD4MSI-VC-EP-316L+VCR,VRD4MSI-VC-EP-316L+VCR,NC**
-181117_WUXI C2F PIPING,패밀리1_패밀리1.json,패밀리1,패밀리1,NC**
 1RI11074-074B01-LNT-03-RO-MOD-UW-10261_detached_2025-03-20_detached,STI_Orifice_Plate_STI_Orifice_Plate.json,STI_Orifice_Plate,STI_Orifice_Plate,NC**
 1RI11074-074B01-LNT-03-RO-MOD-UW-10261_detached_2025-03-20_detached,STI_PPA_FLA_SLO_GRP_AMA_BP801_PN10_EN_DN25-600.json,STI_PPA_FLA_SLO_GRP_AMA_BP801_PN10_EN,DN25-600,NC**
 1RI11074-074B01-LNT-03-RO-MOD-UW-10261_detached_2025-03-20_detached,STI_PPA_FLA_WNK_GRP_AMA_AP802_EN_DN50-1600.json,STI_PPA_FLA_WNK_GRP_AMA_AP802_EN,DN50-1600,NC**
@@ -24,55 +23,26 @@
 1RI11074-074B01-LNT-03-RO-MOD-UW-10261_detached_2025-03-20_detached,STI_PPA_SPP_GRP_AMA_BP801_TIE-IN_V02_DN15-2200.json,STI_PPA_SPP_GRP_AMA_BP801_TIE-IN_V02,DN15-2200,NC**
 1RI11074-074B01-LNT-03-RO-MOD-UW-10261_detached_2025-03-20_detached,STI_PPA_VAN_BUT_ELC-NF-342_WAF_EN_BELGICAST_PN10_STI_PPA_VAN_BUT_ELC-NF-342_WAF_EN_BELGICAST_PN10.json,STI_PPA_VAN_BUT_ELC-NF-342_WAF_EN_BELGICAST_PN10,STI_PPA_VAN_BUT_ELC-NF-342_WAF_EN_BELGICAST_PN10,NC**
 1RI11074-074B01-LNT-03-RO-MOD-UW-10261_detached_2025-03-20_detached,STI_PPF_SPD_GRP_AMA_BP801_PN10-FPI_AWWA_NZL_BW-FF_DN15-100.json,STI_PPF_SPD_GRP_AMA_BP801_PN10-FPI_AWWA_NZL_BW-FF,DN15-100,NC**
-2.HGI project sample_final - 2018,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
-2.HGI project sample_final - 2018,L12 Spir_L12 Spir.json,L12 Spir,L12 Spir,NC**
 2.HGI project sample_final - 2018,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-2.HGI project sample_final - 2018,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
-2.HGI project sample_final - 2018,Somas SI-203 PTFE (Spir)_Somas SI-203 PTFE (Spir).json,Somas SI-203 PTFE (Spir),Somas SI-203 PTFE (Spir),NC**
-2.HGI project sample_final - 2018,Somas SI-203 PTFE_Somas SI-203 PTFE.json,Somas SI-203 PTFE,Somas SI-203 PTFE,NC**
 2.HGI project sample_final - 2018,Арматура КИП м-ф ( gask Spir)_DN 500 PN 16.json,Арматура КИП м-ф ( gask Spir),DN 500 PN 16,NC**
 2.HGI project sample_final - 2018,АС22_АС22.json,АС22,АС22,NC**
 2.HGI project sample_final - 2018,Кран Шаровый Приварной Разборный _Кран Шаровый Приварной Разборный.json,Кран Шаровый Приварной Разборный ,Кран Шаровый Приварной Разборный,NC**
 2.HGI project sample_final - 2018,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
 2.HGI project sample_final - 2018,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88_DN25.json,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88,DN25,NC**
-2.HGI project sample_final - 2018,Разделитель комплекта_Разделитель комплекта.json,Разделитель комплекта,Разделитель комплекта,NC**
-2.HGI project sample_final - 2018,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-2.HGI project sample_final - 2018,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-2.HGI project sample_final - 2018,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
-2.HGI project sample_final - 2019,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
-2.HGI project sample_final - 2019,L12 Spir_L12 Spir.json,L12 Spir,L12 Spir,NC**
 2.HGI project sample_final - 2019,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-2.HGI project sample_final - 2019,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
-2.HGI project sample_final - 2019,Somas SI-203 PTFE (Spir)_Somas SI-203 PTFE (Spir).json,Somas SI-203 PTFE (Spir),Somas SI-203 PTFE (Spir),NC**
-2.HGI project sample_final - 2019,Somas SI-203 PTFE_Somas SI-203 PTFE.json,Somas SI-203 PTFE,Somas SI-203 PTFE,NC**
 2.HGI project sample_final - 2019,Арматура КИП м-ф ( gask Spir)_DN 500 PN 16.json,Арматура КИП м-ф ( gask Spir),DN 500 PN 16,NC**
 2.HGI project sample_final - 2019,АС22_АС22.json,АС22,АС22,NC**
 2.HGI project sample_final - 2019,Кран Шаровый Приварной Разборный _Кран Шаровый Приварной Разборный.json,Кран Шаровый Приварной Разборный ,Кран Шаровый Приварной Разборный,NC**
 2.HGI project sample_final - 2019,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
 2.HGI project sample_final - 2019,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88_DN25.json,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88,DN25,NC**
-2.HGI project sample_final - 2019,Разделитель комплекта_Разделитель комплекта.json,Разделитель комплекта,Разделитель комплекта,NC**
-2.HGI project sample_final - 2019,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-2.HGI project sample_final - 2019,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-2.HGI project sample_final - 2019,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
 2.HGI project sample_final_part - 2019,АС22_АС22.json,АС22,АС22,NC**
-2.HGI project sample_final_part - 2019,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-2.HGI project sample_final_part - 2019,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
 20180418_OneSpec_DifferentFamilyType,Restrained_OD32-OD225_PVDF.json,Restrained_OD32-OD225,PVDF,NC**
-20180702_HGI project sample 2019,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
-20180702_HGI project sample 2019,L12 Spir_L12 Spir.json,L12 Spir,L12 Spir,NC**
 20180702_HGI project sample 2019,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-20180702_HGI project sample 2019,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
-20180702_HGI project sample 2019,Somas SI-203 PTFE (Spir)_Somas SI-203 PTFE (Spir).json,Somas SI-203 PTFE (Spir),Somas SI-203 PTFE (Spir),NC**
-20180702_HGI project sample 2019,Somas SI-203 PTFE_Somas SI-203 PTFE.json,Somas SI-203 PTFE,Somas SI-203 PTFE,NC**
 20180702_HGI project sample 2019,Арматура КИП м-ф ( gask Spir)_DN 500 PN 16.json,Арматура КИП м-ф ( gask Spir),DN 500 PN 16,NC**
 20180702_HGI project sample 2019,АС22_АС22.json,АС22,АС22,NC**
 20180702_HGI project sample 2019,Кран Шаровый Приварной Разборный _Кран Шаровый Приварной Разборный.json,Кран Шаровый Приварной Разборный ,Кран Шаровый Приварной Разборный,NC**
 20180702_HGI project sample 2019,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
 20180702_HGI project sample 2019,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88_DN25.json,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88,DN25,NC**
-20180702_HGI project sample 2019,Разделитель комплекта_Разделитель комплекта.json,Разделитель комплекта,Разделитель комплекта,NC**
-20180702_HGI project sample 2019,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-20180702_HGI project sample 2019,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-20180702_HGI project sample 2019,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
 20180703 B1-RF끽방밗窟친謹,HW-管接头 - 常规_镀锌钢.json,HW-管接头 - 常规,镀锌钢,NC**
 20180703 B1-RF끽방밗窟친謹,Y 型过滤器 - 6-100 mm - 螺纹式_50 mm.json,Y 型过滤器 - 6-100 mm - 螺纹式,50 mm,NC**
 20180703 B1-RF끽방밗窟친謹,减压阀 - Y43H 型 - 活塞式 - 法兰式_Y43H-16Z - 50 mm.json,减压阀 - Y43H 型 - 活塞式 - 法兰式,Y43H-16Z - 50 mm,NC**
@@ -190,28 +160,14 @@
 20180723 베제却-끽방&묏撚밗돛,闸阀 - Z41 型 - 明杆楔式单闸板 - 法兰式_Z41T-10 - 100 mm.json,闸阀 - Z41 型 - 明杆楔式单闸板 - 法兰式,Z41T-10 - 100 mm,NC**
 20180723 베제却-끽방&묏撚밗돛,闸阀 - Z41 型 - 明杆楔式单闸板 - 法兰式_Z41T-10 - 50 mm.json,闸阀 - Z41 型 - 明杆楔式单闸板 - 法兰式,Z41T-10 - 50 mm,NC**
 20180723 베제却-끽방&묏撚밗돛,闸阀 - Z41 型 - 明杆楔式单闸板 - 法兰式_Z41T-10 - 80 mm.json,闸阀 - Z41 型 - 明杆楔式单闸板 - 法兰式,Z41T-10 - 80 mm,NC**
-2019_HGI project sample_final,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
-2019_HGI project sample_final,L12 Spir_L12 Spir.json,L12 Spir,L12 Spir,NC**
 2019_HGI project sample_final,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-2019_HGI project sample_final,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
-2019_HGI project sample_final,Somas SI-203 PTFE (Spir)_Somas SI-203 PTFE (Spir).json,Somas SI-203 PTFE (Spir),Somas SI-203 PTFE (Spir),NC**
-2019_HGI project sample_final,Somas SI-203 PTFE_Somas SI-203 PTFE.json,Somas SI-203 PTFE,Somas SI-203 PTFE,NC**
 2019_HGI project sample_final,Арматура КИП м-ф ( gask Spir)_DN 500 PN 16.json,Арматура КИП м-ф ( gask Spir),DN 500 PN 16,NC**
 2019_HGI project sample_final,АС22_АС22.json,АС22,АС22,NC**
 2019_HGI project sample_final,Кран Шаровый Приварной Разборный _Кран Шаровый Приварной Разборный.json,Кран Шаровый Приварной Разборный ,Кран Шаровый Приварной Разборный,NC**
 2019_HGI project sample_final,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
 2019_HGI project sample_final,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88_DN25.json,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88,DN25,NC**
-2019_HGI project sample_final,Разделитель комплекта_Разделитель комплекта.json,Разделитель комплекта,Разделитель комплекта,NC**
-2019_HGI project sample_final,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-2019_HGI project sample_final,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-2019_HGI project sample_final,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
-2019_One_HGI project sample_Spec,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
 2019_One_HGI project sample_Spec,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-2019_One_HGI project sample_Spec,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
 2019_One_HGI project sample_Spec,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
-2019_One_HGI project sample_Spec,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-2019_One_HGI project sample_Spec,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-2019_One_HGI project sample_Spec,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
 3D_ISO_TESTS_RQ_20200502-V2,EPG-Pieces a sceller-101-NEW_C52.json,EPG-Pieces a sceller-101-NEW,C52,NC**
 3D_ISO_TESTS_RQ_20200502-V2,EPG-Pieces a sceller-106-NEW_B52.json,EPG-Pieces a sceller-106-NEW,B52,NC**
 3D_ISO_TESTS_RQ_20200502-V2,EPG-Pieces a sceller-108-NEW_B50.json,EPG-Pieces a sceller-108-NEW,B50,NC**
@@ -226,21 +182,17 @@ AIR-51-ESP-MNG-011-2111_locale,GEN_Vanne_Pap_Pneum_entre_Bride_BI104.json,GEN_Va
 AIR-51-ESP-MNG-011-2111_locale,GEN_VH_Papillon_Man_Reduc_Entre_Bride_PN10_BI104.json,GEN_VH_Papillon_Man_Reduc_Entre_Bride_PN10,BI104,NC**
 AIR-51-ESP-MNG-011-2111_locale,STI_RCA_SPD_SS_EN_TUB_BW-BW_DN15-2200_BI104_Inox_304L.json,STI_RCA_SPD_SS_EN_TUB_BW-BW_DN15-2200,BI104_Inox_304L,NC**
 CHECK,PGTL 피팅1_PGTL 피팅1.json,PGTL 피팅1,PGTL 피팅1,NC**
-ComplexFamily_Sample_v2018,20180420_Family example_PN 10.json,20180420_Family example,PN 10,NC**
 CPV-M-24-620-GVX03_R23 2,CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC_Insulation Transition.json,CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC,Insulation Transition,NC**
 CPV-M-24-620-GVX03_R23 2,d6100wl(0)-1-1_D6100WL.json,d6100wl(0)-1-1,D6100WL,NC**
-CPV-M-24-620-GVX03_R23 2,ev100f+bac (0)_EV100F+BAC (0).json,ev100f+bac (0),EV100F+BAC (0),NC**
 CPV-M-24-620-GVX03_R23 2,"SITRANS_FM-MAG_5100_W_DN100_JS90 2,5-G1-02 SMART+ Vane-Wheel Single-Jet Dry Water Meter.json",SITRANS_FM-MAG_5100_W_DN100,"JS90 2,5-G1-02 SMART+ Vane-Wheel Single-Jet Dry Water Meter",NC**
 CPV-M-LLA3-Mech-Pipe-R18 (1),CPV-ME-Drainage-Meter-v1_CPV-ME-Drainage-Meter-v1.json,CPV-ME-Drainage-Meter-v1,CPV-ME-Drainage-Meter-v1,NC**
 CPV-M-LLA3-Mech-Pipe-R18 (1),CPV-ME-Flow-Meter-v2_CPV-ME-Flow-Meter-v2.json,CPV-ME-Flow-Meter-v2,CPV-ME-Flow-Meter-v2,NC**
 CPV-M-LLA3-Mech-Pipe-R18 (1),CPV-PROGEF-546-BV-SDR11 Metric_DN50.json,CPV-PROGEF-546-BV-SDR11 Metric,DN50,NC**
-CPV-M-LLA3-Mech-Pipe-R18 (1),CPV-SiteJoint_CPV-SJ-InsTransition.json,CPV-SiteJoint,CPV-SJ-InsTransition,NC**
 da Huen JKJin 190703 Test EZ-ISO,Gas-Kugelhahn - Gewinde_DN 50.json,Gas-Kugelhahn - Gewinde,DN 50,NC**
 da Huen JKJin 190703 Test EZ-ISO,Kompensator Gummi Zwei Flansche DN50-300_Kompensator Gummi Zwei Flansche DN200.json,Kompensator Gummi Zwei Flansche DN50-300,Kompensator Gummi Zwei Flansche DN200,NC**
 Dimension Missing,STEAM TRAP_CMTD_STEAM TRAP_CMTD.json,STEAM TRAP_CMTD,STEAM TRAP_CMTD,NC**
 ENS_B_0301_02_R2018 GLE_détaché,AXI_Clapet Anti-Retour à battant - Taraudé_DN15 à 50.json,AXI_Clapet Anti-Retour à battant - Taraudé,DN15 à 50,NC**
 ENS_B_0301_02_R2018 GLE_détaché,AXI_Compteur - 20-50mm - Fileté_DN20 à 50.json,AXI_Compteur - 20-50mm - Fileté,DN20 à 50,NC**
-ENS_B_0301_02_R2018 GLE_détaché,AXI_DSC_BA_ACS_MM_DN15 à 50 - Bronze.json,AXI_DSC_BA_ACS_MM,DN15 à 50 - Bronze,NC**
 ENS_B_0301_02_R2018 GLE_détaché,AXI_Filtre à bride_DN65 - DN400.json,AXI_Filtre à bride,DN65 - DN400,NC**
 ENS_B_0301_02_R2018 GLE_détaché,AXI_Filtre à tamis - Taraudé_DN10 à 50.json,AXI_Filtre à tamis - Taraudé,DN10 à 50,NC**
 ENS_B_0301_02_R2018 GLE_détaché,AXI_FLT_A_CARTOUCHE_FILETE_20 mm.json,AXI_FLT_A_CARTOUCHE_FILETE,20 mm,NC**
@@ -333,9 +285,6 @@ EZ ISO Test Jones Eng-Manual,BWT_Generic_OrificePlate_250mm.json,BWT_Generic_Ori
 EZ ISO Test Jones Eng_detached,Branch Takeoff - Generic_Standard.json,Branch Takeoff - Generic,Standard,NC**
 EZ ISO Test Jones Eng_detached,BWT_Generic_OrificePlate_200mm.json,BWT_Generic_OrificePlate,200mm,NC**
 EZ ISO Test Jones Eng_detached,BWT_Generic_OrificePlate_250mm.json,BWT_Generic_OrificePlate,250mm,NC**
-Ez ISO_ElbowError,SG_20x16_SG_20x16.json,SG_20x16,SG_20x16,NC**
-Ez ISO_ElbowError_T01,SG_20x16_SG_20x16.json,SG_20x16,SG_20x16,NC**
-Ez ISO_help,SG_20x16_SG_20x16.json,SG_20x16,SG_20x16,NC**
 Ez-ISO ISSUE,8E3B25-CDDBABEGADSAAASHA2Z1  ANSI#150 RF  25A_8E3B25-CDDBABEGADSAAASHA2Z1  ANSI#150 RF  25A.json,8E3B25-CDDBABEGADSAAASHA2Z1  ANSI#150 RF  25A,8E3B25-CDDBABEGADSAAASHA2Z1  ANSI#150 RF  25A,NC**
 EZ-Iso Test 190716 CT,Compensator_Compensator.json,Compensator,Compensator,NC**
 EZ-Iso Test 190716 CT,Gas-Kugelhahn - Gewinde_DN 50.json,Gas-Kugelhahn - Gewinde,DN 50,NC**
@@ -377,7 +326,6 @@ FlangeReducing,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-ALIAXIS-FIP DN15 A 63
 FlangeReducing,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017_B50.json,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017,B50,NC**
 FlangeReducing,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017_B52.json,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017,B52,NC**
 FlangeReducing,OTV-EQV-VANNE A BOISSEAU SPHERIQUE PNEUMATIQUE-CEPEX-DN10 A 100-2017_B52.json,OTV-EQV-VANNE A BOISSEAU SPHERIQUE PNEUMATIQUE-CEPEX-DN10 A 100-2017,B52,NC**
-FlangeReducing,OTV-EQV-Vanne Manchon Manu DN65-AKO-2017_OTV-EQV-Vanne Manchon Manu DN65-AKO-2017.json,OTV-EQV-Vanne Manchon Manu DN65-AKO-2017,OTV-EQV-Vanne Manchon Manu DN65-AKO-2017,NC**
 FlangeReducing,OTV-EQV-VANNE PAPILLON MANUELLE -BAYARD -T15001-DN150 A 1600-2017_B30.json,OTV-EQV-VANNE PAPILLON MANUELLE -BAYARD -T15001-DN150 A 1600-2017,B30,NC**
 FlangeReducing,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017_B30.json,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017,B30,NC**
 FlangeReducing,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017_B52.json,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017,B52,NC**
@@ -394,7 +342,6 @@ FlangeReducing,OTV-EQY-MANCHON ACIER-BAYARD-DN350 A 1600-2017_OTV-EQY-MANCHON AC
 FlangeReducing,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017_Double bride.json,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017,Double bride,NC**
 FlangeReducing,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017_lame_Sans bride.json,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017_lame,Sans bride,NC**
 FlangeReducing,"PIF_ecoFIT BF fixpoint fitting_GF_SDR11, DN50 - DN600.json",PIF_ecoFIT BF fixpoint fitting_GF,"SDR11, DN50 - DN600",NC**
-FlangeReducing,Rotameter_DN40_PVC-U_Rotameter_DN40_PVC-U.json,Rotameter_DN40_PVC-U,Rotameter_DN40_PVC-U,NC**
 for EZ ISO,DIP K型套管_DIP K型套管.json,DIP K型套管,DIP K型套管,NC**
 for EZ ISO,DIP K型短管1號_DIP K型短管1號.json,DIP K型短管1號,DIP K型短管1號,NC**
 for EZ ISO,DIP 喇叭管_DIP 喇叭管.json,DIP 喇叭管,DIP 喇叭管,NC**
@@ -404,7 +351,6 @@ for EZ ISO,DIP 短管2號_短管2號.json,DIP 短管2號,短管2號,NC**
 for EZ ISO,DIP 雙凸緣長管_300.json,DIP 雙凸緣長管,300,NC**
 GVX03-MECH-D3-CPV-R23,CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC_Insulation Transition.json,CPV_PipeFittings_Pressure_Coupler_PEPB.025-1000.EFC,Insulation Transition,NC**
 GVX03-MECH-D3-CPV-R23,d6100wl(0)-1-1_D6100WL.json,d6100wl(0)-1-1,D6100WL,NC**
-GVX03-MECH-D3-CPV-R23,ev100f+bac (0)_EV100F+BAC (0).json,ev100f+bac (0),EV100F+BAC (0),NC**
 GVX03-MECH-D3-CPV-R23,PIF_ecoFIT EF transition coupler loose nut (u)_GF_DN20 - DN50.json,PIF_ecoFIT EF transition coupler loose nut (u)_GF,DN20 - DN50,NC**
 GVX03-MECH-D3-CPV-R23,"SITRANS_FM-MAG_5100_W_DN100_JS90 2,5-G1-02 SMART+ Vane-Wheel Single-Jet Dry Water Meter.json",SITRANS_FM-MAG_5100_W_DN100,"JS90 2,5-G1-02 SMART+ Vane-Wheel Single-Jet Dry Water Meter",NC**
 GW2_GW48_EQU_FTH_MT_C721B_Distrib_V22 - ADF,AXI_ACIER_Bride plate soudée_ACIER Inox.json,AXI_ACIER_Bride plate soudée,ACIER Inox,NC**
@@ -417,51 +363,24 @@ Help,Gas-Kugelhahn CS_DN 50.json,Gas-Kugelhahn CS,DN 50,NC**
 Help,Kompensator Gummi Zwei Flansche CS_Kompensator Gummi Zwei Flansche DN150.json,Kompensator Gummi Zwei Flansche CS,Kompensator Gummi Zwei Flansche DN150,NC**
 Help,Kompensator Gummi Zwei Flansche CS_Kompensator Gummi Zwei Flansche DN80.json,Kompensator Gummi Zwei Flansche CS,Kompensator Gummi Zwei Flansche DN80,NC**
 Help,Rückschlagklappe allgemein - Flansch_Standard.json,Rückschlagklappe allgemein - Flansch,Standard,NC**
-HGI project sample 2018,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
-HGI project sample 2018,L12 Spir_L12 Spir.json,L12 Spir,L12 Spir,NC**
 HGI project sample 2018,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-HGI project sample 2018,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
-HGI project sample 2018,Somas SI-203 PTFE (Spir)_Somas SI-203 PTFE (Spir).json,Somas SI-203 PTFE (Spir),Somas SI-203 PTFE (Spir),NC**
-HGI project sample 2018,Somas SI-203 PTFE_Somas SI-203 PTFE.json,Somas SI-203 PTFE,Somas SI-203 PTFE,NC**
 HGI project sample 2018,Арматура КИП м-ф ( gask Spir)_DN 500 PN 16.json,Арматура КИП м-ф ( gask Spir),DN 500 PN 16,NC**
 HGI project sample 2018,АС22_АС22.json,АС22,АС22,NC**
 HGI project sample 2018,Кран Шаровый Приварной Разборный _Кран Шаровый Приварной Разборный.json,Кран Шаровый Приварной Разборный ,Кран Шаровый Приварной Разборный,NC**
 HGI project sample 2018,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
 HGI project sample 2018,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88_DN25.json,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88,DN25,NC**
-HGI project sample 2018,Разделитель комплекта_Разделитель комплекта.json,Разделитель комплекта,Разделитель комплекта,NC**
-HGI project sample 2018,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-HGI project sample 2018,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-HGI project sample 2018,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
-HGI project sample 2019,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
-HGI project sample 2019,L12 Spir_L12 Spir.json,L12 Spir,L12 Spir,NC**
 HGI project sample 2019,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-HGI project sample 2019,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
-HGI project sample 2019,Somas SI-203 PTFE (Spir)_Somas SI-203 PTFE (Spir).json,Somas SI-203 PTFE (Spir),Somas SI-203 PTFE (Spir),NC**
-HGI project sample 2019,Somas SI-203 PTFE_Somas SI-203 PTFE.json,Somas SI-203 PTFE,Somas SI-203 PTFE,NC**
 HGI project sample 2019,Арматура КИП м-ф ( gask Spir)_DN 500 PN 16.json,Арматура КИП м-ф ( gask Spir),DN 500 PN 16,NC**
 HGI project sample 2019,АС22_АС22.json,АС22,АС22,NC**
 HGI project sample 2019,Кран Шаровый Приварной Разборный _Кран Шаровый Приварной Разборный.json,Кран Шаровый Приварной Разборный ,Кран Шаровый Приварной Разборный,NC**
 HGI project sample 2019,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
 HGI project sample 2019,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88_DN25.json,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88,DN25,NC**
-HGI project sample 2019,Разделитель комплекта_Разделитель комплекта.json,Разделитель комплекта,Разделитель комплекта,NC**
-HGI project sample 2019,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-HGI project sample 2019,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-HGI project sample 2019,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
-HGI project sample_final,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
-HGI project sample_final,L12 Spir_L12 Spir.json,L12 Spir,L12 Spir,NC**
 HGI project sample_final,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-HGI project sample_final,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
-HGI project sample_final,Somas SI-203 PTFE (Spir)_Somas SI-203 PTFE (Spir).json,Somas SI-203 PTFE (Spir),Somas SI-203 PTFE (Spir),NC**
-HGI project sample_final,Somas SI-203 PTFE_Somas SI-203 PTFE.json,Somas SI-203 PTFE,Somas SI-203 PTFE,NC**
 HGI project sample_final,Арматура КИП м-ф ( gask Spir)_DN 500 PN 16.json,Арматура КИП м-ф ( gask Spir),DN 500 PN 16,NC**
 HGI project sample_final,АС22_АС22.json,АС22,АС22,NC**
 HGI project sample_final,Кран Шаровый Приварной Разборный _Кран Шаровый Приварной Разборный.json,Кран Шаровый Приварной Разборный ,Кран Шаровый Приварной Разборный,NC**
 HGI project sample_final,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
 HGI project sample_final,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88_DN25.json,Опора DN20-500-ХБ-А-ВСт3пс-ОСТ 36-146-88,DN25,NC**
-HGI project sample_final,Разделитель комплекта_Разделитель комплекта.json,Разделитель комплекта,Разделитель комплекта,NC**
-HGI project sample_final,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-HGI project sample_final,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-HGI project sample_final,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
 HUEN TEST_detached,1.4571-U-Form Siphon-DN15_Standard.json,1.4571-U-Form Siphon-DN15,Standard,NC**
 HUEN TEST_detached,CW614N-Stopcock-Pressure Measuring-DN15_Standard.json,CW614N-Stopcock-Pressure Measuring-DN15,Standard,NC**
 HUEN_FAMILY_FITTING_PLACEMENT_20210423,PTFE_Lined_Distance_Spacer_PTFE_Lined_Distance_Spacer.json,PTFE_Lined_Distance_Spacer,PTFE_Lined_Distance_Spacer,NC**
@@ -528,8 +447,6 @@ LR058a,Strangregulierventil_Flansch - PN6 DN25 - LINEAR Neutrale Bauteile #dcqgh
 lTest Model_Part,Non-Connector2_Standard 2.json,Non-Connector2,Standard 2,NC**
 lTest Model_Part,Non-Connector_Standard.json,Non-Connector,Standard,NC**
 MODEL 19-12-2024,TPF- VALVULA DE AGUJA BW_SP_TPF- VALVULA DE AGUJA BW_SP.json,TPF- VALVULA DE AGUJA BW_SP,TPF- VALVULA DE AGUJA BW_SP,NC**
-MODEL 19-12-2024,TPF-BRIDA FIJA EN-1092-1 PRFV_PN10_TPF-BRIDA FIJA EN-1092-1 PRFV_PN10.json,TPF-BRIDA FIJA EN-1092-1 PRFV_PN10,TPF-BRIDA FIJA EN-1092-1 PRFV_PN10,NC**
-MODEL 19-12-2024,TPF-BRIDA WN ASME B16.5 - 600 lbs - UNS S32760_ASME B16.5_600 lbs_WN.json,TPF-BRIDA WN ASME B16.5 - 600 lbs - UNS S32760,ASME B16.5_600 lbs_WN,NC**
 MODEL 19-12-2024,TPF-INJERTO DIRECTO - SCH 40S - UNS S32760_ASME B36.19-10 - SCH 40S.json,TPF-INJERTO DIRECTO - SCH 40S - UNS S32760,ASME B36.19-10 - SCH 40S,NC**
 MODEL 19-12-2024,TPF-MANGUITO ELASTICO SIMPLE EN-1092-1 PN10_TPF-MANGUITO ELASTICO SIMPLE EN-1092-1 PN10.json,TPF-MANGUITO ELASTICO SIMPLE EN-1092-1 PN10,TPF-MANGUITO ELASTICO SIMPLE EN-1092-1 PN10,NC**
 MODEL 19-12-2024,TPF-MEDIDOR DE CAUDAL ELETROMAGNETICO BRIDAS 600 lb_TPF-MEDIDOR DE CAUDAL ELETROMAGNETICO BRIDAS 600 lb.json,TPF-MEDIDOR DE CAUDAL ELETROMAGNETICO BRIDAS 600 lb,TPF-MEDIDOR DE CAUDAL ELETROMAGNETICO BRIDAS 600 lb,NC**
@@ -538,8 +455,6 @@ MODEL 19-12-2024,TPF-PLACA DE ORIFICIO_TPF-PLACA DE ORIFICIO.json,TPF-PLACA DE O
 MODEL 19-12-2024,TPF-VALVULA MARIPOSA MOTORIZADA_TPF-Valvula Mariposa Motorizada.json,TPF-VALVULA MARIPOSA MOTORIZADA,TPF-Valvula Mariposa Motorizada,NC**
 MODEL 19-12-2024,"TPF-VALVULA RETENCION DOBLE PLATO, CLASS 600 LB_TPF-VALVULA RETENCION DOBLE PLATO - CLASS 600 LB.json","TPF-VALVULA RETENCION DOBLE PLATO, CLASS 600 LB",TPF-VALVULA RETENCION DOBLE PLATO - CLASS 600 LB,NC**
 MODEL 19-12-2024,"TPF-VÁLVULA DE MACHO BW, ACTUADOR ELECTRICO, CLASS 600 LB_TPF-VÁLVULA DE MACHO BW, ACTUADOR ELECTRICO, CLASS 600 LB.json","TPF-VÁLVULA DE MACHO BW, ACTUADOR ELECTRICO, CLASS 600 LB","TPF-VÁLVULA DE MACHO BW, ACTUADOR ELECTRICO, CLASS 600 LB",NC**
-MODEL 19-12-2024,TPF_ACOPLAMIENTO FLEXIBLE HP_TPF_AcoplamientoFlexible_HP.json,TPF_ACOPLAMIENTO FLEXIBLE HP,TPF_AcoplamientoFlexible_HP,NC**
-MODEL 19-12-2024,TPF_BRIDA DIN PP PN10_TPF-BRIDA DIN PP_PN10.json,TPF_BRIDA DIN PP PN10,TPF-BRIDA DIN PP_PN10,NC**
 MODEL 19-12-2024,TPF_JUNTA ESPIROMETÁLICA B16.5_B16.5_Class 600 lb.json,TPF_JUNTA ESPIROMETÁLICA B16.5,B16.5_Class 600 lb,NC**
 MODEL 19-12-2024,TPF_JUNTA PLANA BRIDAS DIN_PN10.json,TPF_JUNTA PLANA BRIDAS DIN,PN10,NC**
 MODEL 19-12-2024,TPF_Valvula de bola roscada PP-BF_DN25.json,TPF_Valvula de bola roscada PP-BF,DN25,NC**
@@ -554,11 +469,8 @@ O-A똞,061_ねじ込み式可鍛鋳鉄製 - 組フランジ_011_配管用炭素�
 O-B똞,051_ソケット_Common.json,051_ソケット,Common,NC**
 O-B똞,061_ねじ込み式可鍛鋳鉄製 - 組フランジ_011_配管用炭素鋼鋼管_SGP_白管.json,061_ねじ込み式可鍛鋳鉄製 - 組フランジ,011_配管用炭素鋼鋼管_SGP_白管,NC**
 OneElement_HGI project sample_NoSpec,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
-OneElement_HGI project sample_NoSpec,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-OneElement_HGI project sample_NoSpec,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
 P196-AJi-ZZZ-ZZZ-M3-ME-0001_detached (1),AJi-PA-SteamTrap-InvertedBucket_SteamTrap-07.json,AJi-PA-SteamTrap-InvertedBucket,SteamTrap-07,NC**
 Pipeline Extraction,_Stahl_CAx Verbinder_Schweißverbindung.json,_Stahl_CAx Verbinder,Schweißverbindung,NC**
-Pipeline Extraction,Dampfmengenmesser F001_Dampfmengenmesser F001.json,Dampfmengenmesser F001,Dampfmengenmesser F001,NC**
 Pipeline Extraction,Faltenbalgventil DN100_Faltenbalgventil DN100.json,Faltenbalgventil DN100,Faltenbalgventil DN100,NC**
 Pipeline Extraction,Faltenbalgventil DN15_Faltenbalgventil DN15.json,Faltenbalgventil DN15,Faltenbalgventil DN15,NC**
 Pipeline Extraction,Faltenbalgventil DN20_Faltenbalgventil DN20.json,Faltenbalgventil DN20,Faltenbalgventil DN20,NC**
@@ -576,8 +488,6 @@ Pipeline Extraction,QuickEM-DN15_DN15.json,QuickEM-DN15,DN15,NC**
 Pipeline Extraction,QuickEM-horizontal-DN40_DN40.json,QuickEM-horizontal-DN40,DN40,NC**
 Pipeline Extraction,Rückschlagklappe - DN 20 PN 16 - LINEAR Neutrale Bauteile #3d69ash#_Standard.json,Rückschlagklappe - DN 20 PN 16 - LINEAR Neutrale Bauteile #3d69ash#,Standard,NC**
 Pipeline Extraction,Rückschlagklappe - DN 80 PN 16 - LINEAR Neutrale Bauteile #gh1gmvj#_Standard.json,Rückschlagklappe - DN 80 PN 16 - LINEAR Neutrale Bauteile #gh1gmvj#,Standard,NC**
-Pipeline Extraction,Schmutzfänger DN100_Schmutzfänger DN100.json,Schmutzfänger DN100,Schmutzfänger DN100,NC**
-Pipeline Extraction,Spirax Sarco DN50 PA001_Spirax Sarco DN50 PA001.json,Spirax Sarco DN50 PA001,Spirax Sarco DN50 PA001,NC**
 Pipeline Extraction LR070,Muffe_Sanpress-Inox-SC_viega_2315.json,Muffe_Sanpress-Inox-SC_viega,2315,NC**
 Pipeline Extraction LR070,Übergangsstück_Sanpress-Inox-2311_viega_2311.json,Übergangsstück_Sanpress-Inox-2311_viega,2311,NC**
 Problem Olet - ISO Drawing,GEN_Bride_Tournante_EN_1092-1_TYPE 02A_PN10_BI213.json,GEN_Bride_Tournante_EN_1092-1_TYPE 02A_PN10,BI213,NC**
@@ -601,13 +511,8 @@ S32_FBALO_UPI_SAMPLING_NoSheetNumber,Restrained_OD32-OD225_PVDF.json,Restrained_
 S32_FBALO_UPI_SAMPLING_SheetNumber,Restrained_OD32-OD225_PVDF.json,Restrained_OD32-OD225,PVDF,NC**
 sample file,3'kv_3'kv.json,3'kv,3'kv,NC**
 SAMPLE REVIT,"FLOW METER - 50A_FLOW METER, 50A.json",FLOW METER - 50A,"FLOW METER, 50A",NC**
-Simple_HGI project sample,CHS Somas SI-710 SS_CHS Somas SI-710 SS.json,CHS Somas SI-710 SS,CHS Somas SI-710 SS,NC**
 Simple_HGI project sample,PI horizont_PI horizont.json,PI horizont,PI horizont,NC**
-Simple_HGI project sample,Somas SI-203 PTFE (Kling)_Somas SI-203 PTFE (Kling).json,Somas SI-203 PTFE (Kling),Somas SI-203 PTFE (Kling),NC**
 Simple_HGI project sample,КХ-АС-21 (100-600)_КХ-АС-21 (100-600).json,КХ-АС-21 (100-600),КХ-АС-21 (100-600),NC**
-Simple_HGI project sample,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015_Фланец-плоский-на приварной кольце-ГОСТ_33259-2015.json,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,Фланец-плоский-на приварной кольце-ГОСТ_33259-2015,NC**
-Simple_HGI project sample,Фланец-плоский-приварной(CONN kling)_Фланец-плоский-приварной(CONN kling).json,Фланец-плоский-приварной(CONN kling),Фланец-плоский-приварной(CONN kling),NC**
-Simple_HGI project sample,Хомут общий_2 Полухомута.json,Хомут общий,2 Полухомута,NC**
 SKOS3SG_SBS80_PI-Central_detached,"BALL VV_RF_150#_LO,FL,EXTD_API608_AA1.json","BALL VV_RF_150#_LO,FL,EXTD_API608",AA1,NC**
 SKOS3SG_SBS80_PI-Central_detached,"BALL VV_RF_150#_LO,FL_API608_AA1.json","BALL VV_RF_150#_LO,FL_API608",AA1,NC**
 SKOS3SG_SBS80_PI-Central_detached,"BALL VV_RF_150#_LO,FL_API608_AA4.json","BALL VV_RF_150#_LO,FL_API608",AA4,NC**
@@ -631,10 +536,6 @@ SKOS3SG_SBS80_PI-Central_detached,"GLOBE VV_SW_800#_HO,FS_API602_AD3.json","GLOB
 SKOS3SG_SBS80_PI-Central_detached,"GLOBE VV_SW_800#_HO,FS_API602_AD4.json","GLOBE VV_SW_800#_HO,FS_API602",AD4,NC**
 SKOS3SG_SBS80_PI-Central_detached,"SPECTACLE BLIND_RF_150#_FIG8_B1648_AA4,CLOSE.json",SPECTACLE BLIND_RF_150#_FIG8_B1648,"AA4,CLOSE",NC**
 SKOS3SG_SBS80_PI-Central_detached,"SPECTACLE BLIND_RF_150#_FIG8_B1648_AA4,OPEN.json",SPECTACLE BLIND_RF_150#_FIG8_B1648,"AA4,OPEN",NC**
-spec test,M_게이트 밸브 - 50-300mm_200 mm.json,M_게이트 밸브 - 50-300mm,200 mm,NC**
-spec test,M_바스켓 스트레이너 - 50-300mm - 플랜지_200 mm.json,M_바스켓 스트레이너 - 50-300mm - 플랜지,200 mm,NC**
-spec test,M_벤투리 유랑계 - 150-1200mm_200 mm.json,M_벤투리 유랑계 - 150-1200mm,200 mm,NC**
-spec test,M_플랜지 - 슬립 - 스틸 - 클래스 150_표준.json,M_플랜지 - 슬립 - 스틸 - 클래스 150,표준,NC**
 Steam Line,"SYPHON TUBE - SCR'D, 15A_ST'L.json","SYPHON TUBE - SCR'D, 15A",ST'L,NC**
 Steam Line_2023_,"SYPHON TUBE - SCR'D, 15A_ST'L.json","SYPHON TUBE - SCR'D, 15A",ST'L,NC**
 SUEZ - !! Problem urgent !! - Symbol element flanged deformed,ADAPTATEUR DE BRIDE ACIER-DN50-1600_PN 10.json,ADAPTATEUR DE BRIDE ACIER-DN50-1600,PN 10,NC**
@@ -644,7 +545,6 @@ SUEZ - !! Problem urgent !! - Symbol element flanged deformed,GEN_Vanne_Pap_Pneu
 SUEZ - !! Problem urgent !! - Symbol element flanged deformed,GEN_VH_Papillon_Man_Reduc_Entre_Bride_PN10_BI104.json,GEN_VH_Papillon_Man_Reduc_Entre_Bride_PN10,BI104,NC**
 SUEZ - !! Problem urgent !! - Symbol element flanged deformed,STI_RCA_SPD_SS_EN_TUB_BW-BW_DN15-2200_BI104_Inox_304L.json,STI_RCA_SPD_SS_EN_TUB_BW-BW_DN15-2200,BI104_Inox_304L,NC**
 Support Sample_2021,"GATE VV_HAND_FL_10K_CI,GEN_T7_40A-300A.json","GATE VV_HAND_FL_10K_CI,GEN_T7",40A-300A,NC**
-SupportDimensionError,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new_OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new.json,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new,NC**
 SupportDimensionError,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017_B30.json,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017,B30,NC**
 SupportDimensionError,OTV-EQV-VANNE PAPILLON MANUELLE A BRIDES -KSB-ISORIA 25-DN200 A 1000-2017_B30.json,OTV-EQV-VANNE PAPILLON MANUELLE A BRIDES -KSB-ISORIA 25-DN200 A 1000-2017,B30,NC**
 SupportDimensionError,OTV-EQV-VANNE PAPILLON MANUELLE-CEPEX-SERIE STANDARD DN50 A 200-2017_OTV-EQV-VANNE PAPILLON MANUELLE-CEPEX-SERIE STANDARD DN50 A 200-2017.json,OTV-EQV-VANNE PAPILLON MANUELLE-CEPEX-SERIE STANDARD DN50 A 200-2017,OTV-EQV-VANNE PAPILLON MANUELLE-CEPEX-SERIE STANDARD DN50 A 200-2017,NC**
@@ -660,8 +560,6 @@ Test Model,Victaulic-IPS-Suction Diffuser Style 731-D1_Standard.json,Victaulic-I
 Test Vioser 01_R2023,Clamp+Ferrule_DIN32676_for DIN11866 Reihe C_Standard.json,Clamp+Ferrule_DIN32676_for DIN11866 Reihe C,Standard,NC**
 Test Vioser 01_R2023,"E+H Promass P100_Tri-Clamp, DIN 32676 for Row C1_E+H Promass P100_Tri-Clamp, DIN 32676 for Row C 2.json","E+H Promass P100_Tri-Clamp, DIN 32676 for Row C1","E+H Promass P100_Tri-Clamp, DIN 32676 for Row C 2",NC**
 Test Vioser 01_R2023,Flansch_Neumo_DIN11864-2_FormA_ Bundflansch_DIN11866 C_Standard.json,Flansch_Neumo_DIN11864-2_FormA_ Bundflansch_DIN11866 C,Standard,NC**
-Test Vioser 01_R2023,Gemü653_Mem._M_D_59_MG50_2in_DN50.json,Gemü653_Mem._M_D_59_MG50_2in,DN50,NC**
-Test Vioser 01_R2023,Gemü653_Mem._M_D_59_MG80_3in_DN80.json,Gemü653_Mem._M_D_59_MG80_3in,DN80,NC**
 Thermometer Issue,1.4571-U-Form Siphon-DN15_Standard.json,1.4571-U-Form Siphon-DN15,Standard,NC**
 Thermometer Issue,CW614N-Stopcock-Pressure Measuring-DN15_Standard.json,CW614N-Stopcock-Pressure Measuring-DN15,Standard,NC**
 Thermometer Issue,Immersion Sleeve Temperature Sensor_200mm.json,Immersion Sleeve Temperature Sensor,200mm,NC**
@@ -869,7 +767,6 @@ VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-VANNE A BOISSEAU SPHERIQUE M
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017_B50.json,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017,B50,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017_B52.json,OTV-EQV-VANNE A BOISSEAU SPHERIQUE MANUELLE-CEPEX-DN10 A 100-2017,B52,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-VANNE A BOISSEAU SPHERIQUE PNEUMATIQUE-CEPEX-DN10 A 100-2017_B52.json,OTV-EQV-VANNE A BOISSEAU SPHERIQUE PNEUMATIQUE-CEPEX-DN10 A 100-2017,B52,NC**
-VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-Vanne Manchon Manu DN65-AKO-2017_OTV-EQV-Vanne Manchon Manu DN65-AKO-2017.json,OTV-EQV-Vanne Manchon Manu DN65-AKO-2017,OTV-EQV-Vanne Manchon Manu DN65-AKO-2017,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-VANNE PAPILLON MANUELLE -BAYARD -T15001-DN150 A 1600-2017_B30.json,OTV-EQV-VANNE PAPILLON MANUELLE -BAYARD -T15001-DN150 A 1600-2017,B30,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017_B30.json,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017,B30,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017_B52.json,OTV-EQV-VANNE PAPILLON MANUELLE A POIGNEE-TECOFI-DN40 A 300-2017,B52,NC**
@@ -886,9 +783,6 @@ VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQY-MANCHON ACIER-BAYARD-DN350 A
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017_Double bride.json,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017,Double bride,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017_lame_Sans bride.json,OTV-EQY-PIECE A SCELLER-PN 10-ACIER-2017_lame,Sans bride,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,"PIF_ecoFIT BF fixpoint fitting_GF_SDR11, DN50 - DN600.json",PIF_ecoFIT BF fixpoint fitting_GF,"SDR11, DN50 - DN600",NC**
-VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,Rotameter_DN40_PVC-U_Rotameter_DN40_PVC-U.json,Rotameter_DN40_PVC-U,Rotameter_DN40_PVC-U,NC**
-VWT-1-ACT-MAQ-100-ACTIFLO_AC-EBR-1300-1400-B30_detached,Debimetre_Khrone_DN1200_Debimetre_Khrone_DN1200.json,Debimetre_Khrone_DN1200,Debimetre_Khrone_DN1200,NC**
-VWT-1-ACT-MAQ-100-ACTIFLO_AC-EBR-1300-1400-B30_detached,LaMe TECOFI DN1400_LaMe TECOFI DN1400.json,LaMe TECOFI DN1400,LaMe TECOFI DN1400,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_AC-EBR-1300-1400-B30_detached,OTV-BRIDE-PLATE-ACIER_Bride plate acier PN10.json,OTV-BRIDE-PLATE-ACIER,Bride plate acier PN10,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_AC-EBR-1300-1400-B30_detached,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOF_Iintégral male-femelle_DN8 A 100-2017_B30.json,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOF_Iintégral male-femelle_DN8 A 100-2017,B30,NC**
 VWT-1-ACT-MAQ-100-ACTIFLO_AC-EBR-1300-1400-B30_detached,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017_B30.json,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017,B30,NC**
@@ -902,7 +796,6 @@ VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-BRIDE-PLATE-
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-EQI-DEBIMETRE-PROMAG-DN1000_DN 500.json,OTV-EQI-DEBIMETRE-PROMAG-DN1000,DN 500,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (1)_B30.json,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (1),B30,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (2)_B30.json,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (2),B30,NC**
-VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new_OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new.json,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-EQV-DEBITMETRE ELECTROMAGNETIQUE-PROMAG-DN25 A 1200-2017_B30.json,OTV-EQV-DEBITMETRE ELECTROMAGNETIQUE-PROMAG-DN25 A 1200-2017,B30,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017_B30.json,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017,B30,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,OTV-EQV-VANNE PAPILLON MANUELLE A BRIDES -KSB-ISORIA 25-DN200 A 1000-2017_B30.json,OTV-EQV-VANNE PAPILLON MANUELLE A BRIDES -KSB-ISORIA 25-DN200 A 1000-2017,B30,NC**
@@ -922,7 +815,6 @@ VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-BRI
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-EQI-DEBIMETRE-PROMAG-DN1000_DN 500.json,OTV-EQI-DEBIMETRE-PROMAG-DN1000,DN 500,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (1)_B30.json,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (1),B30,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (2)_B30.json,OTV-EQI-DEBIMETRE-PROMAG-DN25 A 300-2017 (2),B30,NC**
-VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new_OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new.json,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new,OTV-EQV-CLAPET CLASAR-BAYARD-SERIE B6 10 DN600 A new,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-EQV-CLAPET DOUBLE BATTANT-TECOFI-DN50-600-2017_NEW_B30.json,OTV-EQV-CLAPET DOUBLE BATTANT-TECOFI-DN50-600-2017_NEW,B30,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-EQV-DEBITMETRE ELECTROMAGNETIQUE-PROMAG-DN25 A 1200-2017_B30.json,OTV-EQV-DEBITMETRE ELECTROMAGNETIQUE-PROMAG-DN25 A 1200-2017,B30,NC**
 VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017_B30.json,OTV-EQV-ROBINET A BOISSEAU SPHERIQUE -TECOFI-BS 6179- DN8 A 100-2017,B30,NC**
@@ -943,10 +835,7 @@ WH SAMPLE_2019,F-3110 F-3210-2_F-3110 F-3210.json,F-3110 F-3210-2,F-3110 F-3210,
 WH SAMPLE_2019,"FILLTER_FE, STS.json",FILLTER,"FE, STS",NC**
 XIRBCP-1AA-100-ME-G3G4E-KGE-CM-COPY-DO NOT USE FOR WORK,Cap-Hose Connector_DN20_Cap-Hose Connector_DN20.json,Cap-Hose Connector_DN20,Cap-Hose Connector_DN20,NC**
 XIRBCP-1AA-100-ME-G3G4E-KGE-CM-COPY-DO NOT USE FOR WORK,Dkn_Sluice Box_Standard.json,Dkn_Sluice Box,Standard,NC**
-XIRBCP-1AA-100-ME-G3G4E-KGE-CM-COPY-DO NOT USE FOR WORK,Flow Meter With Sensor_DN450_450.json,Flow Meter With Sensor_DN450,450,NC**
 XIRBCP-1AA-100-ME-G3G4E-KGE-CM-COPY-DO NOT USE FOR WORK,Flow Meter_DN300_DN 300.json,Flow Meter_DN300,DN 300,NC**
-XIRBCP-1AA-100-ME-G3G4E-KGE-CM-COPY-DO NOT USE FOR WORK,SUC DIFF 12 X 10_SUC DIFF 12 X 10.json,SUC DIFF 12 X 10,SUC DIFF 12 X 10,NC**
-XIRBCP-1AA-100-ME-G3G4E-KGE-CM-COPY-DO NOT USE FOR WORK,SUC DIFF 8 X 5_SUC DIFF 8 X 5.json,SUC DIFF 8 X 5,SUC DIFF 8 X 5,NC**
 XPGF26-1YA-260-PS-C0V00-HET-CM_detached,ex_P_LS_Bellow_D100_ex_P_LS_Bellow_D100.json,ex_P_LS_Bellow_D100,ex_P_LS_Bellow_D100,NC**
 XPGF26-1YA-260-PS-C0V00-HET-CM_detached,ex_P_LS_Bellow_D80_ex_P_LS_Bellow_D80.json,ex_P_LS_Bellow_D80,ex_P_LS_Bellow_D80,NC**
 XPGF26-1YA-260-PS-C0V00-HET-CM_detached,HET_PM_D7202_Electro Magnetic Flowmeter_NA_NA_Carbon Steel_DN 150_HET_PM_D7202_Electro Magnetic Flowmeter_NA_NA_Carbon Steel_DN 150.json,HET_PM_D7202_Electro Magnetic Flowmeter_NA_NA_Carbon Steel_DN 150,HET_PM_D7202_Electro Magnetic Flowmeter_NA_NA_Carbon Steel_DN 150,NC**
@@ -962,9 +851,6 @@ XPGF26-1YA-260-PS-L0000-HET-CM_detached,HET_PM_D7074_UNION_TYPE375_FPTXFPT_PVC_N
 XPGF26-1YA-260-PS-L0000-HET-CM_detached,HET_PM_D7078_FILTER REGULATOR_NA_PLASTIC_NA_DN15_HET_PM_D7078_FILTER REGULATOR_NA_PLASTIC_NA_DN15.json,HET_PM_D7078_FILTER REGULATOR_NA_PLASTIC_NA_DN15,HET_PM_D7078_FILTER REGULATOR_NA_PLASTIC_NA_DN15,NC**
 專案1,In-Ultrasonic Flowmeter_FIQT.json,In-Ultrasonic Flowmeter,FIQT,NC**
 项目1-邵,OTV-EQY-BRIDE ACIER-PN10-PLATE A SOUDER DN10 A 600-2019_B30.json,OTV-EQY-BRIDE ACIER-PN10-PLATE A SOUDER DN10 A 600-2019,B30,NC**
-项目1-邵,VWT-柔性接头_VWT-柔性接头.json,VWT-柔性接头,VWT-柔性接头,NC**
-项目1-邵,VWT-闸阀 - Z40 型 - 明杆弹性闸板 - 法兰式-A_Z40X-10 - 150 mm.json,VWT-闸阀 - Z40 型 - 明杆弹性闸板 - 法兰式-A,Z40X-10 - 150 mm,NC**
-项目1-邵,止回阀 - H47 型 - 蝶形双门消声 - 法兰式-A_H47-10 - 125 mm.json,止回阀 - H47 型 - 蝶形双门消声 - 法兰式-A,H47-10 - 125 mm,NC**
 项目1-邵,球阀_标准.json,球阀,标准,NC**
 수정_ISO_SAMPLE_detached,INA_REGULATOR_INA_REGULATOR.json,INA_REGULATOR,INA_REGULATOR,NC**
 수정_ISO_SAMPLE_detached,LOK_MALE_CONNECTOR_LOK_MALE_CONNECTOR.json,LOK_MALE_CONNECTOR,LOK_MALE_CONNECTOR,NC**
