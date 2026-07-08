@@ -38,6 +38,15 @@ Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
     conn_same_axis       : 두 커넥터가 동일 축 여부 (0/1)
     conn_is_inline       : 두 커넥터가 인라인 (같은 방향 반대, 동축) 여부 (0/1)
 
+  [이름 키워드 (Name keyword)]
+    name_kw_*            : FamilyName/TypeName에 특정 키워드가 포함되는지 (0/1)
+                             예) name_kw_strainer → "strainer" 포함 여부 (단, "restrainer"
+                             등 앞에 접두어가 붙은 경우는 제외)
+                             기하 피처만으로 구분이 어려운 클래스(예: ACCESSORY의
+                             스트레이너 vs VALVE)를 보완하기 위한 텍스트 기반 신호.
+                             KEYWORD_FEATURE_PATTERNS 에 항목을 추가하면 자동으로
+                             NUMERIC_FEATURE_COLS 에 반영됨.
+    
 Revit 내부 단위 변환:
   길이 : feet → meter  (* 0.3048)
   면적 : feet² → m²    (* 0.3048²)
@@ -46,6 +55,7 @@ Revit 내부 단위 변환:
 
 import json
 import math
+import re
 from pathlib import Path
 from typing import Any
 
@@ -56,6 +66,11 @@ _FT2_TO_M2 = _FT_TO_M ** 2
 _FT3_TO_M3 = _FT_TO_M ** 3
 
 _EPS = 1e-9  # 0 나눗셈 방지
+
+KEYWORD_FEATURE_PATTERNS: dict[str, "re.Pattern"] = {
+    "name_kw_strainer": re.compile(r"(?<!re)strainer", re.IGNORECASE),
+    "name_kw_valve": re.compile(r"valve", re.IGNORECASE),
+}
 
 
 # ─────────────────────────────────────────────
@@ -220,6 +235,15 @@ def extract_features(data: dict) -> dict:
     feat["conn_same_axis"] = same_axis
     feat["conn_is_inline"] = is_inline
 
+    name_text = f"{feat['meta_family_name']} {feat['meta_type_name']}"
+    for kw_feat_name, pattern in KEYWORD_FEATURE_PATTERNS.items():
+        feat[kw_feat_name] = 1.0 if pattern.search(name_text) else 0.0
+
+    feat["name_kw_strainer_inline"] = (
+        1.0 if feat.get("name_kw_strainer", 0.0) == 1.0 and conn_count == 2
+        else 0.0
+    )
+
     return feat
 
 
@@ -282,6 +306,8 @@ NUMERIC_FEATURE_COLS = [
     "conn_angle_deg",
     "conn_same_axis",
     "conn_is_inline",
+    *KEYWORD_FEATURE_PATTERNS.keys(),
+    "name_kw_strainer_inline",
 ]
 
 # 피처 그룹 (Ablation study 용)
@@ -300,6 +326,7 @@ FEATURE_GROUPS = {
     "metadata": [
         "meta_max_size_mm", "meta_min_size_mm",
     ],
+    "name_keyword": [*KEYWORD_FEATURE_PATTERNS.keys(), "name_kw_strainer_inline"],
 }
 
 
