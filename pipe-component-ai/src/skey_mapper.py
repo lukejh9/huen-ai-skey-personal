@@ -91,8 +91,8 @@ _PCF_TO_GROUP: dict[str, str] = {
     "TRAP-RETURN":              "TRAP",
     "PIPE":                     "PIPE",
     "PIPE-FIXED":               "PIPE",
-    "WELD":                     "JOINT",
-    "BOLT":                     "JOINT",
+    "WELD":                     "WELD",
+    "BOLT":                     "BOLT",
     "FLOW-ARROW":               "INSTRUMENT",
     "MISC-COMPONENT":           "ACCESSORY",   # 기본값, 아래에서 세분화
     "MISC-COMPONENT-OFFSET":    "ACCESSORY",
@@ -101,6 +101,9 @@ _PCF_TO_GROUP: dict[str, str] = {
 
 # SKEY 패턴 → 세분화 (PCF_ID 가 MISC-COMPONENT 등 애매한 경우)
 _SKEY_OVERRIDE: dict[str, str] = {
+    "SK":   "OLET",
+    "TH":   "OLET",
+    "SW":   "OLET",
     "EX":   "FLEXIBLE_JOINT",   # Expansion Bellows
     "FX":   "FLEXIBLE_JOINT",   # Flexible Hose
     "SG":   "INSTRUMENT",       # Sight Glass
@@ -115,10 +118,10 @@ _SKEY_OVERRIDE: dict[str, str] = {
     "OB":   "ACCESSORY",        # Spectacle Blind (open)
     "SB":   "ACCESSORY",        # Spectacle Blind (closed)
     "SS":   "SUPPORT",          # Puddle Pipe
-    "_B":   "JOINT",            # Bolt
+    "_B":   "BOLT",           # Bolt
     "_G":   "GASKET",           # Gasket
-    "WW":   "JOINT",            # Weld
-    "SC":   "JOINT",            # Thread
+    "WW":   "WELD",
+    "SC":   "THREAD",          # Thread
     "PTRP": "TRAP",             # P-Trap
 }
 
@@ -162,7 +165,8 @@ GROUP_CLASSES = [
     "VALVE", "FITTING", "FLANGE", "GASKET",
     "SLEEVE", "SUPPORT", "INSTRUMENT",
     "FLEXIBLE_JOINT", "ACCESSORY", "OLET",
-    "CAP", "COUPLING", "TRAP", "PIPE", "UNKNOWN",
+    "CAP", "COUPLING", "TRAP", "PIPE",
+    "BOLT", "WELD", "THREAD", "UNKNOWN",
 ]
 
 VALVE_TYPE_CLASSES = [
@@ -197,6 +201,14 @@ def _derive_labels(skey: str, category: str, description: str, pcf_id: str) -> t
     SKEY / Category / PCF_Identification → (component_group, valve_type) 반환.
     """
     prefix = _skey_prefix(skey)
+        # OLET special cases
+    if (
+        prefix.startswith("SK")
+        or prefix.startswith("TH")
+        or "OLET" in description.upper()
+        or "OLET" in category.upper()
+    ):
+        return "OLET", "NON_VALVE"
 
     # ── SKEY 오버라이드 우선 ─────────────────
     # 정확 매칭
@@ -340,6 +352,27 @@ def parse_symbol_xml(xml_path: str | Path) -> dict[str, SkeyInfo]:
 
     return result
 
+# 와일드카드 접두어 매칭용 캐시 (성능 최적화)
+_WILDCARD_CACHE: dict[int, list[tuple[str, "SkeyInfo"]]] = {}
+
+
+def _get_wildcard_bases(skey_map: dict[str, SkeyInfo]) -> list[tuple[str, SkeyInfo]]:
+    """
+    symbol.xml의 와일드카드 SKEY(예: "SK**")에서 '**' 앞부분만 추출.
+    실제 데이터의 SKEY(예: "SKSW")는 이미 와일드카드가 구체적인
+    EndType 코드로 채워져 있으므로, 접두어가 일치하는지 startswith로 검사.
+    긴 접두어부터 매칭해야 "BVA**" vs "BVA2**" 같은 충돌을 올바르게 처리함.
+    """
+    cache_key = id(skey_map)
+    if cache_key not in _WILDCARD_CACHE:
+        bases = []
+        for k, v in skey_map.items():
+            idx = k.find("**")
+            if idx > 0:
+                bases.append((k[:idx], v))
+        bases.sort(key=lambda x: -len(x[0]))  # 긴 접두어 우선
+        _WILDCARD_CACHE[cache_key] = bases
+    return _WILDCARD_CACHE[cache_key]
 
 def get_labels_from_skey(
     skey_value: str,
@@ -371,20 +404,17 @@ def get_labels_from_skey(
             "skey":            skey_clean,
         }
 
-    # 2) prefix 매칭 (와일드카드 제거 후)
-    prefix = _skey_prefix(skey_clean)
+    # 2) 와일드카드 접두어 매칭 (예: "SKSW" → "SK**" 매칭)
     if skey_map:
-        # 가장 긴 prefix match 우선
-        candidates = {k: v for k, v in skey_map.items()
-                      if _skey_prefix(k) == prefix}
-        if candidates:
-            info = next(iter(candidates.values()))
-            return {
-                "component_group": info.component_group,
-                "valve_type":      info.valve_type,
-                "is_valve":        info.component_group == "VALVE",
-                "skey":            skey_clean,
-            }
+        skey_upper = skey_clean.upper()
+        for base, info in _get_wildcard_bases(skey_map):
+            if skey_upper.startswith(base.upper()):
+                return {
+                    "component_group": info.component_group,
+                    "valve_type":      info.valve_type,
+                    "is_valve":        info.component_group == "VALVE",
+                    "skey":            skey_clean,
+                }
 
     # 3) 규칙 기반 fallback
     group, vtype = _derive_labels(

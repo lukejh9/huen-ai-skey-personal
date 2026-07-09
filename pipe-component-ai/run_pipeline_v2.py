@@ -22,9 +22,8 @@ from pathlib import Path
 import joblib
 import lightgbm as lgb
 import numpy as np
-import pandas as pd
-from sklearn.model_selection import StratifiedKFold
-from sklearn.preprocessing import StandardScaler
+import pandas as pd 
+from sklearn.model_selection import StratifiedGroupKFold
 from sklearn.metrics import (
     accuracy_score, classification_report, confusion_matrix
 )
@@ -63,7 +62,7 @@ LGBM_PARAMS = {
     "colsample_bytree":  0.8,
     "subsample":         0.8,
     "subsample_freq":    1,
-    "class_weight":      "balanced",
+    "class_weight":      "balanced",    
     "random_state":      42,
     "verbose":           -1,
     "n_jobs":            -1,
@@ -73,6 +72,8 @@ N_SPLITS = 5  # Stratified K-Fold 분할 수
 
 
 # ─────────────────────────────────────────────
+
+
 def run_pipeline():
     t0 = time.time()
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
@@ -95,6 +96,36 @@ def run_pipeline():
         verbose            = True,
     )
 
+   # meta_category / meta_system_class는 넓은 범주라 그대로 카테고리로 유지
+    categorical_cols = [
+        "meta_category",
+        "meta_system_class",
+    ]
+    for col in categorical_cols:
+        df[col] = df[col].fillna("").astype("category")
+
+    # meta_family_name / meta_type_name은 정확히 일치하는 문자열을 그대로 쓰면
+    # 학습에서 본 특정 부품명을 "암기"할 위험이 있음 (새 프로젝트에 일반화 안 됨).
+    # 대신 이름에 포함된 키워드를 이진(0/1) 피처로 추출 - 어떤 프로젝트든
+    # "GASKET"이라는 단어가 들어가면 항상 같은 신호를 주도록 일반화.
+    
+    KEYWORD_FEATURES = [
+        "VALVE", "GASKET", "ELBOW", "TEE", "FLANGE", "OLET",
+        "REDUCER", "COUPLING", "CAP", "STRAINER", "SLEEVE",
+        "BELLOWS", "FLEXIBLE", "UNION", "BOLT", "WELD",
+        "GAUGE", "METER", "SENSOR", "THERMOMETER", "SIGHT",
+        "GLASS", "INSTRUMENT", "INDICATOR",
+    ]
+
+    combined_name = (
+        df["meta_family_name"].fillna("") + " " + df["meta_type_name"].fillna("")
+    ).str.upper()
+    keyword_cols = []
+    for kw in KEYWORD_FEATURES:
+        col_name = f"kw_{kw}"
+        df[col_name] = combined_name.str.contains(kw).astype(int)
+        keyword_cols.append(col_name)
+
     # NC** 목록 저장
     if nc_samples:
         nc_df = pd.DataFrame(nc_samples)
@@ -106,15 +137,25 @@ def run_pipeline():
     df.to_csv(MODEL_DIR / "dataset.csv", index=False, encoding="utf-8-sig")
     print(f"[STEP 1] 데이터셋 저장: {MODEL_DIR / 'dataset.csv'} ({len(df)}개 샘플)")
 
-    # ── Step 2: 피처 행렬 준비 ─────────────────
+# ── Step 2: 피처 행렬 준비 ─────────────────
     print("\n[STEP 2] 피처 행렬 준비")
-    feature_cols = [c for c in NUMERIC_FEATURE_COLS if c in df.columns]
-    X = df[feature_cols].fillna(0.0).values
-    y = df["group_label"].values
-    groups_str = df["component_group"].values
+
+    feature_cols = [
+        c for c in NUMERIC_FEATURE_COLS
+        if c in df.columns
+    ]
+
+    feature_cols.extend(keyword_cols)
+
+    categorical_feature_cols = [
+        "meta_category",
+        "meta_system_class",
+    ]
+
+    feature_cols.extend(categorical_feature_cols)
 
     print(f"  피처 수  : {len(feature_cols)}")
-    print(f"  샘플 수  : {len(X)}")
+    print(f"  샘플 수  : {len(df)}")
     print(f"  클래스   : {sorted(df['component_group'].unique())}")
 
     # 클래스별 샘플 수 출력
@@ -123,35 +164,69 @@ def run_pipeline():
     for grp, cnt in vc.items():
         print(f"    {grp:20s}: {cnt:5d}개")
 
+    # N_SPLITS보다 샘플이 적은 클래스는 CV 불가능 → 제외 (NC**와 동일하게 별도 저장)
+    rare_classes = vc[vc < N_SPLITS].index.tolist()
+    if rare_classes:
+        print(f"\n  [경고] 샘플 부족으로 제외되는 클래스 (< {N_SPLITS}개):")
+        for grp in rare_classes:
+            print(f"    {grp:20s}: {vc[grp]:5d}개 (제외됨 - 추가 데이터 필요)")
+        rare_df = df[df["component_group"].isin(rare_classes)]
+        rare_df.to_csv(MODEL_DIR / "rare_classes_excluded.csv",
+                        index=False, encoding="utf-8-sig")
+        df = df[~df["component_group"].isin(rare_classes)].reset_index(drop=True)
+        print(f"  [정보] 제외 후 남은 샘플 수: {len(df)}개")
+
+    # 필터링 후 df 기준으로 X, y 생성 (반드시 필터링 이후에 만들어야 함)
+    X = df[feature_cols]
+    y = df["group_label"].values
+
+# N_SPLITS보다 샘플이 적은 클래스는 CV 불가능 → 제외 (NC**와 동일하게 별도 저장)
+    rare_classes = vc[vc < N_SPLITS].index.tolist()
+    if rare_classes:
+        print(f"\n  [경고] 샘플 부족으로 제외되는 클래스 (< {N_SPLITS}개):")
+        for grp in rare_classes:
+            print(f"    {grp:20s}: {vc[grp]:5d}개 (제외됨 - 추가 데이터 필요)")
+        rare_df = df[df["component_group"].isin(rare_classes)]
+        rare_df.to_csv(MODEL_DIR / "rare_classes_excluded.csv",
+                        index=False, encoding="utf-8-sig")
+        df = df[~df["component_group"].isin(rare_classes)].reset_index(drop=True)
+        print(f"  [정보] 제외 후 남은 샘플 수: {len(df)}개")
+
     # ── Step 3: Stratified 5-Fold CV ──────────
-    print(f"\n[STEP 3] Stratified {N_SPLITS}-Fold CV 학습")
-    skf = StratifiedKFold(n_splits=N_SPLITS, shuffle=True, random_state=42)
+    print(f"\n[STEP 3] Stratified Group {N_SPLITS}-Fold CV 학습")
+    groups = df["source_model"].values
+    skf = StratifiedGroupKFold(n_splits=N_SPLITS, shuffle=True, random_state=42)
 
     fold_accs = []
     all_y_true = []
     all_y_pred = []
     feature_importance_sum = np.zeros(len(feature_cols))
 
-    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X, y), 1):
-        X_tr, X_val = X[train_idx], X[val_idx]
-        y_tr, y_val = y[train_idx], y[val_idx]
+    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X, y, groups), 1):
+        
+        X_tr = X.iloc[train_idx]
+        X_val = X.iloc[val_idx]
 
-        # 스케일링
-        scaler = StandardScaler()
-        X_tr_s = scaler.fit_transform(X_tr)
-        X_val_s = scaler.transform(X_val)
+        y_tr = y[train_idx]
+        y_val = y[val_idx]
 
-        # 학습
+
         model = lgb.LGBMClassifier(**LGBM_PARAMS)
+
         model.fit(
-            X_tr_s, y_tr,
-            eval_set=[(X_val_s, y_val)],
-            callbacks=[lgb.early_stopping(30, verbose=False),
-                       lgb.log_evaluation(period=-1)],
+            X_tr,
+            y_tr,
+            categorical_feature=categorical_feature_cols,
+            eval_set=[(X_val, y_val)],
+            callbacks=[
+                lgb.early_stopping(30, verbose=False),
+                lgb.log_evaluation(period=-1)
+            ],
         )
 
-        # 평가
-        y_pred = model.predict(X_val_s)
+
+        y_pred = model.predict(X_val)
+
         acc = accuracy_score(y_val, y_pred)
         fold_accs.append(acc)
         all_y_true.extend(y_val.tolist())
@@ -167,17 +242,48 @@ def run_pipeline():
 
     # ── Step 4: 전체 데이터로 최종 모델 학습 ──
     print("\n[STEP 4] 전체 데이터로 최종 모델 학습")
-    final_scaler = StandardScaler()
-    X_all = final_scaler.fit_transform(X)
 
     final_model = lgb.LGBMClassifier(**LGBM_PARAMS)
-    final_model.fit(X_all, y)
+
+    final_model.fit(
+        X,
+        y,
+        categorical_feature=categorical_feature_cols,
+    )
+
 
     # 모델 저장
-    joblib.dump(final_model,   MODEL_DIR / "group_classifier.pkl")
-    joblib.dump(final_scaler,  MODEL_DIR / "group_scaler.pkl")
-    joblib.dump(feature_cols,  MODEL_DIR / "feature_cols.pkl")
-    joblib.dump(INT_TO_GROUP,  MODEL_DIR / "int_to_group.pkl")
+    joblib.dump(
+        final_model,
+        MODEL_DIR / "group_classifier.pkl"
+    )
+
+    joblib.dump(
+        feature_cols,
+        MODEL_DIR / "feature_cols.pkl"
+    )
+
+    joblib.dump(
+        categorical_feature_cols,
+        MODEL_DIR / "categorical_features.pkl"
+    )
+
+
+    category_values = {
+        col: df[col].cat.categories.tolist()
+        for col in categorical_feature_cols
+    }
+
+    joblib.dump(
+        category_values,
+        MODEL_DIR / "category_values.pkl"
+    )
+
+    joblib.dump(
+        INT_TO_GROUP,
+        MODEL_DIR / "int_to_group.pkl"
+    )
+
     print(f"  모델 저장: {MODEL_DIR}/group_classifier.pkl")
 
     # ── Step 5: 평가 리포트 ────────────────────

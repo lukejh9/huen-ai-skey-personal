@@ -174,11 +174,24 @@ def extract_features(data: dict) -> dict:
     sa = feat["geo_surface_area"]
     vol = feat["geo_volume"]
     feat["geo_compactness"] = vol / (sa ** 1.5 + _EPS)
+    feat["geo_volume_per_face"] = (
+        vol / (feat["geo_face_count"] + _EPS)
+    )
 
     # ── 커넥터 피처 ────────────────────────────
     connectors = data.get("Connectors", [])
     conn_count = len(connectors)
+
     feat["conn_count"] = conn_count
+    feat["conn_density"] = (
+        conn_count / (feat["geo_volume"] + _EPS)
+    )
+
+    # Connector topology features
+    # 2-way: elbow, coupling, valve, pipe connection
+    # 3-way: tee, olet, branch components
+    feat["conn_is_two_way"] = int(conn_count == 2)
+    feat["conn_is_three_way"] = int(conn_count == 3)
 
     radii = [c.get("Radius", 0.0) * _FT_TO_M for c in connectors]
 
@@ -188,12 +201,18 @@ def extract_features(data: dict) -> dict:
         feat["conn_radius_max"]   = max(radii)
         feat["conn_radius_min"]   = min(radii)
         feat["conn_radius_range"] = max(radii) - min(radii)
+        feat["conn_radius_ratio"] = (
+            max(radii) / (min(radii) + _EPS)
+            if radii else 0.0
+        )
+
     else:
         feat["conn_radius_mean"]  = 0.0
         feat["conn_radius_std"]   = 0.0
         feat["conn_radius_max"]   = 0.0
         feat["conn_radius_min"]   = 0.0
         feat["conn_radius_range"] = 0.0
+        feat["conn_radius_ratio"] = 0.0
 
     # 두 커넥터가 있을 때 거리 / 각도 / 동축 판단
     if conn_count >= 2:
@@ -212,12 +231,70 @@ def extract_features(data: dict) -> dict:
         is_inline = 0
 
     feat["conn_distance"]  = dist
+
+    feat["conn_distance_ratio"] = (
+        dist / (feat["geo_bbox_diag"] + _EPS)
+    )
+
+    feat["conn_length_ratio"] = (
+        dist / (feat["conn_radius_mean"] + _EPS)
+    )
+
     feat["conn_angle_deg"] = angle_deg
     feat["conn_same_axis"] = same_axis
     feat["conn_is_inline"] = is_inline
 
-    return feat
+    # 세 번째 커넥터(분기) - OLET/TEE 등 분기형 피팅과
+    # COUPLING/스트레이트 피팅을 구분하는 데 유용한 피처
 
+    branch_angles = []
+
+    for i in range(conn_count):
+        for j in range(i + 1, conn_count):
+            angle = _angle_between_deg(
+                connectors[i]["Direction"],
+                connectors[j]["Direction"]
+            )
+
+            if 10.0 <= angle <= 170.0:
+                branch_angles.append(angle)
+
+
+    if branch_angles:
+        branch_angle_deg = min(branch_angles)
+        has_branch = 1
+    else:
+        branch_angle_deg = 0.0
+        has_branch = 0
+
+    branch_dist = 0.0
+
+    if has_branch:
+        branch_pairs = []
+
+        for i in range(conn_count):
+            for j in range(i + 1, conn_count):
+                angle = _angle_between_deg(
+                    connectors[i]["Direction"],
+                    connectors[j]["Direction"]
+                )
+
+                if 10.0 <= angle <= 170.0:
+                    d = _vec_dist(
+                        connectors[i]["Origin"],
+                        connectors[j]["Origin"]
+                    ) * _FT_TO_M
+
+                    branch_pairs.append(d)
+
+        if branch_pairs:
+            branch_dist = min(branch_pairs)
+
+    feat["conn_branch_angle_deg"] = branch_angle_deg
+    feat["conn_branch_distance"]  = branch_dist
+    feat["conn_has_branch"]       = has_branch
+
+    return feat
 
 def extract_features_from_file(json_path: str | Path) -> dict:
     """
@@ -249,10 +326,11 @@ def _std(values: list[float]) -> float:
 # ─────────────────────────────────────────────
 
 NUMERIC_FEATURE_COLS = [
-    # 메타데이터 수치
+    # metadata
     "meta_max_size_mm",
     "meta_min_size_mm",
-    # 형상
+
+    # geometry
     "geo_surface_area",
     "geo_volume",
     "geo_solid_count",
@@ -265,17 +343,28 @@ NUMERIC_FEATURE_COLS = [
     "geo_aspect_xz",
     "geo_aspect_yz",
     "geo_compactness",
-    # 커넥터
+    "geo_volume_per_face",
+
+    # connector
     "conn_count",
+    "conn_density",
+    "conn_is_two_way",
+    "conn_is_three_way",
     "conn_radius_mean",
     "conn_radius_std",
     "conn_radius_max",
     "conn_radius_min",
     "conn_radius_range",
+    "conn_radius_ratio",
     "conn_distance",
+    "conn_distance_ratio",
+    "conn_length_ratio",
     "conn_angle_deg",
     "conn_same_axis",
     "conn_is_inline",
+    "conn_branch_angle_deg",
+    "conn_branch_distance",
+    "conn_has_branch",
 ]
 
 # 피처 그룹 (Ablation study 용)
@@ -283,12 +372,13 @@ FEATURE_GROUPS = {
     "geometry": [
         "geo_surface_area", "geo_volume", "geo_solid_count", "geo_face_count",
         "geo_bbox_x", "geo_bbox_y", "geo_bbox_z", "geo_bbox_diag",
-        "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_compactness",
+        "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_compactness", "geo_volume_per_face",
     ],
     "connector": [
-        "conn_count", "conn_radius_mean", "conn_radius_std",
-        "conn_radius_max", "conn_radius_min", "conn_radius_range",
-        "conn_distance", "conn_angle_deg", "conn_same_axis", "conn_is_inline",
+        "conn_count", "conn_density", "conn_is_two_way", "conn_is_three_way","conn_radius_mean", 
+        "conn_radius_std", "conn_radius_max", "conn_radius_min", "conn_radius_range", "conn_radius_ratio",
+        "conn_distance", "conn_distance_ratio", "conn_length_ratio", "conn_angle_deg", "conn_same_axis", "conn_is_inline",
+        "conn_branch_angle_deg", "conn_branch_distance", "conn_has_branch",
     ],
     "metadata": [
         "meta_max_size_mm", "meta_min_size_mm",

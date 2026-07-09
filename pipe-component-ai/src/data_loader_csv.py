@@ -18,6 +18,11 @@ CSV 컬럼: FamilyAndTypeName, ItemKey, RevitId
 
 NC** 처리: 학습 대상에서 제외
 _P** 처리: 파이프 타입으로 제외
+
+병렬화 (변경 사항):
+  - 모델 폴더 단위로 ProcessPoolExecutor 사용 (216개 폴더는 서로 독립적)
+  - extract_features()가 CPU 연산 위주라 스레드 대신 프로세스 사용
+    (파이썬 GIL 때문에 스레드로는 CPU 작업이 실제 병렬화되지 않음)
 """
 
 import csv as csv_module
@@ -25,6 +30,8 @@ import json
 import re
 from pathlib import Path
 from typing import Optional
+from concurrent.futures import ProcessPoolExecutor, as_completed
+import os
 
 import pandas as pd
 
@@ -119,15 +126,110 @@ def _load_json(path: Path) -> Optional[dict]:
         return None
 
 
-# ── 메인 데이터 로드 함수 ──────────────────────
+# ── 모델 1개 처리 (워커 함수 - 병렬 실행됨) ──────
+def _process_one_model(args):
+    """
+    모델 폴더 1개를 처리 - 별도 프로세스에서 실행됨.
+    Windows에서 pickling 되려면 반드시 모듈 최상위 함수여야 함.
+
+    Returns
+    -------
+    dict with keys: rows, nc_samples, stats (partial counts for this model)
+    """
+    model_dir_str, csv_path_str, skey_map = args
+    model_dir = Path(model_dir_str)
+    csv_path = Path(csv_path_str)
+    model_name = model_dir.name
+
+    csv_lookup = _load_model_csv(csv_path)
+
+    rows = []
+    nc_samples = []
+    stats = {
+        "json_total":      0,
+        "json_matched":    0,
+        "json_nc_skip":    0,
+        "json_pipe_skip":  0,
+        "json_no_match":   0,
+        "json_feat_error": 0,
+    }
+
+    json_files = sorted(model_dir.glob("*.json"))
+    stats["json_total"] = len(json_files)
+
+    for jf in json_files:
+        data = _load_json(jf)
+        if data is None:
+            continue
+
+        try:
+            feat = extract_features(data)
+        except Exception:
+            stats["json_feat_error"] += 1
+            continue
+
+        family_name = feat.get("meta_family_name", "")
+        type_name   = feat.get("meta_type_name",   "")
+
+        skey = _find_skey(family_name, type_name, csv_lookup)
+
+        if skey is None:
+            stats["json_no_match"] += 1
+            continue
+
+        if skey.strip().upper().startswith("NC"):
+            stats["json_nc_skip"] += 1
+            nc_samples.append({
+                "model": model_name,
+                "file": jf.name,
+                "family": family_name,
+                "type": type_name,
+                "skey": skey,
+            })
+            continue
+
+        if _is_excluded_skey(skey):
+            stats["json_pipe_skip"] += 1
+            continue
+
+        labels = get_labels_from_skey(skey, skey_map)
+        stats["json_matched"] += 1
+
+        row = {
+            "source_model":      model_name,
+            "source_file":       jf.stem,
+            "meta_family_name":  family_name,
+            "meta_type_name":    type_name,
+            "meta_category":     feat.get("meta_category",     ""),
+            "meta_system_class": feat.get("meta_system_class", ""),
+        }
+        for col in NUMERIC_FEATURE_COLS:
+            row[col] = feat.get(col, 0.0)
+
+        row["skey"]            = skey
+        row["component_group"] = labels["component_group"]
+        row["valve_type"]      = labels["valve_type"]
+        row["is_valve"]        = labels["is_valve"]
+        row["group_label"]     = GROUP_TO_INT.get(labels["component_group"],
+                                                   len(GROUP_TO_INT) - 1)
+        row["vtype_label"]     = VTYPE_TO_INT.get(labels["valve_type"],
+                                                   len(VTYPE_TO_INT) - 1)
+        rows.append(row)
+
+    return {"rows": rows, "nc_samples": nc_samples, "stats": stats}
+
+
+# ── 메인 데이터 로드 함수 (병렬화) ──────────────
 def load_dataset_csv(
     training_model_dir: str | Path,
     csv_label_dir: str | Path,
     xml_path: str | Path | None = None,
     verbose: bool = True,
+    n_workers: int | None = None,
 ) -> pd.DataFrame:
     """
     TrainingModel 폴더 구조 + CSV 레이블로 학습 데이터셋 생성.
+    모델 폴더 단위로 병렬 처리 (ProcessPoolExecutor).
 
     Parameters
     ----------
@@ -135,6 +237,7 @@ def load_dataset_csv(
     csv_label_dir      : 전문가_정의_csv 폴더 경로
     xml_path           : symbol.xml 경로 (SKEY 매핑용)
     verbose            : 진행 상황 출력
+    n_workers          : 병렬 워커 수 (기본값: CPU 코어 수)
 
     Returns
     -------
@@ -146,6 +249,9 @@ def load_dataset_csv(
     """
     training_model_dir = Path(training_model_dir)
     csv_label_dir      = Path(csv_label_dir)
+
+    if n_workers is None:
+        n_workers = os.cpu_count() or 4
 
     # symbol.xml 파싱
     skey_map = {}
@@ -171,10 +277,25 @@ def load_dataset_csv(
     if verbose:
         print(f"[INFO] TrainingModel 폴더: {len(model_dirs)}개")
 
+    # 레이블 있는 모델만 작업 목록에 추가
+    tasks = []
+    models_no_label = 0
+    for model_dir in model_dirs:
+        model_name = model_dir.name
+        if model_name not in csv_files:
+            models_no_label += 1
+            continue
+        tasks.append((str(model_dir), str(csv_files[model_name]), skey_map))
+
+    if verbose:
+        print(f"[INFO] 병렬 처리 워커 수: {n_workers}개 "
+              f"(모델 {len(tasks)}개 처리 예정)")
+
     rows = []
+    nc_samples = []
     stats = {
-        "models_with_label": 0,
-        "models_no_label":   0,
+        "models_with_label": len(tasks),
+        "models_no_label":   models_no_label,
         "json_total":        0,
         "json_matched":      0,
         "json_nc_skip":      0,
@@ -182,85 +303,20 @@ def load_dataset_csv(
         "json_no_match":     0,
         "json_feat_error":   0,
     }
-    nc_samples = []  # NC** 항목 기록용
 
-    for model_dir in model_dirs:
-        model_name = model_dir.name
+    completed = 0
+    with ProcessPoolExecutor(max_workers=n_workers) as executor:
+        futures = {executor.submit(_process_one_model, task): task for task in tasks}
+        for future in as_completed(futures):
+            result = future.result()
+            rows.extend(result["rows"])
+            nc_samples.extend(result["nc_samples"])
+            for k, v in result["stats"].items():
+                stats[k] += v
 
-        # 정답 CSV 있는 모델만 처리
-        if model_name not in csv_files:
-            stats["models_no_label"] += 1
-            continue
-
-        stats["models_with_label"] += 1
-        csv_lookup = _load_model_csv(csv_files[model_name])
-
-        json_files = sorted(model_dir.glob("*.json"))
-        stats["json_total"] += len(json_files)
-
-        for jf in json_files:
-            data = _load_json(jf)
-            if data is None:
-                continue
-
-            # 피처 추출
-            try:
-                feat = extract_features(data)
-            except Exception:
-                stats["json_feat_error"] += 1
-                continue
-
-            family_name = feat.get("meta_family_name", "")
-            type_name   = feat.get("meta_type_name",   "")
-
-            # CSV에서 SKEY 조회
-            skey = _find_skey(family_name, type_name, csv_lookup)
-
-            if skey is None:
-                stats["json_no_match"] += 1
-                continue
-
-            # NC** → 제외 (기록만)
-            if skey.strip().upper().startswith("NC"):
-                stats["json_nc_skip"] += 1
-                nc_samples.append({
-                    "model": model_name,
-                    "file": jf.name,
-                    "family": family_name,
-                    "type": type_name,
-                    "skey": skey,
-                })
-                continue
-
-            # _P** → 파이프 타입 제외
-            if _is_excluded_skey(skey):
-                stats["json_pipe_skip"] += 1
-                continue
-
-            # SKEY → 그룹 레이블
-            labels = get_labels_from_skey(skey, skey_map)
-            stats["json_matched"] += 1
-
-            row = {
-                "source_model":      model_name,
-                "source_file":       jf.stem,
-                "meta_family_name":  family_name,
-                "meta_type_name":    type_name,
-                "meta_category":     feat.get("meta_category",     ""),
-                "meta_system_class": feat.get("meta_system_class", ""),
-            }
-            for col in NUMERIC_FEATURE_COLS:
-                row[col] = feat.get(col, 0.0)
-
-            row["skey"]            = skey
-            row["component_group"] = labels["component_group"]
-            row["valve_type"]      = labels["valve_type"]
-            row["is_valve"]        = labels["is_valve"]
-            row["group_label"]     = GROUP_TO_INT.get(labels["component_group"],
-                                                       len(GROUP_TO_INT) - 1)
-            row["vtype_label"]     = VTYPE_TO_INT.get(labels["valve_type"],
-                                                       len(VTYPE_TO_INT) - 1)
-            rows.append(row)
+            completed += 1
+            if verbose and completed % 20 == 0:
+                print(f"  [진행] {completed}/{len(tasks)} 모델 처리 완료")
 
     if verbose:
         print(f"\n=== 데이터 로드 결과 ===")
