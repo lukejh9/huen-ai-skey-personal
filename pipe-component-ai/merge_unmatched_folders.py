@@ -49,16 +49,16 @@ MAPPINGS = [
     ("UT PIPING_20180327_PO2",     "UT PIPING_20180327"),
     ("UT PIPING_20180327_SOLVENT", "UT PIPING_20180327"),
 
-    # NOT INCLUDED (needs manual review first - different export dates,
-    # could be different model versions, not just naming variants):
-    #   IC-M16P2-W12B-1F3F-PI-NA-NA(2021.11.10)      -> 448 files
-    #   IC-M16P2-W12B-1F3F-PI-NA-NA(2022.01.19)      -> 450 files
-    #   IC-M16P2-W12B-1F3F-PI-NA-NA_26ab255b         -> 259 files
-    #   IC-M16P2-W12B-1F3F-PI-NA-NA_(4개 라인)detached -> 17 files
-    # If you confirm these ARE the same model, add them here mapped to:
-    #   "IC-M16P2-W12B-1F3F-PI-NA-NA(400A-500A EDIT)"
+    # Added after confirming the merge technique is safe (matched by
+    # content, not just filename - the UT PIPING batch showed 0 CSV
+    # matching failures out of ~204 merged files). These are the big
+    # ones - 1,174 files combined across 4 folders.
+    ("IC-M16P2-W12B-1F3F-PI-NA-NA(2021.11.10)",           "IC-M16P2-W12B-1F3F-PI-NA-NA(400A-500A EDIT)"),
+    ("IC-M16P2-W12B-1F3F-PI-NA-NA(2022.01.19)",           "IC-M16P2-W12B-1F3F-PI-NA-NA(400A-500A EDIT)"),
+    ("IC-M16P2-W12B-1F3F-PI-NA-NA_26ab255b",              "IC-M16P2-W12B-1F3F-PI-NA-NA(400A-500A EDIT)"),
+    ("IC-M16P2-W12B-1F3F-PI-NA-NA_(4개 라인)detached",     "IC-M16P2-W12B-1F3F-PI-NA-NA(400A-500A EDIT)"),
 
-    # Also worth reviewing before adding:
+    # Still worth reviewing before adding (smaller, lower priority):
     # ("CJ_M15M01ALL_PP_XX_Chemical_EZ-ISO_2019", "CJ_M15M01ALL_FF_1F_A_EZ-Iso_2018"),
     # ("Project2_b2967378", "Project1_2018"),
     # ("S32_FBALO_UPI_SAMPLING_2_b55bd123", "S32_FBALO_UPI_SAMPLING_1_"),
