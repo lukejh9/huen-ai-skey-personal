@@ -15,10 +15,14 @@ Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
     geo_volume           : 전체 솔리드 Volume 합 (Revit 단위 → m³)
     geo_solid_count      : 솔리드 수
     geo_face_count       : 총 Face 수
+    planar_area_frac     :
+    cyl_area_frac        :
+    rev_area_frac        :
     geo_bbox_x           : BBox 가로 (m)
     geo_bbox_y           : BBox 세로 (m)
     geo_bbox_z           : BBox 높이 (m)
     geo_bbox_diag        : BBox 대각선 길이 (m)
+    geo_bbox_vol         : 
     geo_aspect_xy        : bbox_x / bbox_y
     geo_aspect_xz        : bbox_x / bbox_z
     geo_aspect_yz        : bbox_y / bbox_z
@@ -33,6 +37,7 @@ Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
     conn_radius_max      : Radius 최대값 (m)
     conn_radius_min      : Radius 최솟값 (m)
     conn_radius_range    : max - min
+    conn_radius_ratio    : max / min
     conn_distance        : 첫 두 커넥터 간 거리 (2개 이상일 때, m)
     conn_angle_deg       : 두 커넥터 방향 벡터 사이 각도 (degree)
     conn_same_axis       : 두 커넥터가 동일 축 여부 (0/1)
@@ -56,6 +61,7 @@ Revit 내부 단위 변환:
 import json
 import math
 import re
+import numpy as np
 from pathlib import Path
 from typing import Any
 
@@ -108,6 +114,54 @@ def _parse_mm_value(val_str: str) -> float:
         return float(str(val_str).split()[0])
     except Exception:
         return 0.0
+    
+def _face_type(face: dict) -> str:
+    keys = face.keys()
+    if "FaceNormal" in keys:
+        return "planar"
+    if "Radius" in keys:
+        return "cylindrical"
+    if "Curve" in keys:
+        return "revolved"
+    else:
+        return "other"
+    
+def _bolt_circle_detector(arcs, angle_tol=0.15, min_holes=3):
+    # Step 1: keep only full circles (holes), not partial arcs (edges/fillets)
+    full_circles = [a for a in arcs if abs(a['Period'] - 2*np.pi) < 1e-3]
+    
+    # Step 2: group by Normal direction (same face) — round to dedupe float noise
+    from collections import defaultdict
+    by_normal = defaultdict(list)
+    for a in full_circles:
+        n = a['Normal']
+        key = (round(n['X'],3), round(n['Y'],3), round(n['Z'],3))
+        by_normal[key].append(a)
+    
+    results = []
+    for normal, circles in by_normal.items():
+        if len(circles) < min_holes:
+            continue
+        radii = [c['Radius'] for c in circles]
+        max_r = max(radii)
+        # bolt holes = small circles, not the big bore
+        small = [c for c in circles if c['Radius'] < 0.5 * max_r]
+        if len(small) < min_holes:
+            continue
+        
+        centers = np.array([[c['Center']['X'], c['Center']['Y'], c['Center']['Z']] for c in small])
+        centroid = centers.mean(axis=0)
+        dists = np.linalg.norm(centers - centroid, axis=1)
+        variance_ratio = dists.std() / dists.mean()
+        
+        if variance_ratio < angle_tol:
+            results.append({
+                'normal': normal,
+                'hole_count': len(small),
+                'bolt_circle_diameter': 2 * dists.mean(),
+                'hole_radius': np.mean([c['Radius'] for c in small])
+            })
+    return results
 
 
 # ─────────────────────────────────────────────
@@ -160,18 +214,32 @@ def extract_features(data: dict) -> dict:
     # BBox: 모든 솔리드의 Face → EdgeLoop → Tessellate 점 순회
     face_count = 0
     xs, ys, zs = [], [], []
+    area_by_type = {"planar": 0.0, "cylindrical": 0.0, "revolved": 0.0, "other": 0.0}
+    total_area = 0.0
 
     for solid in solids:
         for face in solid.get("Faces", []):
             face_count += 1
+            area = face.get("Area", 0.0)
+            face_type = _face_type(face)
+            area_by_type[face_type] += area
+            total_area += area
+
+            face_arcs = []
+
             for loop in face.get("EdgeLoops", []):
                 for edge in loop:
+                    if edge.get("CurveType") == "Arc" and "AsCurve" in edge:
+                        face_arcs.append(edge)
                     for pt in edge.get("Tessellate", []):
                         xs.append(pt["X"])
                         ys.append(pt["Y"])
                         zs.append(pt["Z"])
 
     feat["geo_face_count"] = face_count
+    feat["planar_area_frac"] = area_by_type["planar"] / total_area
+    feat["cyl_area_frac"] = area_by_type["cylindrical"] / total_area
+    feat["rev_area_frac"] = area_by_type["revolved"] / total_area
 
     if xs:
         bbox_x = (max(xs) - min(xs)) * _FT_TO_M
@@ -184,6 +252,7 @@ def extract_features(data: dict) -> dict:
     feat["geo_bbox_y"]    = bbox_y
     feat["geo_bbox_z"]    = bbox_z
     feat["geo_bbox_diag"] = math.sqrt(bbox_x ** 2 + bbox_y ** 2 + bbox_z ** 2)
+    feat["geo_bbox_vol"]  = bbox_x * bbox_y * bbox_z
     feat["geo_aspect_xy"] = bbox_x / (bbox_y + _EPS)
     feat["geo_aspect_xz"] = bbox_x / (bbox_z + _EPS)
     feat["geo_aspect_yz"] = bbox_y / (bbox_z + _EPS)
@@ -207,12 +276,14 @@ def extract_features(data: dict) -> dict:
         feat["conn_radius_max"]   = max(radii)
         feat["conn_radius_min"]   = min(radii)
         feat["conn_radius_range"] = max(radii) - min(radii)
+        feat["conn_radius_ratio"] = max(radii) / min(radii)
     else:
         feat["conn_radius_mean"]  = 0.0
         feat["conn_radius_std"]   = 0.0
         feat["conn_radius_max"]   = 0.0
         feat["conn_radius_min"]   = 0.0
         feat["conn_radius_range"] = 0.0
+        feat["conn_radius_ratio"] = 0.0
 
     # 두 커넥터가 있을 때 거리 / 각도 / 동축 판단
     if conn_count >= 2:
@@ -285,10 +356,14 @@ NUMERIC_FEATURE_COLS = [
     "geo_volume",
     "geo_solid_count",
     "geo_face_count",
+    "planar_area_frac",
+    "cyl_area_frac",
+    "rev_area_frac",
     "geo_bbox_x",
     "geo_bbox_y",
     "geo_bbox_z",
     "geo_bbox_diag",
+    "geo_bbox_vol",
     "geo_aspect_xy",
     "geo_aspect_xz",
     "geo_aspect_yz",
@@ -302,6 +377,7 @@ NUMERIC_FEATURE_COLS = [
     "conn_radius_max",
     "conn_radius_min",
     "conn_radius_range",
+    "conn_radius_ratio",
     "conn_distance",
     "conn_angle_deg",
     "conn_same_axis",
@@ -314,19 +390,22 @@ NUMERIC_FEATURE_COLS = [
 FEATURE_GROUPS = {
     "geometry": [
         "geo_surface_area", "geo_volume", "geo_solid_count", "geo_face_count",
-        "geo_bbox_x", "geo_bbox_y", "geo_bbox_z", "geo_bbox_diag",
+        "planar_area_frac", "cyl_area_frac", "rev_area_frac",
+        "geo_bbox_x", "geo_bbox_y", "geo_bbox_z", "geo_bbox_diag", "geo_bbox_vol",
         "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_compactness",
         "geo_density", "geo_sav_ratio",
     ],
     "connector": [
         "conn_count", "conn_radius_mean", "conn_radius_std",
-        "conn_radius_max", "conn_radius_min", "conn_radius_range",
+        "conn_radius_max", "conn_radius_min", "conn_radius_range", "conn_radius_ratio"
         "conn_distance", "conn_angle_deg", "conn_same_axis", "conn_is_inline",
     ],
     "metadata": [
         "meta_max_size_mm", "meta_min_size_mm",
     ],
-    "name_keyword": [*KEYWORD_FEATURE_PATTERNS.keys(), "name_kw_strainer_inline"],
+    "name_keyword": [
+        *KEYWORD_FEATURE_PATTERNS.keys(), "name_kw_strainer_inline"
+    ],
 }
 
 

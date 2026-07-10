@@ -152,7 +152,6 @@ def run_pipeline():
 
         # 평가
         y_pred = model.predict(X_val_s)
-        train_pred = model.predict(X_tr_s)
         acc = accuracy_score(y_val, y_pred)
         fold_accs.append(acc)
         all_y_true.extend(y_val.tolist())
@@ -240,18 +239,6 @@ def run_pipeline():
     print(f"  Stratified {N_SPLITS}-Fold CV Acc : {mean_acc:.4f} ± {std_acc:.4f}")
     print(f"  모델 저장 위치           : {MODEL_DIR}")
     print("=" * 65)
-
-    train_acc = accuracy_score(y_tr, train_pred)
-    val_acc = accuracy_score(y_val, y_pred)
-    print(f"Train accuracy: {train_acc}")
-    print(f"Val accuracy: {val_acc}")
-
-    importance_df = pd.DataFrame({
-        "feature": NUMERIC_FEATURE_COLS,
-        "importance": model.feature_importances_
-    }).sort_values("importance", ascending=False)
-
-    print(importance_df)
 
     return {
         "cv_accuracy": mean_acc,
