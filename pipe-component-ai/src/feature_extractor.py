@@ -125,44 +125,6 @@ def _face_type(face: dict) -> str:
         return "revolved"
     else:
         return "other"
-    
-def _bolt_circle_detector(arcs, angle_tol=0.15, min_holes=3):
-    # Step 1: keep only full circles (holes), not partial arcs (edges/fillets)
-    full_circles = [a for a in arcs if abs(a['Period'] - 2*np.pi) < 1e-3]
-    
-    # Step 2: group by Normal direction (same face) — round to dedupe float noise
-    from collections import defaultdict
-    by_normal = defaultdict(list)
-    for a in full_circles:
-        n = a['Normal']
-        key = (round(n['X'],3), round(n['Y'],3), round(n['Z'],3))
-        by_normal[key].append(a)
-    
-    results = []
-    for normal, circles in by_normal.items():
-        if len(circles) < min_holes:
-            continue
-        radii = [c['Radius'] for c in circles]
-        max_r = max(radii)
-        # bolt holes = small circles, not the big bore
-        small = [c for c in circles if c['Radius'] < 0.5 * max_r]
-        if len(small) < min_holes:
-            continue
-        
-        centers = np.array([[c['Center']['X'], c['Center']['Y'], c['Center']['Z']] for c in small])
-        centroid = centers.mean(axis=0)
-        dists = np.linalg.norm(centers - centroid, axis=1)
-        variance_ratio = dists.std() / dists.mean()
-        
-        if variance_ratio < angle_tol:
-            results.append({
-                'normal': normal,
-                'hole_count': len(small),
-                'bolt_circle_diameter': 2 * dists.mean(),
-                'hole_radius': np.mean([c['Radius'] for c in small])
-            })
-    return results
-
 
 # ─────────────────────────────────────────────
 #  메인 추출 함수
