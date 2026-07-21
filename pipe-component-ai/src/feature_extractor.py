@@ -130,22 +130,7 @@ def _face_type(face: dict) -> str:
 #  메인 추출 함수
 # ─────────────────────────────────────────────
 
-def extract_features(data: dict) -> dict:
-    """
-    JSON dict (json.load 결과) → 피처 딕셔너리 반환.
-
-    Parameters
-    ----------
-    data : dict
-        BIM JSON 전체 내용
-
-    Returns
-    -------
-    dict
-        피처 딕셔너리 (모두 수치형 or str)
-    """
-    feat: dict[str, Any] = {}
-
+def extract_metadata(data: dict, feat: dict):
     # ── 메타데이터 ─────────────────────────────
     feat["meta_family_name"] = data.get("FamilyName", "")
     feat["meta_type_name"]   = data.get("TypeName", "")
@@ -163,6 +148,7 @@ def extract_features(data: dict) -> dict:
     feat["meta_max_size_mm"]  = _parse_mm_value(param_map.get("Maximum Size", "0"))
     feat["meta_min_size_mm"]  = _parse_mm_value(param_map.get("Minimum Size", "0"))
 
+def extract_geometric_features(data: dict, feat: dict):
     # ── 형상 피처 ──────────────────────────────
     solids = data.get("Geometry", {}).get("Solid", [])
     total_surface_area = sum(s.get("SurfaceArea", 0.0) for s in solids)
@@ -225,6 +211,7 @@ def extract_features(data: dict) -> dict:
     feat["geo_density"] = face_count / feat["geo_volume"] if feat["geo_volume"] > 0 else 0
     feat["geo_sav_ratio"] = total_surface_area / total_volume
 
+def extract_connector_features(data: dict, feat: dict) -> int:
     # ── 커넥터 피처 ────────────────────────────
     connectors = data.get("Connectors", [])
     conn_count = len(connectors)
@@ -246,7 +233,7 @@ def extract_features(data: dict) -> dict:
         feat["conn_radius_min"]   = 0.0
         feat["conn_radius_range"] = 0.0
         feat["conn_radius_ratio"] = 0.0
-
+    
     # 두 커넥터가 있을 때 거리 / 각도 / 동축 판단
     if conn_count >= 2:
         c0, c1 = connectors[0], connectors[1]
@@ -268,6 +255,7 @@ def extract_features(data: dict) -> dict:
     feat["conn_same_axis"] = same_axis
     feat["conn_is_inline"] = is_inline
 
+def extract_kw_features(data: dict, feat: dict, conn_count: int):
     name_text = f"{feat['meta_family_name']} {feat['meta_type_name']}"
     for kw_feat_name, pattern in KEYWORD_FEATURE_PATTERNS.items():
         feat[kw_feat_name] = 1.0 if pattern.search(name_text) else 0.0
@@ -276,6 +264,29 @@ def extract_features(data: dict) -> dict:
         1.0 if feat.get("name_kw_strainer", 0.0) == 1.0 and conn_count == 2
         else 0.0
     )
+
+
+
+def extract_features(data: dict) -> dict:
+    """
+    JSON dict (json.load 결과) → 피처 딕셔너리 반환.
+
+    Parameters
+    ----------
+    data : dict
+        BIM JSON 전체 내용
+
+    Returns
+    -------
+    dict
+        피처 딕셔너리 (모두 수치형 or str)
+    """
+    feat: dict[str, Any] = {}
+
+    extract_metadata(data, feat)
+    extract_geometric_features(data, feat)
+    conn_count = extract_connector_features(data, feat)
+    extract_kw_features(data, feat, conn_count)
 
     return feat
 
