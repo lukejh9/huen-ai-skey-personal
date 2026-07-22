@@ -55,6 +55,53 @@ N_SPLITS = 5  # Stratified K-Fold 분할 수
 
 
 # ─────────────────────────────────────────────
+def run_valve_pipeline(df, feature_cols, model = lgb.LGBMClassifier(**LGBM_PARAMS)):
+    print("")
+    print("Valve Data:")
+
+    skf = StratifiedKFold(n_splits=N_SPLITS, shuffle=True, random_state=42)
+    
+    valve_rows = df[df["is_valve"] == True]
+    X_valves = valve_rows[feature_cols].values
+    y_valves = valve_rows["vtype_label"].values
+
+    fold_accs = []
+    all_y_true = []
+    all_y_pred = []
+    vfeature_importance_sum = np.zeros(len(feature_cols))
+
+    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X_valves, y_valves), 1):
+        X_tr, X_val = X_valves[train_idx], X_valves[val_idx]
+        y_tr, y_val = y_valves[train_idx], y_valves[val_idx]
+
+        scaler = StandardScaler()
+        X_tr_s = scaler.fit_transform(X_tr)
+        X_val_s = scaler.transform(X_val)
+
+        model.fit(
+            X_tr_s, y_tr,
+            eval_set=[(X_val_s, y_val)],
+            callbacks=[lgb.early_stopping(30, verbose=False),
+                       lgb.log_evaluation(period=-1)],
+        )
+
+        y_pred = model.predict(X_val_s)
+        acc = accuracy_score(y_val, y_pred)
+        fold_accs.append(acc)
+        all_y_true.extend(y_val.tolist())
+        all_y_pred.extend(y_pred.tolist())
+        vfeature_importance_sum += model.feature_importances_
+
+        print(f"  Fold {fold_idx}/{N_SPLITS}: Val Acc = {acc:.4f}  "
+              f"(val_size={len(y_val)})")
+        
+    mean_acc = np.mean(fold_accs)
+    std_acc  = np.std(fold_accs)
+    print(f"\n  CV (Valve) 결과: {mean_acc:.4f} ± {std_acc:.4f}")
+    print("")
+
+
+"""
 def run_pipeline():
     t0 = time.time()
     MODEL_DIR.mkdir(parents=True, exist_ok=True)
@@ -232,7 +279,7 @@ def run_pipeline():
         "n_nc_skip":   len(nc_samples),
         "model_dir":   str(MODEL_DIR),
     }
-
+"""
 
 if __name__ == "__main__":
-    result = run_pipeline()
+    result = run_valve_pipeline()
