@@ -152,6 +152,7 @@ def run_pipeline():
 
         # 평가
         y_pred = model.predict(X_val_s)
+        print(y_pred)
         acc = accuracy_score(y_val, y_pred)
         fold_accs.append(acc)
         all_y_true.extend(y_val.tolist())
