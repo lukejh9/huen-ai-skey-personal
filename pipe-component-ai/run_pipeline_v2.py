@@ -89,7 +89,7 @@ def run_pipeline():
 
     # ── Step 1: 데이터 로드 ────────────────────
     print("\n[STEP 1] 데이터 로드 (전문가 CSV 레이블 적용)")
-    df, nc_samples = load_dataset_csv(
+    df, nc_samples, fuzzy_samples = load_dataset_csv(
         training_model_dir = TRAINING_MODEL_DIR,
         csv_label_dir      = CSV_LABEL_DIR,
         xml_path           = XML_PATH,
@@ -103,6 +103,19 @@ def run_pipeline():
     ]
     for col in categorical_cols:
         df[col] = df[col].fillna("").astype("category")
+
+    # category_values는 반드시 "필터링 이전"에 스냅샷으로 캡처해 둔다.
+    # (참고: pandas는 행을 필터링해도 카테고리 dtype의 .categories 목록 자체는
+    #  자동으로 줄이지 않으므로, 사실 어느 시점에 캡처하든 결과가 같기는 하다.
+    #  다만 그 동작에 암묵적으로 의존하면, 나중에 누군가 메모리 최적화를 위해
+    #  .cat.remove_unused_categories()를 추가하는 순간 조용히 깨질 수 있다.
+    #  그래서 "학습에 사용된 전체 원본 데이터 기준 카테고리"라는 의도를
+    #  코드 자체에 명시적으로 고정해 둔다 - 이후 rare-class 필터링 등 df에
+    #  어떤 행 필터가 추가되더라도 inference-time 카테고리 목록은 영향받지 않는다.)
+    full_category_values = {
+        col: df[col].cat.categories.tolist()
+        for col in categorical_cols
+    }
 
     # meta_family_name / meta_type_name은 정확히 일치하는 문자열을 그대로 쓰면
     # 학습에서 본 특정 부품명을 "암기"할 위험이 있음 (새 프로젝트에 일반화 안 됨).
@@ -132,6 +145,15 @@ def run_pipeline():
         nc_path = MODEL_DIR / "nc_pending_labels.csv"
         nc_df.to_csv(nc_path, index=False, encoding="utf-8-sig")
         print(f"[STEP 1] NC** 미정 항목 {len(nc_samples)}개 저장: {nc_path}")
+
+    # fuzzy(부분 문자열) 매칭으로 라벨링된 항목 저장 - 학습에는 포함되지만
+    # 오매칭 가능성이 있으므로 반드시 검토 권장.
+    if fuzzy_samples:
+        fuzzy_df = pd.DataFrame(fuzzy_samples)
+        fuzzy_path = MODEL_DIR / "fuzzy_matched_labels.csv"
+        fuzzy_df.to_csv(fuzzy_path, index=False, encoding="utf-8-sig")
+        print(f"[STEP 1] fuzzy 매칭 항목 {len(fuzzy_samples)}개 저장: {fuzzy_path} "
+              f"(검토 권장 - 오매칭 가능성 있음)")
 
     # 데이터셋 저장
     df.to_csv(MODEL_DIR / "dataset.csv", index=False, encoding="utf-8-sig")
@@ -179,18 +201,6 @@ def run_pipeline():
     # 필터링 후 df 기준으로 X, y 생성 (반드시 필터링 이후에 만들어야 함)
     X = df[feature_cols]
     y = df["group_label"].values
-
-# N_SPLITS보다 샘플이 적은 클래스는 CV 불가능 → 제외 (NC**와 동일하게 별도 저장)
-    rare_classes = vc[vc < N_SPLITS].index.tolist()
-    if rare_classes:
-        print(f"\n  [경고] 샘플 부족으로 제외되는 클래스 (< {N_SPLITS}개):")
-        for grp in rare_classes:
-            print(f"    {grp:20s}: {vc[grp]:5d}개 (제외됨 - 추가 데이터 필요)")
-        rare_df = df[df["component_group"].isin(rare_classes)]
-        rare_df.to_csv(MODEL_DIR / "rare_classes_excluded.csv",
-                        index=False, encoding="utf-8-sig")
-        df = df[~df["component_group"].isin(rare_classes)].reset_index(drop=True)
-        print(f"  [정보] 제외 후 남은 샘플 수: {len(df)}개")
 
     # ── Step 3: Stratified 5-Fold CV ──────────
     print(f"\n[STEP 3] Stratified Group {N_SPLITS}-Fold CV 학습")
@@ -269,8 +279,20 @@ def run_pipeline():
     )
 
 
+    # Step 1에서 필터링 이전에 캡처해 둔 스냅샷을 사용한다.
+    # (categorical_feature_cols와 categorical_cols는 현재 동일한 두 컬럼이지만,
+    #  혹시 나중에 categorical_feature_cols에 다른 컬럼이 추가되는 경우를 대비해
+    #  방어적으로 체크한다.)
+    missing_snapshot_cols = [
+        c for c in categorical_feature_cols if c not in full_category_values
+    ]
+    if missing_snapshot_cols:
+        raise ValueError(
+            f"category_values 스냅샷에 없는 카테고리 컬럼: {missing_snapshot_cols} "
+            f"(Step 1의 categorical_cols 목록을 확인하세요)"
+        )
     category_values = {
-        col: df[col].cat.categories.tolist()
+        col: full_category_values[col]
         for col in categorical_feature_cols
     }
 
@@ -342,6 +364,7 @@ def run_pipeline():
     print(f"  학습 모델 수 (CSV)       : {df['source_model'].nunique()}개")
     print(f"  학습 샘플 수             : {len(df)}개")
     print(f"  NC** 제외 샘플           : {len(nc_samples)}개 (추후 보완)")
+    print(f"  fuzzy 매칭 샘플 (포함됨) : {len(fuzzy_samples)}개 (검토 권장)")
     print(f"  Stratified {N_SPLITS}-Fold CV Acc : {mean_acc:.4f} ± {std_acc:.4f}")
     print(f"  모델 저장 위치           : {MODEL_DIR}")
     print("=" * 65)
@@ -352,6 +375,7 @@ def run_pipeline():
         "n_samples":   len(df),
         "n_models":    df["source_model"].nunique(),
         "n_nc_skip":   len(nc_samples),
+        "n_fuzzy_matched": len(fuzzy_samples),
         "model_dir":   str(MODEL_DIR),
     }
 

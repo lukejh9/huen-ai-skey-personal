@@ -80,14 +80,33 @@ def _normalize(text: str) -> str:
     return re.sub(r"[\s_\-\.\(\)]+", "", text).upper()
 
 
+# 부분(fuzzy) 매칭을 허용할 최소 정규화 문자열 길이.
+# 이보다 짧으면 우연히 겹칠 확률이 높아 매칭을 포기한다 (오매칭 방지).
+_MIN_FUZZY_LEN = 4
+
+# 매칭 신뢰도 등급 (감사/필터링용)
+MATCH_TIER_EXACT      = "exact"       # "FamilyName: TypeName" 원문 그대로 일치
+MATCH_TIER_NORMALIZED = "normalized"  # 공백/특수문자/대소문자만 다름
+MATCH_TIER_FUZZY       = "fuzzy"      # 부분 문자열 포함 관계로 추정한 매칭 (검증 필요)
+MATCH_TIER_NONE        = "no_match"
+
+
 def _find_skey(
     family_name: str,
     type_name: str,
     csv_lookup: dict[str, str],
-) -> Optional[str]:
+) -> tuple[Optional[str], str]:
     """
     CSV lookup에서 (family_name, type_name)에 해당하는 SKEY 반환.
-    None이면 매칭 실패.
+
+    Returns
+    -------
+    (skey, match_tier) : (Optional[str], str)
+        skey가 None이면 매칭 실패 (match_tier == MATCH_TIER_NONE).
+        match_tier는 매칭이 얼마나 신뢰할 수 있는지를 나타낸다:
+          - "exact"      : 원문 그대로 일치 → 가장 신뢰도 높음
+          - "normalized" : 공백/기호/대소문자 차이만 있음 → 신뢰도 높음
+          - "fuzzy"      : 부분 문자열 포함으로 추정 → 반드시 감사(audit) 필요
     """
     # 1) "FamilyName: TypeName" 형식으로 조합
     candidates = []
@@ -99,22 +118,36 @@ def _find_skey(
     # 정확 매칭
     for cand in candidates:
         if cand in csv_lookup:
-            return csv_lookup[cand]
+            return csv_lookup[cand], MATCH_TIER_EXACT
 
     # 정규화 매칭
     norm_cands = [_normalize(c) for c in candidates]
     norm_map = {_normalize(k): v for k, v in csv_lookup.items()}
     for nc in norm_cands:
         if nc in norm_map:
-            return norm_map[nc]
+            return norm_map[nc], MATCH_TIER_NORMALIZED
 
-    # 패밀리명만으로 부분 매칭
+    # 패밀리명만으로 부분(fuzzy) 매칭 - 최후의 수단.
+    # - 너무 짧은 문자열은 우연히 포함 관계가 성립하기 쉬우므로 제외
+    # - 여러 후보가 겹치면 "가장 긴 공통 구간"을 가진, 즉 가장 구체적인
+    #   매칭을 선택한다 (기존 코드는 dict 순회 순서상 첫 매칭을 그냥 반환해서
+    #   재현성이 없고 품질이 더 나쁜 매칭이 이길 수 있었음).
     norm_fam = _normalize(family_name)
-    for k, v in norm_map.items():
-        if norm_fam in k or k in norm_fam:
-            return v
+    if len(norm_fam) >= _MIN_FUZZY_LEN:
+        best_match = None
+        best_score = -1
+        for k, v in norm_map.items():
+            if len(k) < _MIN_FUZZY_LEN:
+                continue
+            if norm_fam in k or k in norm_fam:
+                score = min(len(norm_fam), len(k))
+                if score > best_score:
+                    best_score = score
+                    best_match = v
+        if best_match is not None:
+            return best_match, MATCH_TIER_FUZZY
 
-    return None
+    return None, MATCH_TIER_NONE
 
 
 # ── JSON 로더 ─────────────────────────────────
@@ -145,6 +178,7 @@ def _process_one_model(args):
 
     rows = []
     nc_samples = []
+    fuzzy_samples = []
     stats = {
         "json_total":      0,
         "json_matched":    0,
@@ -152,6 +186,9 @@ def _process_one_model(args):
         "json_pipe_skip":  0,
         "json_no_match":   0,
         "json_feat_error": 0,
+        "match_exact":      0,
+        "match_normalized": 0,
+        "match_fuzzy":      0,
     }
 
     json_files = sorted(model_dir.glob("*.json"))
@@ -171,11 +208,25 @@ def _process_one_model(args):
         family_name = feat.get("meta_family_name", "")
         type_name   = feat.get("meta_type_name",   "")
 
-        skey = _find_skey(family_name, type_name, csv_lookup)
+        skey, match_tier = _find_skey(family_name, type_name, csv_lookup)
 
         if skey is None:
             stats["json_no_match"] += 1
             continue
+
+        stats[f"match_{match_tier}"] = stats.get(f"match_{match_tier}", 0) + 1
+
+        if match_tier == MATCH_TIER_FUZZY:
+            # 부분 문자열 매칭은 오매칭 가능성이 있으므로 별도 감사 목록에 기록.
+            # 학습 데이터에서 자동으로 빼지는 않되(데이터 손실 방지),
+            # match_tier 컬럼으로 표시해 두어 나중에 필터링/검토할 수 있게 한다.
+            fuzzy_samples.append({
+                "model": model_name,
+                "file": jf.name,
+                "family": family_name,
+                "type": type_name,
+                "matched_skey": skey,
+            })
 
         if skey.strip().upper().startswith("NC"):
             stats["json_nc_skip"] += 1
@@ -207,6 +258,7 @@ def _process_one_model(args):
             row[col] = feat.get(col, 0.0)
 
         row["skey"]            = skey
+        row["match_tier"]      = match_tier
         row["component_group"] = labels["component_group"]
         row["valve_type"]      = labels["valve_type"]
         row["is_valve"]        = labels["is_valve"]
@@ -216,7 +268,12 @@ def _process_one_model(args):
                                                    len(VTYPE_TO_INT) - 1)
         rows.append(row)
 
-    return {"rows": rows, "nc_samples": nc_samples, "stats": stats}
+    return {
+        "rows": rows,
+        "nc_samples": nc_samples,
+        "fuzzy_samples": fuzzy_samples,
+        "stats": stats,
+    }
 
 
 # ── 메인 데이터 로드 함수 (병렬화) ──────────────
@@ -241,11 +298,23 @@ def load_dataset_csv(
 
     Returns
     -------
-    pd.DataFrame with columns:
-        source_model, source_file, meta_family_name, meta_type_name,
-        [NUMERIC_FEATURE_COLS],
-        skey, component_group, valve_type, is_valve,
-        group_label, vtype_label
+    (df, nc_samples, fuzzy_samples) : tuple
+        df : pd.DataFrame with columns:
+            source_model, source_file, meta_family_name, meta_type_name,
+            [NUMERIC_FEATURE_COLS],
+            skey, match_tier, component_group, valve_type,
+            group_label, vtype_label
+            (match_tier is one of "exact" / "normalized" / "fuzzy" -
+             see _find_skey; filter to match_tier != "fuzzy" if you want
+             to train only on high-confidence labels)
+        nc_samples : list[dict]
+            JSON files whose expert-labeled SKEY was "NC**" (미정) - excluded
+            from training, kept for manual review.
+        fuzzy_samples : list[dict]
+            JSON files whose CSV label was resolved via substring/fuzzy
+            matching rather than an exact or normalized match. These ARE
+            included in df (tagged match_tier="fuzzy") but should be
+            spot-checked, since fuzzy matching can silently mislabel data.
     """
     training_model_dir = Path(training_model_dir)
     csv_label_dir      = Path(csv_label_dir)
@@ -293,6 +362,7 @@ def load_dataset_csv(
 
     rows = []
     nc_samples = []
+    fuzzy_samples = []
     stats = {
         "models_with_label": len(tasks),
         "models_no_label":   models_no_label,
@@ -302,6 +372,9 @@ def load_dataset_csv(
         "json_pipe_skip":    0,
         "json_no_match":     0,
         "json_feat_error":   0,
+        "match_exact":       0,
+        "match_normalized":  0,
+        "match_fuzzy":       0,
     }
 
     completed = 0
@@ -311,8 +384,9 @@ def load_dataset_csv(
             result = future.result()
             rows.extend(result["rows"])
             nc_samples.extend(result["nc_samples"])
+            fuzzy_samples.extend(result["fuzzy_samples"])
             for k, v in result["stats"].items():
-                stats[k] += v
+                stats[k] = stats.get(k, 0) + v
 
             completed += 1
             if verbose and completed % 20 == 0:
@@ -328,6 +402,11 @@ def load_dataset_csv(
         print(f"  Pipe 제외         : {stats['json_pipe_skip']}개")
         print(f"  CSV 매칭 실패     : {stats['json_no_match']}개")
         print(f"  피처 추출 오류    : {stats['json_feat_error']}개")
+        print(f"\n  --- CSV 매칭 신뢰도 (감사용) ---")
+        print(f"  exact (원문 일치)      : {stats['match_exact']}개")
+        print(f"  normalized (정규화 일치): {stats['match_normalized']}개")
+        print(f"  fuzzy (부분 매칭 추정)  : {stats['match_fuzzy']}개  "
+              f"← 검토 권장, fuzzy_matched_labels.csv 확인")
 
     if not rows:
         raise ValueError("유효한 학습 데이터가 없습니다.")
@@ -338,4 +417,4 @@ def load_dataset_csv(
         print(f"\n컴포넌트 그룹 분포:\n{df['component_group'].value_counts().to_string()}")
         print(f"\n총 학습 샘플: {len(df)}개")
 
-    return df, nc_samples
+    return df, nc_samples, fuzzy_samples

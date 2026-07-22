@@ -156,6 +156,19 @@ _SKEY_TO_VALVE_TYPE: dict[str, str] = {
     "AV":    "ANGLE",
 }
 
+# ── 접두어(prefix) startswith 매칭용 - 길이 내림차순 정렬 ──
+# dict의 순회 순서(삽입 순서)에 의존하면, 짧은 코드가 긴 코드보다 먼저
+# 매칭되어 잘못된 그룹/타입이 선택될 수 있다 (예: "AB" 항목이 "ABC" 항목보다
+# 먼저 정의되어 있으면 실제 SKEY "ABCxx"가 "AB"에 먼저 걸려버림).
+# 항상 가장 구체적인(긴) 접두어가 우선하도록 정렬된 리스트를 별도로 유지한다.
+# _get_wildcard_bases()가 symbol.xml 기반 매핑에 이미 적용 중인 것과 동일한 원칙.
+_SKEY_OVERRIDE_SORTED: list[tuple[str, str]] = sorted(
+    _SKEY_OVERRIDE.items(), key=lambda kv: -len(kv[0])
+)
+_SKEY_TO_VALVE_TYPE_SORTED: list[tuple[str, str]] = sorted(
+    _SKEY_TO_VALVE_TYPE.items(), key=lambda kv: -len(kv[0])
+)
+
 
 # ─────────────────────────────────────────────
 #  레이블 클래스 정의 (학습용)
@@ -218,7 +231,8 @@ def _derive_labels(skey: str, category: str, description: str, pcf_id: str) -> t
         return group, vtype
 
     # prefix 앞부분으로 오버라이드 검사 (ex: "EX" matches "EX**")
-    for key, grp in _SKEY_OVERRIDE.items():
+    # 길이 내림차순으로 검사하므로 가장 구체적인(긴) 접두어가 항상 우선한다.
+    for key, grp in _SKEY_OVERRIDE_SORTED:
         if prefix.startswith(key):
             vtype = _derive_valve_type(prefix, grp)
             return grp, vtype
@@ -303,8 +317,8 @@ def _derive_valve_type(prefix: str, group: str) -> str:
     if prefix in _SKEY_TO_VALVE_TYPE:
         return _SKEY_TO_VALVE_TYPE[prefix]
 
-    # prefix 시작 매칭
-    for key, vtype in _SKEY_TO_VALVE_TYPE.items():
+    # prefix 시작 매칭 - 길이 내림차순으로 검사 (가장 구체적인 접두어 우선)
+    for key, vtype in _SKEY_TO_VALVE_TYPE_SORTED:
         if prefix.startswith(key):
             return vtype
 
