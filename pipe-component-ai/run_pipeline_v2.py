@@ -39,7 +39,7 @@ from src.skey_mapper import (
     GROUP_CLASSES, NUM_GROUP_CLASSES,
     INT_TO_GROUP, GROUP_TO_INT,
 )
-from valve_type import run_valve_pipeline
+from valve_type import run_valve_pipeline, valve_report
 
 # ── 경로 설정 ─────────────────────────────────
 _BIM_BASE          = _ROOT.parent / "BIM_Data"
@@ -166,7 +166,7 @@ def run_pipeline():
     std_acc  = np.std(fold_accs)
     print(f"\n  CV 결과: {mean_acc:.4f} ± {std_acc:.4f}")
 
-    run_valve_pipeline(df, feature_cols)
+    valve_data = run_valve_pipeline(df, feature_cols)
 
     # ── Step 4: 전체 데이터로 최종 모델 학습 ──
     print("\n[STEP 4] 전체 데이터로 최종 모델 학습")
@@ -229,6 +229,9 @@ def run_pipeline():
     })
     fold_df.to_csv(MODEL_DIR / "fold_accuracies.csv",
                    index=False, encoding="utf-8-sig")
+
+    # Valve Report
+    valve_report(**valve_data)
 
     # 최종 요약
     elapsed = time.time() - t0
