@@ -50,6 +50,18 @@ LGBM_PARAMS = {
     "n_jobs":            -1,
 }
 
+ZERO_IMPORTANCE_FEATURES_VALVE = [
+    "conn_count",
+    "conn_radius_range",
+    "conn_radius_std",
+    "conn_angle_deg",
+    "conn_radius_ratio",
+    "conn_same_axis",
+    "conn_is_inline",
+    "name_kw_valve",
+    "name_kw_strainer_inline",
+]
+
 N_SPLITS = 5  # Stratified K-Fold 분할 수
 
 
@@ -57,6 +69,8 @@ N_SPLITS = 5  # Stratified K-Fold 분할 수
 def run_valve_pipeline(df, feature_cols, model = lgb.LGBMClassifier(**LGBM_PARAMS)) -> dict:
     print("")
     print("Valve Classifier:")
+
+    feature_cols = [c for c in feature_cols if c not in ZERO_IMPORTANCE_FEATURES_VALVE]
 
     skf = StratifiedKFold(n_splits=N_SPLITS, shuffle=True, random_state=42)
     
