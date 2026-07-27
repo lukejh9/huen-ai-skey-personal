@@ -34,7 +34,7 @@ if str(_ROOT) not in sys.path:
     sys.path.insert(0, str(_ROOT))
 
 from src.data_loader_csv import load_dataset_csv
-from src.feature_extractor import NUMERIC_FEATURE_COLS
+from src.feature_extractor import NUMERIC_FEATURE_COLS, VALVE_ONLY_FEATURES
 from src.skey_mapper import (
     GROUP_CLASSES, NUM_GROUP_CLASSES,
     INT_TO_GROUP, GROUP_TO_INT,
@@ -110,11 +110,12 @@ def run_pipeline():
     # ── Step 2: 피처 행렬 준비 ─────────────────
     print("\n[STEP 2] 피처 행렬 준비")
     feature_cols = [c for c in NUMERIC_FEATURE_COLS if c in df.columns]
-    X = df[feature_cols].fillna(0.0).values
+    group_feature_cols = [c for c in feature_cols if c not in VALVE_ONLY_FEATURES]
+    X = df[group_feature_cols].fillna(0.0).values
     y = df["group_label"].values
     groups_str = df["component_group"].values
 
-    print(f"  피처 수  : {len(feature_cols)}")
+    print(f"  피처 수  : {len(group_feature_cols)}")
     print(f"  샘플 수  : {len(X)}")
     print(f"  클래스   : {sorted(df['component_group'].unique())}")
 
@@ -131,7 +132,7 @@ def run_pipeline():
     fold_accs = []
     all_y_true = []
     all_y_pred = []
-    feature_importance_sum = np.zeros(len(feature_cols))
+    feature_importance_sum = np.zeros(len(group_feature_cols))
 
     for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X, y), 1):
         X_tr, X_val = X[train_idx], X[val_idx]
@@ -177,10 +178,10 @@ def run_pipeline():
     final_model.fit(X_all, y)
 
     # 모델 저장
-    joblib.dump(final_model,   MODEL_DIR / "group_classifier.pkl")
-    joblib.dump(final_scaler,  MODEL_DIR / "group_scaler.pkl")
-    joblib.dump(feature_cols,  MODEL_DIR / "feature_cols.pkl")
-    joblib.dump(INT_TO_GROUP,  MODEL_DIR / "int_to_group.pkl")
+    joblib.dump(final_model,        MODEL_DIR / "group_classifier.pkl")
+    joblib.dump(final_scaler,       MODEL_DIR / "group_scaler.pkl")
+    joblib.dump(group_feature_cols, MODEL_DIR / "feature_cols.pkl")
+    joblib.dump(INT_TO_GROUP,       MODEL_DIR / "int_to_group.pkl")
     print(f"  모델 저장: {MODEL_DIR}/group_classifier.pkl")
 
     # ── Step 5: 평가 리포트 ────────────────────
@@ -214,7 +215,7 @@ def run_pipeline():
 
     # Feature importance
     fi_df = pd.DataFrame({
-        "feature":    feature_cols,
+        "feature":    group_feature_cols,
         "importance": feature_importance_sum / N_SPLITS,
     }).sort_values("importance", ascending=False)
     fi_df.to_csv(MODEL_DIR / "feature_importance.csv",
