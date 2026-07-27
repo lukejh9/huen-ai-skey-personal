@@ -80,7 +80,7 @@ KEYWORD_FEATURE_PATTERNS: dict[str, "re.Pattern"] = {
 }
 
 VALVE_ONLY_FEATURES = [
-
+    
 ]
 
 
@@ -278,9 +278,6 @@ def extract_connector_features(data: dict, feat: dict) -> int:
     feat["conn_same_axis"] = same_axis
     feat["conn_is_inline"] = is_inline
 
-def extract_valve_features(data: dict, feat: dict):
-    pass
-
 def extract_kw_features(data: dict, feat: dict, conn_count: int):
     name_text = f"{feat['meta_family_name']} {feat['meta_type_name']}"
     for kw_feat_name, pattern in KEYWORD_FEATURE_PATTERNS.items():
@@ -312,7 +309,6 @@ def extract_features(data: dict) -> dict:
     extract_metadata(data, feat)
     extract_geometric_features(data, feat)
     conn_count = extract_connector_features(data, feat)
-    #extract_valve_features(data, feat)
     extract_kw_features(data, feat, conn_count)
 
     return feat

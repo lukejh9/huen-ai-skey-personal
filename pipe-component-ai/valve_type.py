@@ -59,6 +59,7 @@ ZERO_IMPORTANCE_FEATURES_VALVE = [
     "conn_same_axis",
     "conn_is_inline",
     "name_kw_valve",
+    "name_kw_strainer",
     "name_kw_strainer_inline",
 ]
 
