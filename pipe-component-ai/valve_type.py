@@ -51,6 +51,7 @@ LGBM_PARAMS = {
 }
 
 ZERO_IMPORTANCE_FEATURES_VALVE = [
+    "geo_bbox_vol",
     "conn_count",
     "conn_radius_range",
     "conn_radius_std",
