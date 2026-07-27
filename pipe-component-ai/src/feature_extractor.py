@@ -26,6 +26,7 @@ Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
     geo_aspect_xy        : bbox_x / bbox_y
     geo_aspect_xz        : bbox_x / bbox_z
     geo_aspect_yz        : bbox_y / bbox_z
+    geo_centroid_dist    :
     geo_compactness      : volume / (surface_area^1.5)  (형상 밀집도)
     geo_density          : geo face count / geo volume
     geo_sav_ratio        : geo surface area / geo volume
@@ -168,8 +169,13 @@ def extract_geometric_features(data: dict, feat: dict):
     xs, ys, zs = [], [], []
     area_by_type = {"planar": 0.0, "cylindrical": 0.0, "revolved": 0.0, "other": 0.0}
     total_area = 0.0
+    centroids = []
 
     for solid in solids:
+        c = solid.get("ComputeCentroid")
+        if c:
+            centroids.append(c)
+
         for face in solid.get("Faces", []):
             face_count += 1
             area = face.get("Area", 0.0)
@@ -208,6 +214,19 @@ def extract_geometric_features(data: dict, feat: dict):
     feat["geo_aspect_xy"] = bbox_x / (bbox_y + _EPS)
     feat["geo_aspect_xz"] = bbox_x / (bbox_z + _EPS)
     feat["geo_aspect_yz"] = bbox_y / (bbox_z + _EPS)
+
+    if centroids:
+        center_x = (max(xs) + min(xs)) / 2 if xs else 0.0
+        center_y = (max(ys) + min(ys)) / 2 if ys else 0.0
+        center_z = (max(zs) + min(zs)) / 2 if zs else 0.0
+
+        max_dist = max(
+            math.dist((c["X"], c["Y"], c["Z"]), (center_x, center_y, center_z))
+            for c in centroids
+        )
+        feat["geo_centroid_dist"] = max_dist / feat["geo_bbox_diag"] if feat["geo_bbox_diag"] > 0 else 0.0
+    else:
+        feat["geo_centroid_dist"] = 0.0
 
     sa = feat["geo_surface_area"]
     vol = feat["geo_volume"]
@@ -348,6 +367,7 @@ NUMERIC_FEATURE_COLS = [
     "geo_aspect_xy",
     "geo_aspect_xz",
     "geo_aspect_yz",
+    "geo_centroid_dist",
     "geo_compactness",
     "geo_density",
     "geo_sav_ratio",
@@ -373,8 +393,8 @@ FEATURE_GROUPS = {
         "geo_surface_area", "geo_volume", "geo_solid_count", "geo_face_count",
         "planar_area_frac", "cyl_area_frac", "rev_area_frac",
         "geo_bbox_x", "geo_bbox_y", "geo_bbox_z", "geo_bbox_diag", "geo_bbox_vol",
-        "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_compactness",
-        "geo_density", "geo_sav_ratio",
+        "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_centroid_dist", 
+        "geo_compactness", "geo_density", "geo_sav_ratio",
     ],
     "connector": [
         "conn_count", "conn_radius_mean", "conn_radius_std",
