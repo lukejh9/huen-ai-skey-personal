@@ -220,7 +220,7 @@ def extract_geometric_features(data: dict, feat: dict):
     feat["geo_density"] = face_count / feat["geo_volume"] if feat["geo_volume"] > 0 else 0
     feat["geo_sav_ratio"] = total_surface_area / total_volume
 
-def extract_connector_features(data: dict, feat: dict) -> int:
+def extract_connector_features(data: dict, feat: dict):
     # ── 커넥터 피처 ────────────────────────────
     connectors = data.get("Connectors", [])
     conn_count = len(connectors)
@@ -284,7 +284,7 @@ def extract_features(data: dict) -> dict:
 
     extract_metadata(data, feat)
     extract_geometric_features(data, feat)
-    conn_count = extract_connector_features(data, feat)
+    extract_connector_features(data, feat)
 
     return feat
 
