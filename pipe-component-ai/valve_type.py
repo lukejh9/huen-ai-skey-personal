@@ -1,5 +1,4 @@
 import sys
-import time
 from pathlib import Path
 
 import joblib
@@ -50,7 +49,7 @@ LGBM_PARAMS = {
     "n_jobs":            -1,
 }
 
-ZERO_IMPORTANCE_FEATURES_VALVE = [
+NON_VALVE_FEATURES = [
     "geo_bbox_vol",
     "conn_count",
     "conn_radius_range",
@@ -59,9 +58,6 @@ ZERO_IMPORTANCE_FEATURES_VALVE = [
     "conn_radius_ratio",
     "conn_same_axis",
     "conn_is_inline",
-    "name_kw_valve",
-    "name_kw_strainer",
-    "name_kw_strainer_inline",
 ]
 
 N_SPLITS = 5  # Stratified K-Fold 분할 수
@@ -72,7 +68,7 @@ def run_valve_pipeline(df, feature_cols, model = lgb.LGBMClassifier(**LGBM_PARAM
     print("")
     print("Valve Classifier:")
 
-    feature_cols = [c for c in feature_cols if c not in ZERO_IMPORTANCE_FEATURES_VALVE]
+    feature_cols = [c for c in feature_cols if c not in NON_VALVE_FEATURES]
 
     skf = StratifiedKFold(n_splits=N_SPLITS, shuffle=True, random_state=42)
     
