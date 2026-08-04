@@ -41,6 +41,7 @@ from src.skey_mapper import (
     get_labels_from_skey,
     GROUP_TO_INT, VTYPE_TO_INT,
 )
+from src.multilingual_recovery import recover_row as _recover_multilingual
 
 
 # ── 제외할 SKEY 패턴 ──────────────────────────
@@ -159,6 +160,32 @@ def _load_json(path: Path) -> Optional[dict]:
         return None
 
 
+def _build_row(model_name, jf, family_name, type_name, feat, skey, match_tier, labels) -> dict:
+    """Assemble one training row dict. Shared by the real-SKEY path and the
+    multilingual-recovery path so both produce identically-shaped rows."""
+    row = {
+        "source_model":      model_name,
+        "source_file":       jf.stem,
+        "meta_family_name":  family_name,
+        "meta_type_name":    type_name,
+        "meta_category":     feat.get("meta_category",     ""),
+        "meta_system_class": feat.get("meta_system_class", ""),
+    }
+    for col in NUMERIC_FEATURE_COLS:
+        row[col] = feat.get(col, 0.0)
+
+    row["skey"]            = skey
+    row["match_tier"]      = match_tier
+    row["component_group"] = labels["component_group"]
+    row["valve_type"]      = labels["valve_type"]
+    row["is_valve"]        = labels["is_valve"]
+    row["group_label"]     = GROUP_TO_INT.get(labels["component_group"],
+                                               len(GROUP_TO_INT) - 1)
+    row["vtype_label"]     = VTYPE_TO_INT.get(labels["valve_type"],
+                                               len(VTYPE_TO_INT) - 1)
+    return row
+
+
 # ── 모델 1개 처리 (워커 함수 - 병렬 실행됨) ──────
 def _process_one_model(args):
     """
@@ -167,9 +194,11 @@ def _process_one_model(args):
 
     Returns
     -------
-    dict with keys: rows, nc_samples, stats (partial counts for this model)
+    dict with keys: rows, nc_samples, multilingual_samples, stats
+        (partial counts for this model)
     """
-    model_dir_str, csv_path_str, skey_map = args
+    (model_dir_str, csv_path_str, skey_map,
+     enable_multilingual, multilingual_min_tier) = args
     model_dir = Path(model_dir_str)
     csv_path = Path(csv_path_str)
     model_name = model_dir.name
@@ -179,6 +208,7 @@ def _process_one_model(args):
     rows = []
     nc_samples = []
     fuzzy_samples = []
+    multilingual_samples = []
     stats = {
         "json_total":      0,
         "json_matched":    0,
@@ -186,6 +216,7 @@ def _process_one_model(args):
         "json_pipe_skip":  0,
         "json_no_match":   0,
         "json_feat_error": 0,
+        "json_multilingual_recovered": 0,
         "match_exact":      0,
         "match_normalized": 0,
         "match_fuzzy":      0,
@@ -229,6 +260,39 @@ def _process_one_model(args):
             })
 
         if skey.strip().upper().startswith("NC"):
+            recovered_group = None
+            if enable_multilingual:
+                recovered_group, recovered_vtype, matched_kw, tier = _recover_multilingual(
+                    family_name, type_name, min_tier=multilingual_min_tier,
+                )
+
+            if recovered_group is not None:
+                # Recovered via multilingual keyword match - NOT an expert
+                # label. Included in training but tagged so it can be
+                # filtered out later (mirrors the existing "fuzzy" pattern).
+                stats["json_multilingual_recovered"] += 1
+                labels = {
+                    "component_group": recovered_group,
+                    "valve_type":      recovered_vtype or "UNKNOWN",
+                    "is_valve":        recovered_group == "VALVE",
+                }
+                multilingual_samples.append({
+                    "model": model_name,
+                    "file": jf.name,
+                    "family": family_name,
+                    "type": type_name,
+                    "recovered_group": recovered_group,
+                    "matched_keyword": matched_kw,
+                    "confidence_tier": tier,
+                })
+                rows.append(_build_row(
+                    model_name, jf, family_name, type_name, feat,
+                    skey=f"MULTILINGUAL:{matched_kw}",
+                    match_tier=f"multilingual_{tier}",
+                    labels=labels,
+                ))
+                continue
+
             stats["json_nc_skip"] += 1
             nc_samples.append({
                 "model": model_name,
@@ -245,33 +309,14 @@ def _process_one_model(args):
 
         labels = get_labels_from_skey(skey, skey_map)
         stats["json_matched"] += 1
-
-        row = {
-            "source_model":      model_name,
-            "source_file":       jf.stem,
-            "meta_family_name":  family_name,
-            "meta_type_name":    type_name,
-            "meta_category":     feat.get("meta_category",     ""),
-            "meta_system_class": feat.get("meta_system_class", ""),
-        }
-        for col in NUMERIC_FEATURE_COLS:
-            row[col] = feat.get(col, 0.0)
-
-        row["skey"]            = skey
-        row["match_tier"]      = match_tier
-        row["component_group"] = labels["component_group"]
-        row["valve_type"]      = labels["valve_type"]
-        row["is_valve"]        = labels["is_valve"]
-        row["group_label"]     = GROUP_TO_INT.get(labels["component_group"],
-                                                   len(GROUP_TO_INT) - 1)
-        row["vtype_label"]     = VTYPE_TO_INT.get(labels["valve_type"],
-                                                   len(VTYPE_TO_INT) - 1)
-        rows.append(row)
+        rows.append(_build_row(model_name, jf, family_name, type_name, feat,
+                                skey, match_tier, labels))
 
     return {
         "rows": rows,
         "nc_samples": nc_samples,
         "fuzzy_samples": fuzzy_samples,
+        "multilingual_samples": multilingual_samples,
         "stats": stats,
     }
 
@@ -283,6 +328,8 @@ def load_dataset_csv(
     xml_path: str | Path | None = None,
     verbose: bool = True,
     n_workers: int | None = None,
+    enable_multilingual: bool = False,
+    multilingual_min_tier: str = "specific",
 ) -> pd.DataFrame:
     """
     TrainingModel 폴더 구조 + CSV 레이블로 학습 데이터셋 생성.
@@ -295,26 +342,46 @@ def load_dataset_csv(
     xml_path           : symbol.xml 경로 (SKEY 매핑용)
     verbose            : 진행 상황 출력
     n_workers          : 병렬 워커 수 (기본값: CPU 코어 수)
+    enable_multilingual : bool, default False
+        CSV 레이블이 "NC**" (미정)인 항목에 대해, family/type 이름을
+        다국어 키워드 사전(src/multilingual_recovery.py)과 대조해서
+        component_group을 복구 시도한다. 기본값 False - 이 기능을 켜기
+        전에 nc_recovered_labels.csv를 사람이 검토했는지 확인할 것.
+        (전문가가 부여한 진짜 SKEY가 아니라 추정 레이블이므로 반드시
+        match_tier="multilingual_*"로 표시되어 이후 필터링 가능함.)
+    multilingual_min_tier : "specific" (기본값, 보수적) | "generic"
+        복구 시 허용할 최소 신뢰도 등급. "specific"는 다중 문자/복합어
+        (예: "球阀"=볼밸브)만 허용하고, 단일 일반 단어(예: 그냥 "VALVE"/
+        "阀")로만 매칭된 항목은 무시한다. "generic"으로 낮추면 그런
+        항목도 포함하지만 오매칭 위험이 커지므로 사전에 반드시 검토 필요.
 
     Returns
     -------
-    (df, nc_samples, fuzzy_samples) : tuple
+    (df, nc_samples, fuzzy_samples, multilingual_samples) : tuple
         df : pd.DataFrame with columns:
             source_model, source_file, meta_family_name, meta_type_name,
             [NUMERIC_FEATURE_COLS],
             skey, match_tier, component_group, valve_type,
             group_label, vtype_label
-            (match_tier is one of "exact" / "normalized" / "fuzzy" -
-             see _find_skey; filter to match_tier != "fuzzy" if you want
-             to train only on high-confidence labels)
+            (match_tier is one of "exact" / "normalized" / "fuzzy" /
+             "multilingual_specific" / "multilingual_generic" -
+             see _find_skey; filter to match_tier not in
+             {"fuzzy", "multilingual_specific", "multilingual_generic"}
+             if you want to train only on genuine expert labels)
         nc_samples : list[dict]
-            JSON files whose expert-labeled SKEY was "NC**" (미정) - excluded
-            from training, kept for manual review.
+            JSON files whose expert-labeled SKEY was "NC**" (미정) and
+            could NOT be recovered (or enable_multilingual=False) -
+            excluded from training, kept for manual review.
         fuzzy_samples : list[dict]
             JSON files whose CSV label was resolved via substring/fuzzy
             matching rather than an exact or normalized match. These ARE
             included in df (tagged match_tier="fuzzy") but should be
             spot-checked, since fuzzy matching can silently mislabel data.
+        multilingual_samples : list[dict]
+            JSON files whose "NC**" label was recovered via the
+            multilingual keyword pass. These ARE included in df (tagged
+            match_tier="multilingual_specific"/"multilingual_generic") but
+            are NOT expert-verified - spot-check before trusting fully.
     """
     training_model_dir = Path(training_model_dir)
     csv_label_dir      = Path(csv_label_dir)
@@ -354,7 +421,10 @@ def load_dataset_csv(
         if model_name not in csv_files:
             models_no_label += 1
             continue
-        tasks.append((str(model_dir), str(csv_files[model_name]), skey_map))
+        tasks.append((
+            str(model_dir), str(csv_files[model_name]), skey_map,
+            enable_multilingual, multilingual_min_tier,
+        ))
 
     if verbose:
         print(f"[INFO] 병렬 처리 워커 수: {n_workers}개 "
@@ -363,6 +433,7 @@ def load_dataset_csv(
     rows = []
     nc_samples = []
     fuzzy_samples = []
+    multilingual_samples = []
     stats = {
         "models_with_label": len(tasks),
         "models_no_label":   models_no_label,
@@ -372,6 +443,7 @@ def load_dataset_csv(
         "json_pipe_skip":    0,
         "json_no_match":     0,
         "json_feat_error":   0,
+        "json_multilingual_recovered": 0,
         "match_exact":       0,
         "match_normalized":  0,
         "match_fuzzy":       0,
@@ -385,6 +457,7 @@ def load_dataset_csv(
             rows.extend(result["rows"])
             nc_samples.extend(result["nc_samples"])
             fuzzy_samples.extend(result["fuzzy_samples"])
+            multilingual_samples.extend(result["multilingual_samples"])
             for k, v in result["stats"].items():
                 stats[k] = stats.get(k, 0) + v
 
@@ -398,6 +471,9 @@ def load_dataset_csv(
         print(f"  레이블 없는 모델  : {stats['models_no_label']}개 (제외)")
         print(f"  JSON 총계         : {stats['json_total']}개")
         print(f"  학습 사용         : {stats['json_matched']}개")
+        if enable_multilingual:
+            print(f"  다국어 복구 사용  : {stats['json_multilingual_recovered']}개 "
+                  f"(min_tier={multilingual_min_tier!r}, 전문가 검증 아님 - 검토 권장)")
         print(f"  NC** 제외         : {stats['json_nc_skip']}개 (추후 보완 예정)")
         print(f"  Pipe 제외         : {stats['json_pipe_skip']}개")
         print(f"  CSV 매칭 실패     : {stats['json_no_match']}개")
@@ -417,4 +493,4 @@ def load_dataset_csv(
         print(f"\n컴포넌트 그룹 분포:\n{df['component_group'].value_counts().to_string()}")
         print(f"\n총 학습 샘플: {len(df)}개")
 
-    return df, nc_samples, fuzzy_samples
+    return df, nc_samples, fuzzy_samples, multilingual_samples

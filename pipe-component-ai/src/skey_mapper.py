@@ -209,6 +209,12 @@ def _skey_prefix(skey: str) -> str:
     return prefix
 
 
+def skey_prefix(skey: str) -> str:
+    """공개 래퍼: _skey_prefix()와 동일 - 개별 SKEY 단위 분류기(run_pipeline_v2.py
+    Step 7)의 레이블 생성에 사용. 예: "VB**" → "VB", "BVA2**" → "BVA2"."""
+    return _skey_prefix(skey)
+
+
 def _derive_labels(skey: str, category: str, description: str, pcf_id: str) -> tuple[str, str]:
     """
     SKEY / Category / PCF_Identification → (component_group, valve_type) 반환.

@@ -1,0 +1,124 @@
+﻿source_model,BALL,BASIC,BUTTERFLY,CHECK,CONTROL,GATE,GLOBE,KNIFE_GATE,PLUG,PRESSURE_REDUCING,TOTAL
+v2017_20180723 B1밗履뺏(___),0,0,15,11,0,2,5,0,0,0,33
+20180723 베제却-끽방&묏撚밗돛,2,0,15,9,0,3,3,0,0,1,33
+20180723 B1밗履뺏(___),0,0,15,11,0,2,5,0,0,0,33
+UT PIPING_20180327,21,11,0,0,0,0,0,0,0,0,32
+F21P1-F-LB2-PIPE-MU,10,4,10,6,0,0,0,0,0,0,30
+F21P1-F-LB2-PIPE-MU_1016,10,4,10,6,0,0,0,0,0,0,30
+XPGF26-1YA-260-PS-L0000-HET-CM_detached,10,3,5,3,0,0,0,0,0,0,21
+KL118_SRYO_DCS_MPIPE_TWR_B2,1,6,5,6,0,1,0,0,0,0,19
+Tunnel Piping for EZISO,9,4,1,0,0,3,2,0,0,0,19
+XIRBCP-1AA-100-ME-G3G4E-KGE-CM-COPY-DO NOT USE FOR WORK,9,0,8,2,0,0,0,0,0,0,19
+Tunnel Piping for EZISO(Edited Version by Huensystem),9,4,1,0,0,3,2,0,0,0,19
+MYDP-4UT-A000-M3-P-000011_grayliam_detached_2019,4,4,3,0,0,7,0,0,0,0,18
+ESI-MED-TOLEDO Stand Alone_detached,2,0,4,3,0,5,2,0,0,0,16
+MYDP-6MS-C110-M3-P-000001_detached.2019_Test,3,0,2,5,0,5,0,0,0,0,15
+MYDP-6MS-C110-M3-P-000001_2019,3,0,2,5,0,5,0,0,0,0,15
+I-PJT_piping_RACK,6,0,8,1,0,0,0,0,0,0,15
+FlangeReducing,8,0,3,0,0,3,0,0,0,0,14
+VWT-1-ACT-MAQ-100-ACTIFLO_20190529_detached,8,0,3,0,0,3,0,0,0,0,14
+MYDP-6UT-C000-M3-P-000011,4,0,4,2,0,4,0,0,0,0,14
+P196-AJi-ZZZ-ZZZ-M3-ME-0001_detached (1),2,2,0,3,0,6,0,0,0,0,13
+XPGF26-1YA-260-PS-C0V00-HET-CM_detached,5,0,7,1,0,0,0,0,0,0,13
+WH SAMPLE_2019,4,1,1,4,0,1,1,0,0,0,12
+RGD-VEO-2A-32-M3-M-0001_Mechanical_Model,1,0,6,2,0,2,0,0,0,0,11
+20180703 B1-RF끽방밗窟친謹,2,0,6,1,0,0,1,0,0,1,11
+VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20191028_supports,1,0,2,3,0,0,0,4,0,0,10
+EZ ISO Test Jones Eng-Manual,0,3,4,2,0,1,0,0,0,0,10
+EZ ISO Test Jones Eng_detached,0,3,4,2,0,1,0,0,0,0,10
+Example_3D_EZ-ISO V2,0,0,2,2,1,0,0,3,0,0,8
+EZ-ISO_TestDate_20210201,1,1,3,2,0,0,1,0,0,0,8
+Example_For_Checking,0,0,2,2,1,0,0,3,0,0,8
+ISO_SAMPLE,3,4,0,0,0,0,0,0,0,0,7
+MYDP-7OB-D310-M3-B-900001,0,5,0,2,0,0,0,0,0,0,7
+VWT-1-FIS-MAQ-200-BACHES EAUX SALES ET LAVAGE_detached_20190529,1,0,1,1,0,0,0,4,0,0,7
+수정_ISO_SAMPLE_detached,3,4,0,0,0,0,0,0,0,0,7
+CPV-M-LLA3-Mech-Pipe-R18 (1),4,0,3,0,0,0,0,0,0,0,7
+Test Model,0,0,5,1,0,0,0,0,0,0,6
+Ez-ISO ISSUE,4,2,0,0,0,0,0,0,0,0,6
+PST - ISO Coordinates - original,1,1,2,1,0,1,0,0,0,0,6
+PST - ISO Coordinates - original no coordinates,1,1,2,1,0,1,0,0,0,0,6
+S32_FBALO_UPI_SAMPLING,0,2,3,0,0,0,0,0,0,0,5
+HUEN TEST_detached,1,0,3,1,0,0,0,0,0,0,5
+S32_FBALO_UPI_SAMPLING_SheetNumber,0,2,3,0,0,0,0,0,0,0,5
+S32_FBALO_UPI_SAMPLING_NoSheetNumber,0,2,3,0,0,0,0,0,0,0,5
+Ez-ISO Extraction file,0,2,2,1,0,0,0,0,0,0,5
+Ez-ISO Video_Sample,0,2,3,0,0,0,0,0,0,0,5
+20180418_OneSpec_DifferentFamilyType,0,2,3,0,0,0,0,0,0,0,5
+S32_FBALO_UPI_SAMPLING_1_,0,2,3,0,0,0,0,0,0,0,5
+EZ-ISO Test_detached (1),1,0,3,0,0,0,0,0,0,0,4
+CPV-M-24-620-GVX03_R23 2,0,2,2,0,0,0,0,0,0,0,4
+HUEN_FAMILY_FITTING_PLACEMENT_20210423,0,4,0,0,0,0,0,0,0,0,4
+SupportDimensionError,1,0,2,1,0,0,0,0,0,0,4
+GVX03-MECH-D3-CPV-R23,0,2,2,0,0,0,0,0,0,0,4
+VWT-1-ACT-MAQ-100-ACTIFLO_AC-EBR-1300-1400-B30_detached,2,0,1,0,0,1,0,0,0,0,4
+F20P1-XR-07-FB2-001-MD-PIPE_錯誤,3,0,1,0,0,0,0,0,0,0,4
+TEST_Ez-ISO,1,3,0,0,0,0,0,0,0,0,4
+20180220_test_Sample Model Simple,3,0,0,0,0,0,0,0,0,0,3
+Sample Model,3,0,0,0,0,0,0,0,0,0,3
+项目1-邵,1,0,0,1,0,1,0,0,0,0,3
+sample file,3,0,0,0,0,0,0,0,0,0,3
+lTest Model_Part,0,0,3,0,0,0,0,0,0,0,3
+Error_Sample Project,2,0,0,0,0,1,0,0,0,0,3
+Iso Sample,3,0,0,0,0,0,0,0,0,0,3
+Ez ISO_ElbowError,0,0,2,1,0,0,0,0,0,0,3
+IC-M16P2-W12B-1F3F-PI-NA-NA(250A-TW-GA2-N-3242)EDIT VERSION,1,0,1,1,0,0,0,0,0,0,3
+EZ-IsoTest_190923_Bolt,1,0,0,0,0,2,0,0,0,0,3
+Ez ISO_help,0,0,2,1,0,0,0,0,0,0,3
+Ez ISO piping,1,1,1,0,0,0,0,0,0,0,3
+ComplexFamily,3,0,0,0,0,0,0,0,0,0,3
+EZ-Iso Test 190716 CT_Attached,1,0,0,0,0,2,0,0,0,0,3
+EZ-Iso Test 190716 CT,1,0,0,0,0,2,0,0,0,0,3
+da Huen JKJin 190703 Test EZ-ISO,1,0,0,0,0,2,0,0,0,0,3
+Zauner- EZ-ISO Bolts Family,1,0,2,0,0,0,0,0,0,0,3
+Ez ISO_ElbowError_T01,0,0,2,1,0,0,0,0,0,0,3
+EZ-ISOTestModel_2_detached,1,2,0,0,0,0,0,0,0,0,3
+UG DRAIN - Kim Technology,1,0,1,0,0,0,0,0,0,0,2
+03-150000-4100001496-SPM-MEC-MDL-2-00-100-R20,0,1,1,0,0,0,0,0,0,0,2
+Thermometer Issue,1,0,1,0,0,0,0,0,0,0,2
+TWE_YEOSU_PXX_Central,1,0,1,0,0,0,0,0,0,0,2
+TAIF-STP-40-MDM-41001_envio_EZ-ISO,0,0,0,1,0,1,0,0,0,0,2
+12.SK,1,0,1,0,0,0,0,0,0,0,2
+12-TOT-LAM-025 (1),0,0,2,0,0,0,0,0,0,0,2
+IC-M16P2-W12B-1F3F-PI-NA-NA(400A-500A EDIT),1,0,1,0,0,0,0,0,0,0,2
+專案1,1,0,1,0,0,0,0,0,0,0,2
+FLOW,2,0,0,0,0,0,0,0,0,0,2
+Help,1,0,0,0,0,1,0,0,0,0,2
+CJ_M15M01ALL_FF_1F_A_EZ-Iso_2018,1,0,1,0,0,0,0,0,0,0,2
+LR058a,2,0,0,0,0,0,0,0,0,0,2
+L13 Extract,0,0,0,1,0,1,0,0,0,0,2
+Ex Gridline Issue 2 230619,0,2,0,0,0,0,0,0,0,0,2
+UCB-B7-M-SANI-ZAT,1,0,0,0,0,0,0,0,0,0,1
+重力管範例,0,0,1,0,0,0,0,0,0,0,1
+Zauner EZ-ISO Air Vent,1,0,0,0,0,0,0,0,0,0,1
+pipe testing,0,0,1,0,0,0,0,0,0,0,1
+001,0,0,0,0,0,0,0,0,1,0,1
+System_ISO,1,0,0,0,0,0,0,0,0,0,1
+GW2_GW48_EQU_FTH_MT_C721B_Distrib_V22 - ADF,0,0,1,0,0,0,0,0,0,0,1
+10,0,1,0,0,0,0,0,0,0,0,1
+10_2019,0,1,0,0,0,0,0,0,0,0,1
+2.HGI project sample_final - 2018,1,0,0,0,0,0,0,0,0,0,1
+2.HGI project sample_final - 2019,1,0,0,0,0,0,0,0,0,0,1
+20180702_HGI project sample 2019,1,0,0,0,0,0,0,0,0,0,1
+2019_HGI project sample_final,1,0,0,0,0,0,0,0,0,0,1
+AIR-51-ESP-MNG-011-2111_locale,0,0,1,0,0,0,0,0,0,0,1
+ComplexFamily_Sample_v2018,1,0,0,0,0,0,0,0,0,0,1
+ENS_B_0301_02_R2018 GLE_détaché,0,0,0,1,0,0,0,0,0,0,1
+EZ ISO PROVA,0,0,0,1,0,0,0,0,0,0,1
+EZ_ISO_Test_Model(paremeter setting),0,0,1,0,0,0,0,0,0,0,1
+Ez ISO_FlangeBolts,0,0,1,0,0,0,0,0,0,0,1
+HGI project sample 2018,1,0,0,0,0,0,0,0,0,0,1
+Steam Line_2023_,0,0,0,0,0,0,1,0,0,0,1
+HGI project sample 2019,1,0,0,0,0,0,0,0,0,0,1
+HGI project sample_final,1,0,0,0,0,0,0,0,0,0,1
+Pipeline Extraction,1,0,0,0,0,0,0,0,0,0,1
+Project1_2018,0,0,1,0,0,0,0,0,0,0,1
+Project1_2019_UnconnectedConnector,0,0,1,0,0,0,0,0,0,0,1
+SAMPLE REVIT,0,1,0,0,0,0,0,0,0,0,1
+STREM_2022_PLUMBING_kmendesF6MT8_kmendesF6MT8 (3),1,0,0,0,0,0,0,0,0,0,1
+SUEZ - !! Problem urgent !! - Symbol element flanged deformed,0,0,1,0,0,0,0,0,0,0,1
+Sample Model_RaughComplexed,1,0,0,0,0,0,0,0,0,0,1
+Sample for Jin EZ Iso,0,0,1,0,0,0,0,0,0,0,1
+Spec_eng_Sample_Model,1,0,0,0,0,0,0,0,0,0,1
+Steam Line,0,0,0,0,0,0,1,0,0,0,1
+ISO TEST,0,0,1,0,0,0,0,0,0,0,1
