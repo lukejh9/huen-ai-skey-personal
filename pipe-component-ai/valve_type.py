@@ -76,13 +76,14 @@ def run_valve_pipeline(df, feature_cols) -> dict:
     valve_rows = df[df["is_valve"] == True]
     X_valves = valve_rows[feature_cols].values
     y_valves = valve_rows["vtype_label"].values
+    groups = valve_rows["source_model"].values
 
     fold_accs = []
     all_y_true = []
     all_y_pred = []
     feature_importance_sum = np.zeros(len(feature_cols))
 
-    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X_valves, y_valves), 1):
+    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X_valves, y_valves, groups=groups), 1):
         X_tr, X_val = X_valves[train_idx], X_valves[val_idx]
         y_tr, y_val = y_valves[train_idx], y_valves[val_idx]
 
