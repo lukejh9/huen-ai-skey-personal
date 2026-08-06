@@ -181,10 +181,15 @@ def extract_geometric_features(data: dict, feat: dict):
                         zs.append(pt["Z"])
 
     feat["geo_face_count"] = face_count
-    feat["planar_area_frac"] = area_by_type["planar"] / total_area
-    feat["cyl_area_frac"] = area_by_type["cylindrical"] / total_area
-    feat["rev_area_frac"] = area_by_type["revolved"] / total_area
-
+    if (total_area == 0):
+        feat["planar_area_frac"] = 0
+        feat["cyl_area_frac"] = 0
+        feat["rev_area_frac"] = 0
+    else:
+        feat["planar_area_frac"] = area_by_type["planar"] / total_area
+        feat["cyl_area_frac"] = area_by_type["cylindrical"] / total_area
+        feat["rev_area_frac"] = area_by_type["revolved"] / total_area
+    
     if xs:
         bbox_x = (max(xs) - min(xs)) * _FT_TO_M
         bbox_y = (max(ys) - min(ys)) * _FT_TO_M
@@ -218,7 +223,7 @@ def extract_geometric_features(data: dict, feat: dict):
     vol = feat["geo_volume"]
     feat["geo_compactness"] = vol / (sa ** 1.5 + _EPS)
     feat["geo_density"] = face_count / feat["geo_volume"] if feat["geo_volume"] > 0 else 0
-    feat["geo_sav_ratio"] = total_surface_area / total_volume
+    feat["geo_sav_ratio"] = total_surface_area / total_volume if total_volume > 0 else 0
 
 def extract_connector_features(data: dict, feat: dict):
     # ── 커넥터 피처 ────────────────────────────

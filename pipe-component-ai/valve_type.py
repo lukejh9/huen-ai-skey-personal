@@ -50,7 +50,7 @@ LGBM_PARAMS = {
 }
 
 NON_VALVE_FEATURES = [
-    "geo_bbox_vol",
+    "conn_radius_min",
     "conn_count",
     "conn_radius_range",
     "conn_radius_std",
@@ -64,12 +64,13 @@ N_SPLITS = 5  # Stratified K-Fold 분할 수
 
 
 # ─────────────────────────────────────────────
-def run_valve_pipeline(df, feature_cols, model = lgb.LGBMClassifier(**LGBM_PARAMS)) -> dict:
+def run_valve_pipeline(df, feature_cols) -> dict:
     print("")
     print("Valve Classifier:")
 
     feature_cols = [c for c in feature_cols if c not in NON_VALVE_FEATURES]
 
+    model = lgb.LGBMClassifier(**LGBM_PARAMS)
     skf = StratifiedKFold(n_splits=N_SPLITS, shuffle=True, random_state=42)
     
     valve_rows = df[df["is_valve"] == True]
@@ -85,18 +86,14 @@ def run_valve_pipeline(df, feature_cols, model = lgb.LGBMClassifier(**LGBM_PARAM
         X_tr, X_val = X_valves[train_idx], X_valves[val_idx]
         y_tr, y_val = y_valves[train_idx], y_valves[val_idx]
 
-        scaler = StandardScaler()
-        X_tr_s = scaler.fit_transform(X_tr)
-        X_val_s = scaler.transform(X_val)
-
         model.fit(
-            X_tr_s, y_tr,
-            eval_set=[(X_val_s, y_val)],
+            X_tr, y_tr,
+            eval_set=[(X_val, y_val)],
             callbacks=[lgb.early_stopping(30, verbose=False),
                        lgb.log_evaluation(period=-1)],
         )
 
-        y_pred = model.predict(X_val_s)
+        y_pred = model.predict(X_val)
         acc = accuracy_score(y_val, y_pred)
         fold_accs.append(acc)
         all_y_true.extend(y_val.tolist())
