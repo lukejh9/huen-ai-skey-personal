@@ -113,7 +113,6 @@ def run_pipeline():
     group_feature_cols = [c for c in feature_cols if c not in VALVE_ONLY_FEATURES]
     X = df[group_feature_cols].fillna(0.0).values
     y = df["group_label"].values
-    groups = df["source_model"].values
 
     print(f"  피처 수  : {len(group_feature_cols)}")
     print(f"  샘플 수  : {len(X)}")
@@ -134,7 +133,7 @@ def run_pipeline():
     all_y_pred = []
     feature_importance_sum = np.zeros(len(group_feature_cols))
 
-    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X, y, groups=groups), 1):
+    for fold_idx, (train_idx, val_idx) in enumerate(skf.split(X, y), 1):
         X_tr, X_val = X[train_idx], X[val_idx]
         y_tr, y_val = y[train_idx], y[val_idx]
 
