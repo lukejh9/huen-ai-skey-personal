@@ -77,7 +77,7 @@ def load_dataset(
           group_label, vtype_label, label_source
     """
     data_dir = Path(data_dir)
-    json_files = sorted(data_dir.glob("*.json"))
+    json_files = sorted(data_dir.rglob("*.json"))
 
     if not json_files:
         raise FileNotFoundError(f"JSON 파일을 찾을 수 없습니다: {data_dir}")

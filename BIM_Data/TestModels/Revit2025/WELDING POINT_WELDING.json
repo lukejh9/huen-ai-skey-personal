@@ -1,0 +1,521 @@
+{
+  "Id": 5064308,
+  "FamilyName": "WELDING POINT",
+  "TypeName": "WELDING",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": 612.4343976285064,
+        "Y": 1170.570866141733,
+        "Z": 17.070866141732303
+      },
+      "Direction": {
+        "X": 1.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Radius": 0.6561679790026247
+    },
+    {
+      "Origin": {
+        "X": 612.4343976285064,
+        "Y": 1170.570866141733,
+        "Z": 17.070866141732303
+      },
+      "Direction": {
+        "X": -1.0,
+        "Y": 0.0,
+        "Z": 0.0
+      },
+      "Radius": 0.6561679790026247
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "시스템 약어",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "단열재 두께",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "전체 크기",
+      "Value": "400 mm-400 mm",
+      "StorageType": "String",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "단열재 두께",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "시스템 유형",
+      "Value": "Hydronic Supply",
+      "StorageType": "ElementId",
+      "GroupName": "기계",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "시스템 분류",
+      "Value": "순환수 공급",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "시스템 이름",
+      "Value": "Hydronic Supply 157",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "최대 크기",
+      "Value": "400",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "최소 크기",
+      "Value": "400",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "주석 축척 사용",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "그래픽",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "크기",
+      "Value": "400-400",
+      "StorageType": "String",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "손실 방법",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IFC로 내보내기",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "0pa52s3699RwKKXw5d7RKS",
+      "StorageType": "String",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "설계 옵션",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "철거 공정",
+      "Value": "없음",
+      "StorageType": "ElementId",
+      "GroupName": "공정",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "생성 공정",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "공정",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "호스트 ID",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "구속조건",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리 및 유형",
+      "Value": "WELDING POINT: WELDING",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리",
+      "Value": "WELDING POINT",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형",
+      "Value": "WELDING",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 ID",
+      "Value": "5062549",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨로부터의 높이",
+      "Value": "5203.20",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SK_CLASS",
+      "Value": "HBB1",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_PIPERUN NO",
+      "Value": "30NAB11BR005-HBB1-400(N0)",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_UTIL",
+      "Value": "NAB",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_COAT SPEC",
+      "Value": "MP-01B",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_INSUL TYPE",
+      "Value": "N",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_ISO SHEET NO",
+      "Value": "05",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_PIPELINE NO",
+      "Value": "30NAB11BR005",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_SEQUENCE NO",
+      "Value": "005",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_TRACING TYPE",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_SUB UNIT",
+      "Value": "30",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_INSUL THICK",
+      "Value": "0",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_TIE IN POINT",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_PLAN DWG NO",
+      "Value": "24035D-08100-P-PP-30-06003",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Nominal Diameter",
+      "Value": "400",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Radius",
+      "Value": "200",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Length",
+      "Value": "260.00",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "기본 높이",
+      "Value": "0.00",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "IFC로 유형 내보내기",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 IfcGUID",
+      "Value": "0xl6kficfCkvyGT6R0EW_g",
+      "StorageType": "String",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "설계 옵션",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "URL",
+      "Value": "www.mtmdc.co.kr",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "코드 이름",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass 제목",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass 번호",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "조합 설명",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "조합 코드",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리 이름",
+      "Value": "WELDING POINT",
+      "StorageType": "String",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 이름",
+      "Value": "WELDING",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Copyright",
+      "Value": "Copyright ⓒ MTM Digital Construction, All right reserved",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Item Description",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "모델 특성",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Material",
+      "Value": "<카테고리별>",
+      "StorageType": "ElementId",
+      "GroupName": "재료 및 마감재",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "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"
+}
