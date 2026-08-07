@@ -1,0 +1,366 @@
+{
+  "Id": 4065023,
+  "FamilyName": "PIPE_FLOW ARROW",
+  "TypeName": "FLOW ARROW",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [],
+  "InstanceParameters": [
+    {
+      "Name": "단열재 두께",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "전체 크기",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "단열재 두께",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 밸브류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 밸브류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "시스템 유형",
+      "Value": "정의되지 않음",
+      "StorageType": "ElementId",
+      "GroupName": "기계",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "크기",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "손실 방법",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IFC로 내보내기",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "1zc1Ymy55CIRrdZUPGx1RP",
+      "StorageType": "String",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "설계 옵션",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "철거 공정",
+      "Value": "없음",
+      "StorageType": "ElementId",
+      "GroupName": "공정",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "생성 공정",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "공정",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "호스트 ID",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "구속조건",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리 및 유형",
+      "Value": "PIPE_FLOW ARROW: FLOW ARROW",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리",
+      "Value": "PIPE_FLOW ARROW",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형",
+      "Value": "FLOW ARROW",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 ID",
+      "Value": "1492478",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "일람표 레벨",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨로부터의 높이",
+      "Value": "5406.40",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "SK_SCOPE",
+      "Value": "Steam_ETC",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_FD / SK_AREA",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_FL / SK_UNIT",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_RM / SK_BOM UNIT",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Width1",
+      "Value": "40.64",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Width2",
+      "Value": "20.32",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Length1",
+      "Value": "20.32",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Length2",
+      "Value": "40.64",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Diameter",
+      "Value": "51",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "카테고리",
+      "Value": "배관 밸브류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 밸브류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "IFC로 유형 내보내기",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 IfcGUID",
+      "Value": "2p9kIgev179RfYNwxUP9Ya",
+      "StorageType": "String",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "설계 옵션",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "코드 이름",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass 제목",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass 번호",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "조합 설명",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "조합 코드",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리 이름",
+      "Value": "PIPE_FLOW ARROW",
+      "StorageType": "String",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 이름",
+      "Value": "FLOW ARROW",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "기본 높이",
+      "Value": "1219.20",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Copyright",
+      "Value": "Copyright ⓒ MTM Digital Construction, All right reserved",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": false,
+      "IsShared": true
+    }
+  ],
+  "Thumbnail": "iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAA+HSURBVHhe7Z1nr1VFG4b9Bf4AY/kLJvrJN8b4SYkxsQZDiIpoVOygiAcrAoq9YMPYsKPYe8eGDftREexd7IrdPeaavKOH4+E5wGaXtdZ1JSuUfdisvWfueerM2iCJyH9otVorW63W9A2GvyAiCkQkRIGIBCgQkQAFIhKgQEQCFIhIgAIRCVAgIgEKRCRAgYgEKBCRAAUiEqBARAIUiEiAAhEJUCAiAQpEJECBiAQoEJEABSISoEBEAhSISIACEQlQICIBCkQkQIGIBCgQkQAFIhKgQEQCFIhIgAIRCVAgIgEKRCRAgYgEKBCRAAUiEqBARAIUiEiAAhEJUCAiAQpEJECBiAQoEJEABSISoEBEAhSISIACEQlQICIBCkQkQIGIBCgQkQAFIhKgQEQCFEiNabVa6Y8//kg///xz+vrrr9OHH36Ynn/++XTvvfemBx98MD366KPp1VdfTR9//HH67rvv8s/yb+RfFEiN+euvv7I4vvrqq/TWW2+lRx55JJ155plpwoQJadKkSWnKlCnp0ksvTU888UR6991388/++eefimQICqSG/PTTT2np0qXp6aefTo8//ngWBhbjrrvuSpdddlmaM2dOFsp5552XrrnmmnTPPfekhx56KD322GPpmWeeSS+99FK2Nr/++uvwt24cCqSGfPLJJ+m6665Lxx13XDr++OPTrFmzsqW4/fbbswCWL1+eLcrrr7+eFi1alG699dZ0wQUXpIGBgTRjxox07rnnZkF98803w9+6cSiQGvHjjz+mZcuW5dji8ssvT6eddlo655xz0rx589Idd9yRnn322fTRRx+l33//Pa1cuTJ9//33WSyLFy9ON910Uzr77LOzZeHf3HbbbVlEiISfbyoKpEZ88MEH6dprr80TfeHChenJJ59MS5YsSW+++WYOxL/99tv0yy+/5NiEWIOgHKEggvfffz8H7LhZWBQE9fDDD6fBwcEsvKaiQCpImdhYACY3VoHJTXaKuAIXidjj008/za/zs6NZgd9++y398MMPWWQvvvhijkluvPHGbEl4L9wxXDeyXQTzvB9CqzsKpIIQhGMR3n777SyM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"
+}

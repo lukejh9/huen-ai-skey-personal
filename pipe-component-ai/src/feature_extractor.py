@@ -181,6 +181,11 @@ def extract_features(data: dict) -> dict:
     feat["meta_system_class"] = param_map.get("System Classification", "")
     feat["meta_max_size_mm"]  = _parse_mm_value(param_map.get("Maximum Size", "0"))
     feat["meta_min_size_mm"]  = _parse_mm_value(param_map.get("Minimum Size", "0"))
+    # Maximum/Minimum Size 파라미터 자체가 없는 경우(커스텀 패밀리 등) 0.0과
+    # 구분이 안 되므로, 값이 실제로 존재했는지 여부를 별도 플래그로 남긴다.
+    feat["meta_size_available"] = int(
+        "Maximum Size" in param_map or "Minimum Size" in param_map
+    )
 
     # ── 형상 피처 ──────────────────────────────
     solids = data.get("Geometry", {}).get("Solid", [])
@@ -327,9 +332,20 @@ def extract_features(data: dict) -> dict:
     )
 
     # 두 커넥터가 있을 때 거리 / 각도 / 동축 판단
+    # 3개 이상 커넥터(TEE/OLET 등)가 있는 경우 connectors[0]/[1]은 JSON
+    # 직렬화 순서에 불과해 어느 두 개가 뽑힐지 보장이 없다 (family/type
+    # 마다 순서가 달라져 같은 형상이 다른 값으로 잡히는 원인이 될 수 있음).
+    # 대신 모든 쌍 중 거리가 가장 먼 쌍(대개 메인 런 방향)을 결정적으로
+    # 선택해 순서와 무관하게 항상 같은 기준으로 값을 계산한다.
     if conn_count >= 2:
-        c0, c1 = connectors[0], connectors[1]
-        dist = _vec_dist(c0["Origin"], c1["Origin"]) * _FT_TO_M
+        best_pair, best_dist = None, -1.0
+        for i in range(conn_count):
+            for j in range(i + 1, conn_count):
+                d = _vec_dist(connectors[i]["Origin"], connectors[j]["Origin"]) * _FT_TO_M
+                if d > best_dist:
+                    best_dist, best_pair = d, (connectors[i], connectors[j])
+        c0, c1 = best_pair
+        dist = best_dist
         angle_deg = _angle_between_deg(c0["Direction"], c1["Direction"])
 
         # 동축(same_axis): 두 방향 벡터가 평행 (0° 또는 180°)
@@ -441,6 +457,7 @@ NUMERIC_FEATURE_COLS = [
     # metadata
     "meta_max_size_mm",
     "meta_min_size_mm",
+    "meta_size_available",
 
     # geometry
     "geo_surface_area",
@@ -505,7 +522,7 @@ FEATURE_GROUPS = {
         "conn_branch_angle_deg", "conn_branch_distance", "conn_has_branch",
     ],
     "metadata": [
-        "meta_max_size_mm", "meta_min_size_mm",
+        "meta_max_size_mm", "meta_min_size_mm", "meta_size_available",
     ],
 }
 

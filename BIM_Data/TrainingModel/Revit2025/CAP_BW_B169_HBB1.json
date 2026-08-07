@@ -1,0 +1,665 @@
+{
+  "Id": 2297132,
+  "FamilyName": "CAP_BW_B169",
+  "TypeName": "HBB1",
+  "Geometry": {
+    "Solid": []
+  },
+  "Connectors": [
+    {
+      "Origin": {
+        "X": 500.95305833828235,
+        "Y": 936.9371206686316,
+        "Z": 12.477690288713948
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": -1.0,
+        "Z": 0.0
+      },
+      "Radius": 0.6561679790026247
+    },
+    {
+      "Origin": {
+        "X": 500.95305833828235,
+        "Y": 937.5211101699439,
+        "Z": 12.477690288713948
+      },
+      "Direction": {
+        "X": 0.0,
+        "Y": 1.0,
+        "Z": 0.0
+      },
+      "Radius": 0.03280839895013123
+    }
+  ],
+  "InstanceParameters": [
+    {
+      "Name": "시스템 약어",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "단열재 두께",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "전체 크기",
+      "Value": "400 mm-20 mm",
+      "StorageType": "String",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "단열재 두께",
+      "Value": "0 mm",
+      "StorageType": "Double",
+      "GroupName": "단열재",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "시스템 유형",
+      "Value": "Hydronic Supply",
+      "StorageType": "ElementId",
+      "GroupName": "기계",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "시스템 분류",
+      "Value": "순환수 공급",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "시스템 이름",
+      "Value": "Hydronic Supply 157",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "최대 크기",
+      "Value": "400",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "최소 크기",
+      "Value": "20",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "주석 축척 사용",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": "그래픽",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "크기",
+      "Value": "400-20",
+      "StorageType": "String",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "손실 방법",
+      "Value": "3bf616f9-6b98-4a21-80ff-da1120c8f6d6",
+      "StorageType": "String",
+      "GroupName": "기계",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IFC로 내보내기",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "IfcGUID",
+      "Value": "0TXFFJGL94RgzCfdMALBsi",
+      "StorageType": "String",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "설계 옵션",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "체적",
+      "Value": "0.02 m³",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "철거 공정",
+      "Value": "없음",
+      "StorageType": "ElementId",
+      "GroupName": "공정",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "생성 공정",
+      "Value": "New Construction",
+      "StorageType": "ElementId",
+      "GroupName": "공정",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "호스트 ID",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "구속조건",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리 및 유형",
+      "Value": "CAP_BW_B169: HBB1",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리",
+      "Value": "CAP_BW_B169",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형",
+      "Value": "HBB1",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 ID",
+      "Value": "1629488",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨로부터의 높이",
+      "Value": "3803.20",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "레벨",
+      "Value": "Level 1",
+      "StorageType": "ElementId",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "SK_SIZE",
+      "Value": "400A",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_PIPERUN NO",
+      "Value": "30NAB11BR005-HBB1-400(N0)",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_UTIL",
+      "Value": "NAB",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_COAT SPEC",
+      "Value": "MP-01B",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_INSUL TYPE",
+      "Value": "N",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_ISO SHEET NO",
+      "Value": "09",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_PIPELINE NO",
+      "Value": "30NAB11BR005",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_SEQUENCE NO",
+      "Value": "005",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_SCOPE",
+      "Value": "TANK",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_FD / SK_AREA",
+      "Value": "B",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_FL / SK_UNIT",
+      "Value": "B1",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_RM / SK_BOM UNIT",
+      "Value": "UTA0",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_TRACING TYPE",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Body_Radius",
+      "Value": "203.20",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Cap_Length",
+      "Value": "178.00",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Body_Fillet",
+      "Value": "59.33",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Length",
+      "Value": "178.00",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "SK_SUB UNIT",
+      "Value": "30",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_INSUL THICK",
+      "Value": "0",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_PLAN DWG NO",
+      "Value": "24035D-08100-P-PP-30-03003",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Nominal Diameter1",
+      "Value": "400",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Radius1",
+      "Value": "200",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Radius2",
+      "Value": "10",
+      "StorageType": "Double",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Nominal Diameter2",
+      "Value": "20",
+      "StorageType": "Double",
+      "GroupName": "치수",
+      "IsReadOnly": true,
+      "IsShared": false
+    }
+  ],
+  "TypeParameters": [
+    {
+      "Name": "기본 높이",
+      "Value": "0.00",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "카테고리",
+      "Value": "배관 부속류",
+      "StorageType": "ElementId",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "IFC로 유형 내보내기",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 IfcGUID",
+      "Value": "1uzhGREtLE089HkZm2FNvR",
+      "StorageType": "String",
+      "GroupName": "IFC 매개변수",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "설계 옵션",
+      "Value": "-1",
+      "StorageType": "ElementId",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "제조업체",
+      "Value": "MTM Digital Construction Co. Ltd.,",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "URL",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "코드 이름",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass 제목",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "OmniClass 번호",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "조합 설명",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "조합 코드",
+      "Value": "",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "패밀리 이름",
+      "Value": "CAP_BW_B169",
+      "StorageType": "String",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "유형 이름",
+      "Value": "HBB1",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Material",
+      "Value": "CARBON STEEL3",
+      "StorageType": "ElementId",
+      "GroupName": "재료 및 마감재",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "Copyright",
+      "Value": "Copyright ⓒ SK ECOENGINEERING, All right reserved",
+      "StorageType": "String",
+      "GroupName": "ID 데이터",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_ITEM",
+      "Value": "CAP_BW",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_CLASS",
+      "Value": "HBB1",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_SCODE",
+      "Value": "CAP",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SK_MATE",
+      "Value": "HBB1",
+      "StorageType": "String",
+      "GroupName": "문자",
+      "IsReadOnly": true,
+      "IsShared": true
+    },
+    {
+      "Name": "SIZE Range_Max",
+      "Value": "500",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "SIZE Range_Min",
+      "Value": "65",
+      "StorageType": "Double",
+      "GroupName": "구속조건",
+      "IsReadOnly": false,
+      "IsShared": true
+    },
+    {
+      "Name": "Lookup Table Name",
+      "Value": "CAP_BW_B169",
+      "StorageType": "String",
+      "GroupName": null,
+      "IsReadOnly": true,
+      "IsShared": false
+    },
+    {
+      "Name": "Match_Main_Only",
+      "Value": "1",
+      "StorageType": "Integer",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    },
+    {
+      "Name": "Match_Branch_Only",
+      "Value": "0",
+      "StorageType": "Integer",
+      "GroupName": null,
+      "IsReadOnly": false,
+      "IsShared": false
+    }
+  ],
+  "Thumbnail": "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"
+}

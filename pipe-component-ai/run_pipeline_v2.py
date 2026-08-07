@@ -13,8 +13,13 @@ run_pipeline_v2.py
                              생성 로직 자체가 없음 - 이름 참조만 남아 있고 실제로 만들어지지 않음)
   - meta_category         : InstanceParameters 의 Category (텍스트/카테고리)
   - meta_system_class     : System Classification (텍스트/카테고리)
-  - meta_max_size_mm      : 사람이 입력한 파라미터 값 (형상에서 측정된 값 아님)
+  - meta_max_size_mm      : 사람이 입력한 파라미터 값. 한 차례 재포함해 재학습해
+                             봤으나(ABLATION), RealData 실사용 데이터에서 SUPPORT로의
+                             쏠림(46→95건)이 발생해 되돌림 - 학습 CSV와 RealData 간
+                             "Maximum Size 파라미터 존재 여부" 분포가 달라 생긴 문제로
+                             추정. CV 이득은 미미했음 (0.9311→0.9338).
   - meta_min_size_mm      : 〃
+  - meta_size_available   : 〃 (위와 함께 도입/제외됨)
 
 사용 피처 (FEATURE_GROUPS["geometry"] + FEATURE_GROUPS["connector"]):
   - solid/face/bbox 기반 형상 피처, 커넥터 반경/거리/각도/분기 피처 전체.
@@ -480,6 +485,13 @@ def run_pipeline():
     # ── Step 2: 피처 행렬 준비 (PURE GEOMETRY) ──
     print("\n[STEP 2] 피처 행렬 준비 (순수 geometry + connector만 사용)")
 
+    # [ABLATION - REVERTED] meta_max_size_mm/meta_min_size_mm/meta_size_available를
+    # 다시 포함해 재학습한 결과, CV 정확도는 거의 그대로였지만(0.9311→0.9338)
+    # 실제 RealData 추론에서 SUPPORT로의 쏠림이 크게 발생했다 (46→95건,
+    # CAP/FLANGE/OLET/COUPLING에서 이동). 학습 CSV에서는 "Maximum Size가
+    # 없으면 SUPPORT"라는 상관관계가 강했지만, RealData에서는 그 파라미터가
+    # 없는 비-SUPPORT 부품이 많아 같은 규칙이 잘못 적용된 것으로 보인다.
+    # CV 이득 대비 실사용 데이터 저하가 커서 원래대로 되돌린다.
     PURE_GEOMETRY_FEATURES = FEATURE_GROUPS["geometry"] + FEATURE_GROUPS["connector"]
     feature_cols = [c for c in PURE_GEOMETRY_FEATURES if c in df.columns]
 
