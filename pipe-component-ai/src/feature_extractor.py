@@ -3,6 +3,11 @@ feature_extractor.py
 --------------------
 Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
 
+[PATCHED] extract_metadata() now falls back to Korean parameter names
+(카테고리, 시스템 분류, 최대 크기, 최소 크기) when the English keys
+are not present, since the Revit export in this project uses Korean
+display names for InstanceParameters.
+
 추출 피처 목록:
   [메타데이터]
     meta_category        : InstanceParameters 의 Category 값 (str)
@@ -105,7 +110,7 @@ def _parse_mm_value(val_str: str) -> float:
         return float(str(val_str).split()[0])
     except Exception:
         return 0.0
-    
+
 def _face_type(face: dict) -> str:
     keys = face.keys()
     if "FaceNormal" in keys:
@@ -116,6 +121,32 @@ def _face_type(face: dict) -> str:
         return "revolved"
     else:
         return "other"
+
+
+# ─────────────────────────────────────────────
+#  [PATCH] 파라미터 이름 다국어 매핑
+#  Revit 파라미터 표시 이름은 프로젝트/언어별로 다를 수 있으므로
+#  영문 키가 없으면 한국어 키로 fallback 한다.
+# ─────────────────────────────────────────────
+
+_PARAM_NAME_ALIASES: dict[str, list[str]] = {
+    "Category":               ["Category", "카테고리"],
+    "System Classification":  ["System Classification", "시스템 분류"],
+    "Maximum Size":           ["Maximum Size", "최대 크기"],
+    "Minimum Size":           ["Minimum Size", "최소 크기"],
+}
+
+
+def _get_param_any(param_map: dict, canonical_key: str, default: str = "") -> str:
+    """
+    canonical_key(예: 'Category')에 대해 등록된 별칭들을 순서대로 시도해
+    param_map 에서 값을 찾는다. 하나도 없으면 default 반환.
+    """
+    for alias in _PARAM_NAME_ALIASES.get(canonical_key, [canonical_key]):
+        if alias in param_map:
+            return param_map[alias]
+    return default
+
 
 # ─────────────────────────────────────────────
 #  메인 추출 함수
@@ -134,10 +165,15 @@ def extract_metadata(data: dict, feat: dict):
         if name not in param_map:   # 첫 번째 값 우선
             param_map[name] = val
 
-    feat["meta_category"]     = param_map.get("Category", "")
-    feat["meta_system_class"] = param_map.get("System Classification", "")
-    feat["meta_max_size_mm"]  = _parse_mm_value(param_map.get("Maximum Size", "0"))
-    feat["meta_min_size_mm"]  = _parse_mm_value(param_map.get("Minimum Size", "0"))
+    # [PATCH] 영문 키가 없으면 한국어 키로 fallback
+    feat["meta_category"]     = _get_param_any(param_map, "Category")
+    feat["meta_system_class"] = _get_param_any(param_map, "System Classification")
+    feat["meta_max_size_mm"]  = _parse_mm_value(
+        _get_param_any(param_map, "Maximum Size", "0")
+    )
+    feat["meta_min_size_mm"]  = _parse_mm_value(
+        _get_param_any(param_map, "Minimum Size", "0")
+    )
 
 def extract_geometric_features(data: dict, feat: dict):
     # ── 형상 피처 ──────────────────────────────

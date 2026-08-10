@@ -38,7 +38,9 @@ def predict_data():
     df["predicted_group_label"] = pred_labels
     df["predicted_component_group"] = pred_group
 
-    df.to_csv(PREDICTIONS_DIR / "predictions.csv", index=False, encoding="utf-8-sig")
+    component_df = df[["source_file", "skey", "predicted_component_group"]]
+
+    component_df.to_csv(PREDICTIONS_DIR / "predictions.csv", index=False, encoding="utf-8-sig")
 
     predict_valves(df)
 
@@ -58,6 +60,8 @@ def predict_valves(df):
 
     df["predicted_group_label"] = pred_labels
     df["predicted_component_group"] = pred_group
+
+    df = df[["source_file", "skey", "predicted_component_group"]]
 
     df.to_csv(PREDICTIONS_DIR / "valve_predictions.csv", index=False, encoding="utf-8-sig")
 
