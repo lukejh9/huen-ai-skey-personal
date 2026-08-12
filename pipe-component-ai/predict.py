@@ -6,7 +6,6 @@ from sklearn.metrics import classification_report
 import pandas as pd
 
 from src.data_loader import load_dataset
-from src.skey_mapper import skey_prefix
 
 
 _ROOT = Path(__file__).parent
@@ -40,8 +39,6 @@ def predict_data():
     df["predicted_group_label"] = pred_labels
     df["predicted_component_group"] = pred_group
 
-    #df["skey_prefix"] = 
-
     component_df = df[["source_file", "skey", "predicted_component_group"]]
 
     component_df.to_csv(PREDICTIONS_DIR / "predictions.csv", index=False, encoding="utf-8-sig")
@@ -53,7 +50,7 @@ def predict_data():
     )
 
     component_df = component_df.merge(
-        valve_df[["source_file", "predicted_valve_type"]],
+        valve_df[["source_file", "predicted_valve_type", "predicted_skey"]],
         on="source_file",
         how="left"
     )
@@ -77,7 +74,10 @@ def predict_valves(df):
     df["predicted_group_label"] = pred_labels
     df["predicted_component_group"] = pred_group
 
-    df = df[["source_file", "skey", "predicted_component_group"]]
+    int_to_skey = joblib.load(f"{MODEL_DIR}/int_to_skey.pkl")
+    df["predicted_skey"] = df["predicted_group_label"].map(int_to_skey).fillna("UNKNOWN")
+
+    df = df[["source_file", "predicted_group_label", "predicted_skey", "skey", "predicted_component_group"]]
 
     df.to_csv(PREDICTIONS_DIR / "valve_predictions.csv", index=False, encoding="utf-8-sig")
 
@@ -86,6 +86,7 @@ def predict_valves(df):
 def report_accuracy(df, verbose=True):
     key = pd.read_csv("source_file_skey.csv")
     total = 0
+    correct_pre = 0
     correct = 0
     incorrect = []
 
@@ -94,28 +95,26 @@ def report_accuracy(df, verbose=True):
         skey = row["Ez-ISO v2 SKEY"]
 
         data = df[df["source_file"] == source].iloc[0]
-        if data["skey"] == skey:
+        predicted_skey = data["predicted_skey"] if pd.notna(data["predicted_skey"]) else data["skey"]
+        if pd.notna(data["predicted_skey"]) and skey.startswith(data["predicted_skey"]):
+            correct_pre += 1
+        if predicted_skey == skey:
             correct += 1
         else:
-            incorrect.append([source, data["skey"], skey])
+            incorrect.append([source, predicted_skey, skey])
 
         total += 1
 
     if verbose:
-        print("")
-        print("-" * 65)
         print("Accuracy report:")
-        print(f"# Correct:   {correct}")
-        print(f"# Incorrect: {len(incorrect)}")
-        print(f"# Total:     {total}")
-        print(f"Accuracy:    {correct / total}")
-        print("")
-        print("Incorrect predictions:")
+        print(f"# Correct Prefixes: {correct_pre}")
+        print(f"# Correct:          {correct}")
+        print(f"# Incorrect:        {len(incorrect)}")
+        print(f"# Total:            {total}")
+        print(f"Accuracy:           {correct / total}")
         for i in incorrect:
-            print(f"Source: {i[0]}")
-            print(f"Predicted SKEY: {i[1]}")
-            print(f"Actual SKEY:    {i[2]}")
-            print("")
+            print(i[0])
+            print(f"{i[1]} : {i[2]}")
 
     incorrect_df = pd.DataFrame(
         incorrect,

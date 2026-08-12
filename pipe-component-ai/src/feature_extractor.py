@@ -3,11 +3,6 @@ feature_extractor.py
 --------------------
 Revit BIM 패밀리 JSON → 수치 피처 벡터 추출.
 
-[PATCHED] extract_metadata() now falls back to Korean parameter names
-(카테고리, 시스템 분류, 최대 크기, 최소 크기) when the English keys
-are not present, since the Revit export in this project uses Korean
-display names for InstanceParameters.
-
 추출 피처 목록:
   [메타데이터]
     meta_category        : InstanceParameters 의 Category 값 (str)
@@ -23,9 +18,9 @@ display names for InstanceParameters.
     planar_area_frac     :
     cyl_area_frac        :
     rev_area_frac        :
-    geo_bbox_x           : BBox 가로 (m)
-    geo_bbox_y           : BBox 세로 (m)
-    geo_bbox_z           : BBox 높이 (m)
+    geo_bbox_x           : BBox 최장 축 (m)
+    geo_bbox_y           : BBox 중간 축 (m)
+    geo_bbox_z           : BBox 최단 축 (m)
     geo_bbox_diag        : BBox 대각선 길이 (m)
     geo_bbox_vol         : 
     geo_aspect_xy        : bbox_x / bbox_y
@@ -227,11 +222,13 @@ def extract_geometric_features(data: dict, feat: dict):
         feat["rev_area_frac"] = area_by_type["revolved"] / total_area
     
     if xs:
-        bbox_x = (max(xs) - min(xs)) * _FT_TO_M
-        bbox_y = (max(ys) - min(ys)) * _FT_TO_M
-        bbox_z = (max(zs) - min(zs)) * _FT_TO_M
+        raw_x = (max(xs) - min(xs)) * _FT_TO_M
+        raw_y = (max(ys) - min(ys)) * _FT_TO_M
+        raw_z = (max(zs) - min(zs)) * _FT_TO_M
     else:
-        bbox_x = bbox_y = bbox_z = 0.0
+        raw_x = raw_y = raw_z = 0.0
+
+    bbox_x, bbox_y, bbox_z = sorted([raw_x, raw_y, raw_z], reverse=True)
 
     feat["geo_bbox_x"]    = bbox_x
     feat["geo_bbox_y"]    = bbox_y
@@ -261,6 +258,17 @@ def extract_geometric_features(data: dict, feat: dict):
     feat["geo_density"] = face_count / feat["geo_volume"] if feat["geo_volume"] > 0 else 0
     feat["geo_sav_ratio"] = total_surface_area / total_volume if total_volume > 0 else 0
 
+def _connector_sort_key(c: dict) -> tuple:
+    radius = c.get("Radius", 0.0)
+    origin = c.get("Origin", {}) or {}
+    return (
+        -radius,
+        origin.get("X", 0.0),
+        origin.get("Y", 0.0),
+        origin.get("Z", 0.0),
+    )
+
+
 def extract_connector_features(data: dict, feat: dict):
     # ── 커넥터 피처 ────────────────────────────
     connectors = data.get("Connectors", [])
@@ -283,10 +291,12 @@ def extract_connector_features(data: dict, feat: dict):
         feat["conn_radius_min"]   = 0.0
         feat["conn_radius_range"] = 0.0
         feat["conn_radius_ratio"] = 0.0
-    
+
+    sorted_connectors = sorted(connectors, key=_connector_sort_key)
+
     # 두 커넥터가 있을 때 거리 / 각도 / 동축 판단
     if conn_count >= 2:
-        c0, c1 = connectors[0], connectors[1]
+        c0, c1 = sorted_connectors[0], sorted_connectors[1]
         dist = _vec_dist(c0["Origin"], c1["Origin"]) * _FT_TO_M
         angle_deg = _angle_between_deg(c0["Direction"], c1["Direction"])
 
@@ -403,12 +413,12 @@ FEATURE_GROUPS = {
         "geo_surface_area", "geo_volume", "geo_solid_count", "geo_face_count",
         "planar_area_frac", "cyl_area_frac", "rev_area_frac",
         "geo_bbox_x", "geo_bbox_y", "geo_bbox_z", "geo_bbox_diag", "geo_bbox_vol",
-        "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_centroid_dist", 
+        "geo_aspect_xy", "geo_aspect_xz", "geo_aspect_yz", "geo_centroid_dist",
         "geo_compactness", "geo_density", "geo_sav_ratio",
     ],
     "connector": [
         "conn_count", "conn_radius_mean", "conn_radius_std",
-        "conn_radius_max", "conn_radius_min", "conn_radius_range", "conn_radius_ratio"
+        "conn_radius_max", "conn_radius_min", "conn_radius_range", "conn_radius_ratio",
         "conn_distance", "conn_angle_deg", "conn_same_axis", "conn_is_inline",
     ],
     "metadata": [
