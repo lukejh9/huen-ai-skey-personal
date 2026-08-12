@@ -115,6 +115,25 @@ N_SPLITS = 5  # Stratified K-Fold 분할 수
 ENABLE_MULTILINGUAL_RECOVERY = True
 MULTILINGUAL_MIN_TIER        = "specific"  # "specific" | "generic"
 
+# ── 범주형 메타데이터 (valve_type / skey 단계 전용) ──────
+# component_group(STEP 3) 분류기는 의도적으로 pure-geometry 그대로 둔다 -
+# meta_max_size_mm 재포함 실험에서 RealData 쏠림(46→95건, SUPPORT)이
+# 발생했던 게 바로 이 단계였기 때문. VALVE 세부 타입(STEP 4/5)은 완전히
+# 다른 분류 문제(전부 VALVE인 표본 안에서의 세부 구분)라 같은 실패가
+# 그대로 재발한다는 보장은 없지만, 혹시 RealData에서 비슷한 존재율 격차가
+# 나타나면 아래 플래그 하나로 즉시 되돌릴 수 있게 해둔다.
+ENABLE_VALVE_METADATA   = True
+CATEGORICAL_META_FEATURES = FEATURE_GROUPS["metadata_categorical"]  # meta_category, meta_system_class
+_MISSING_CATEGORY = "MISSING"  # 결측을 NaN이 아니라 명시적 카테고리로 취급
+
+# True면 valve_type/skey 각 단계를 metadata 없이(baseline) 한 번 더
+# 돌려서 CV 정확도를 나란히 출력한다 (모델/리포트 파일은 저장하지 않는
+# dry-run - 실제로 저장되는 모델은 ENABLE_VALVE_METADATA 설정을 따름).
+# meta_max_size_mm 때처럼 "CV는 오르는데 RealData는 나빠지는" 상황을
+# CV 단계에서 완전히 잡아낼 수는 없지만, 최소한 metadata가 CV 상에서
+# 실제로 기여하는지는 매 실행마다 바로 확인할 수 있다.
+RUN_METADATA_ABLATION = True
+
 
 # ═══════════════════════════════════════════════
 #  출력 / 저장 헬퍼
@@ -211,12 +230,54 @@ def _safe_n_splits(df: pd.DataFrame, label_col: str, groups_col: str, n_splits: 
     return splits
 
 
+def _fill_missing_categorical(df: pd.DataFrame, cols: list) -> pd.DataFrame:
+    """범주형 메타데이터 컬럼의 빈 문자열/NaN을 명시적 'MISSING' 카테고리로
+    채운다. NaN으로 두면 LightGBM이 결측을 어떻게 다룰지 우리가 통제할 수
+    없고, meta_max_size_mm 사례처럼 "값이 없다"는 사실 자체가 소스별로
+    분포가 다른 신호일 수 있으므로, 최소한 그 신호를 모델이 명시적으로
+    보게(그리고 나중에 감사하기 쉽게) 만든다."""
+    df = df.copy()
+    for c in cols:
+        if c in df.columns:
+            df[c] = df[c].astype(str).replace(
+                {"": _MISSING_CATEGORY, "nan": _MISSING_CATEGORY, "None": _MISSING_CATEGORY}
+            )
+    return df
+
+
+def _apply_categorical_dtype(X: pd.DataFrame, categorical_feature_cols: list,
+                              category_values: dict | None = None) -> tuple[pd.DataFrame, dict]:
+    """categorical_feature_cols를 pandas Categorical dtype으로 변환한다.
+    LightGBM sklearn API는 dtype이 'category'인 컬럼을 자동으로 범주형으로
+    취급한다 (categorical_feature='auto' 기본값 - 별도 인자 불필요).
+
+    category_values가 주어지면(추론 시 재현용) 그 카테고리 집합을 그대로
+    쓰고, 없으면(학습 시) X에서 관측된 값으로 새로 만들어 반환한다 -
+    반환값은 그대로 category_values.pkl로 저장해서 추론 시 동일하게
+    재현해야 한다 (그렇지 않으면 학습 때 못 본 카테고리 순서가 갈려
+    예측이 어긋날 수 있음)."""
+    X = X.copy()
+    out_values = dict(category_values) if category_values else {}
+    for col in categorical_feature_cols:
+        if col not in X.columns:
+            continue
+        if category_values and col in category_values:
+            cats = category_values[col]
+        else:
+            cats = sorted(X[col].astype(str).unique().tolist())
+            out_values[col] = cats
+        X[col] = pd.Categorical(X[col].astype(str), categories=cats)
+    return X, out_values
+
+
 def _run_cv_stage(*, stage_name: str, X: pd.DataFrame, y: np.ndarray, groups: np.ndarray,
                    n_splits: int, lgbm_params: dict, int_to_label: dict,
                    classifier_file: str, feature_cols_file: str,
                    categorical_features_file: str, int_to_label_file: str,
                    report_prefix: str, feature_cols: list,
-                   categorical_feature_cols: list) -> dict:
+                   categorical_feature_cols: list,
+                   category_values_file: str = "category_values.pkl",
+                   dry_run: bool = False) -> dict:
     """
     Stratified-Group K-Fold CV → 전체 데이터 최종 학습 → 리포트/모델 저장까지
     한 번에 처리하는 공용 루틴.
@@ -231,6 +292,12 @@ def _run_cv_stage(*, stage_name: str, X: pd.DataFrame, y: np.ndarray, groups: np
     같이 표시한다. 개별 클래스별 리포트 표는 콘솔에 통째로 찍지 않고
     CSV로 저장한 뒤 요약(정확도 + macro/weighted F1)만 보여준다.
     """
+    # 범주형 메타데이터 컬럼을 pandas Categorical dtype으로 변환 (전체 X 기준
+    # 카테고리 어휘 고정 - 폴드마다 다른 어휘가 생기지 않도록 CV 시작 전에
+    # 한 번만 계산한다. 이 category_values는 최종적으로 저장되어 추론 시
+    # 동일하게 재현된다).
+    X, category_values = _apply_categorical_dtype(X, categorical_feature_cols)
+
     skf = StratifiedGroupKFold(n_splits=n_splits, shuffle=True, random_state=42)
 
     fold_accs, all_true, all_pred = [], [], []
@@ -272,13 +339,8 @@ def _run_cv_stage(*, stage_name: str, X: pd.DataFrame, y: np.ndarray, groups: np
     final_model = lgb.LGBMClassifier(**lgbm_params)
     final_model.fit(X, y)
 
-    print(f"\n  [저장 - {stage_name}]")
-    _save(final_model, classifier_file)
-    _save(feature_cols, feature_cols_file)
-    _save(categorical_feature_cols, categorical_features_file)
-    _save(int_to_label, int_to_label_file)
-
-    # 평가 리포트 (전체 텍스트 표는 CSV로만 저장 - 콘솔에는 요약만)
+    # 평가 리포트는 dry-run(ablation 비교용)이어도 계산은 한다 - macro_f1
+    # 등은 비교에 필요하기 때문. 단, 디스크 저장은 dry_run이 아닐 때만.
     unique_labels = sorted(set(all_true))
     label_names = [int_to_label.get(i, str(i)) for i in unique_labels]
 
@@ -286,27 +348,40 @@ def _run_cv_stage(*, stage_name: str, X: pd.DataFrame, y: np.ndarray, groups: np
         all_true, all_pred, labels=unique_labels, target_names=label_names,
         output_dict=True, zero_division=0,
     )
-    cr_file = f"{report_prefix}classification_report.csv"
-    _save(pd.DataFrame(cr_dict).T, cr_file, index=True)
     macro_f1 = cr_dict["macro avg"]["f1-score"]
     weighted_f1 = cr_dict["weighted avg"]["f1-score"]
-    print(f"  분류 리포트 요약: macro F1={macro_f1:.4f}, weighted F1={weighted_f1:.4f} "
-          f"(클래스별 전체 표는 {cr_file} 참고)")
-
-    cm = confusion_matrix(all_true, all_pred, labels=unique_labels)
-    _save(pd.DataFrame(cm, index=label_names, columns=label_names),
-          f"{report_prefix}confusion_matrix.csv", index=True)
 
     fi_df = pd.DataFrame({
         "feature": feature_cols,
         "importance": fi_sum / n_splits,
     }).sort_values("importance", ascending=False)
-    _save(fi_df, f"{report_prefix}feature_importance.csv")
-    print(f"  피처 중요도 Top 5: "
-          + ", ".join(f"{r.feature}({r.importance:.0f})" for r in fi_df.head(5).itertuples()))
 
-    _save(pd.DataFrame({"fold": list(range(1, n_splits + 1)), "accuracy": fold_accs}),
-          f"{report_prefix}fold_accuracies.csv")
+    if dry_run:
+        print(f"  [dry-run - {stage_name}] 모델/리포트 저장 생략 (ablation 비교 전용)")
+        print(f"  분류 리포트 요약: macro F1={macro_f1:.4f}, weighted F1={weighted_f1:.4f}")
+    else:
+        print(f"\n  [저장 - {stage_name}]")
+        _save(final_model, classifier_file)
+        _save(feature_cols, feature_cols_file)
+        _save(categorical_feature_cols, categorical_features_file)
+        _save(int_to_label, int_to_label_file)
+        _save(category_values, category_values_file)
+
+        cr_file = f"{report_prefix}classification_report.csv"
+        _save(pd.DataFrame(cr_dict).T, cr_file, index=True)
+        print(f"  분류 리포트 요약: macro F1={macro_f1:.4f}, weighted F1={weighted_f1:.4f} "
+              f"(클래스별 전체 표는 {cr_file} 참고)")
+
+        cm = confusion_matrix(all_true, all_pred, labels=unique_labels)
+        _save(pd.DataFrame(cm, index=label_names, columns=label_names),
+              f"{report_prefix}confusion_matrix.csv", index=True)
+
+        _save(fi_df, f"{report_prefix}feature_importance.csv")
+        print(f"  피처 중요도 Top 5: "
+              + ", ".join(f"{r.feature}({r.importance:.0f})" for r in fi_df.head(5).itertuples()))
+
+        _save(pd.DataFrame({"fold": list(range(1, n_splits + 1)), "accuracy": fold_accs}),
+              f"{report_prefix}fold_accuracies.csv")
 
     return {
         "cv_accuracy": mean_acc,
@@ -314,6 +389,7 @@ def _run_cv_stage(*, stage_name: str, X: pd.DataFrame, y: np.ndarray, groups: np
         "n_samples": len(X),
         "n_splits": n_splits,
         "macro_f1": macro_f1,
+        "category_values": category_values,
     }
 
 
@@ -544,10 +620,9 @@ def run_pipeline():
         feature_cols=feature_cols,
         categorical_feature_cols=categorical_feature_cols,
     )
-    # category_values.pkl: categorical_feature_cols가 항상 빈 리스트이므로
-    # 카테고리 어휘 스냅샷은 없지만, 추론 코드가 기대하는 파일 구조만 맞춰
-    # 빈 dict로 남겨둔다.
-    _save({}, "category_values.pkl")
+    # category_values.pkl은 이제 _run_cv_stage가 직접 저장한다 (group은
+    # categorical_feature_cols=[]이므로 빈 dict가 저장됨 - 추론 코드가
+    # 기대하는 파일 구조는 그대로 유지됨).
 
     # ── Step 4: Valve 세부 타입 분류기 ─────────
     # component_group == "VALVE" 로 예측(또는 레이블링)된 행만 따로 모아,
@@ -585,11 +660,36 @@ def run_pipeline():
             print("  [정보] 필터링 후 남은 밸브 타입이 2개 미만이라 이 단계를 건너뜁니다.")
         else:
             v_splits = _safe_n_splits(valve_df, "valve_type", "source_model", N_SPLITS)
+
+            # 범주형 메타데이터 사용 여부에 따라 valve 단계 전용 feature_cols
+            # 구성 - component_group(pure geometry) feature_cols에 meta_category/
+            # meta_system_class를 덧붙인다. 결측은 "MISSING" 카테고리로 명시.
+            valve_meta_cols = CATEGORICAL_META_FEATURES if ENABLE_VALVE_METADATA else []
+            valve_feature_cols = feature_cols + valve_meta_cols
+            valve_df_filled = _fill_missing_categorical(valve_df, CATEGORICAL_META_FEATURES)
+
+            valve_baseline = None
+            if RUN_METADATA_ABLATION and valve_meta_cols:
+                print("  [ABLATION - baseline] metadata 없이 valve_type 재학습 (비교용, dry-run)")
+                valve_baseline = _run_cv_stage(
+                    stage_name="valve_type (baseline, no metadata)",
+                    X=valve_df_filled[feature_cols],
+                    y=valve_df_filled["vtype_label"].values,
+                    groups=valve_df_filled["source_model"].values,
+                    n_splits=v_splits,
+                    lgbm_params={**LGBM_PARAMS, "num_class": NUM_VTYPE_CLASSES},
+                    int_to_label=INT_TO_VTYPE,
+                    classifier_file="", feature_cols_file="", categorical_features_file="",
+                    int_to_label_file="", report_prefix="valve_baseline_",
+                    feature_cols=feature_cols, categorical_feature_cols=[],
+                    dry_run=True,
+                )
+
             valve_result = _run_cv_stage(
-                stage_name="valve_type",
-                X=valve_df[feature_cols],
-                y=valve_df["vtype_label"].values,
-                groups=valve_df["source_model"].values,
+                stage_name="valve_type" + (" (+ metadata)" if valve_meta_cols else ""),
+                X=valve_df_filled[valve_feature_cols],
+                y=valve_df_filled["vtype_label"].values,
+                groups=valve_df_filled["source_model"].values,
                 n_splits=v_splits,
                 lgbm_params={**LGBM_PARAMS, "num_class": NUM_VTYPE_CLASSES},
                 int_to_label=INT_TO_VTYPE,
@@ -597,11 +697,18 @@ def run_pipeline():
                 feature_cols_file="valve_feature_cols.pkl",
                 categorical_features_file="valve_categorical_features.pkl",
                 int_to_label_file="int_to_vtype.pkl",
+                category_values_file="valve_category_values.pkl",
                 report_prefix="valve_",
-                feature_cols=feature_cols,
-                categorical_feature_cols=categorical_feature_cols,
+                feature_cols=valve_feature_cols,
+                categorical_feature_cols=valve_meta_cols,
             )
             valve_result["n_types"] = valve_df["valve_type"].nunique()
+            if valve_baseline is not None:
+                delta = valve_result["cv_accuracy"] - valve_baseline["cv_accuracy"]
+                sign = "+" if delta >= 0 else ""
+                print(f"  >> [ABLATION] valve_type metadata 효과: "
+                      f"{valve_baseline['cv_accuracy']:.4f} → {valve_result['cv_accuracy']:.4f} "
+                      f"({sign}{delta:.4f})")
 
     # ── Step 5: 개별 SKEY 단위 분류기 ──────────
     # Step 4의 valve_type(BALL/GATE/GLOBE/...)은 여러 SKEY 접두어를 한
@@ -660,11 +767,33 @@ def run_pipeline():
                 skey_df["skey_label"] = skey_df["skey_prefix"].map(SKEY_TO_INT)
 
                 sk_splits = _safe_n_splits(skey_df, "skey_prefix", "source_model", N_SPLITS)
+
+                skey_meta_cols = CATEGORICAL_META_FEATURES if ENABLE_VALVE_METADATA else []
+                skey_feature_cols = feature_cols + skey_meta_cols
+                skey_df_filled = _fill_missing_categorical(skey_df, CATEGORICAL_META_FEATURES)
+
+                skey_baseline = None
+                if RUN_METADATA_ABLATION and skey_meta_cols:
+                    print("  [ABLATION - baseline] metadata 없이 skey 재학습 (비교용, dry-run)")
+                    skey_baseline = _run_cv_stage(
+                        stage_name="skey (baseline, no metadata)",
+                        X=skey_df_filled[feature_cols],
+                        y=skey_df_filled["skey_label"].values,
+                        groups=skey_df_filled["source_model"].values,
+                        n_splits=sk_splits,
+                        lgbm_params={**LGBM_PARAMS, "num_class": len(SKEY_CLASSES)},
+                        int_to_label=INT_TO_SKEY,
+                        classifier_file="", feature_cols_file="", categorical_features_file="",
+                        int_to_label_file="", report_prefix="skey_baseline_",
+                        feature_cols=feature_cols, categorical_feature_cols=[],
+                        dry_run=True,
+                    )
+
                 skey_result = _run_cv_stage(
-                    stage_name="skey",
-                    X=skey_df[feature_cols],
-                    y=skey_df["skey_label"].values,
-                    groups=skey_df["source_model"].values,
+                    stage_name="skey" + (" (+ metadata)" if skey_meta_cols else ""),
+                    X=skey_df_filled[skey_feature_cols],
+                    y=skey_df_filled["skey_label"].values,
+                    groups=skey_df_filled["source_model"].values,
                     n_splits=sk_splits,
                     lgbm_params={**LGBM_PARAMS, "num_class": len(SKEY_CLASSES)},
                     int_to_label=INT_TO_SKEY,
@@ -672,12 +801,19 @@ def run_pipeline():
                     feature_cols_file="skey_feature_cols.pkl",
                     categorical_features_file="skey_categorical_features.pkl",
                     int_to_label_file="int_to_skey.pkl",
+                    category_values_file="skey_category_values.pkl",
                     report_prefix="skey_",
-                    feature_cols=feature_cols,
-                    categorical_feature_cols=categorical_feature_cols,
+                    feature_cols=skey_feature_cols,
+                    categorical_feature_cols=skey_meta_cols,
                 )
                 skey_result["n_skeys"] = skey_df["skey_prefix"].nunique()
                 skey_result["n_multilingual_dropped"] = n_multilingual_dropped
+                if skey_baseline is not None:
+                    delta = skey_result["cv_accuracy"] - skey_baseline["cv_accuracy"]
+                    sign = "+" if delta >= 0 else ""
+                    print(f"  >> [ABLATION] skey metadata 효과: "
+                          f"{skey_baseline['cv_accuracy']:.4f} → {skey_result['cv_accuracy']:.4f} "
+                          f"({sign}{delta:.4f})")
 
     # ── 최종 요약 ──────────────────────────────
     elapsed = time.time() - t0

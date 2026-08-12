@@ -56,6 +56,8 @@ from src.feature_extractor import extract_features_from_file
 CONFIDENCE_AUTO = 0.90
 CONFIDENCE_REVIEW = 0.75
 
+
+
 class ComponentPredictor:
     """group_classifier + (선택) valve_type_classifier + (선택) skey_classifier
     를 로드해서 JSON 파일 하나로부터 component_group, VALVE인 경우 valve_type
