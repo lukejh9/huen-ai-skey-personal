@@ -6,6 +6,7 @@ from sklearn.metrics import classification_report
 import pandas as pd
 
 from src.data_loader import load_dataset
+from src.skey_mapper import skey_prefix
 
 
 _ROOT = Path(__file__).parent
@@ -39,7 +40,7 @@ def predict_data():
     df["predicted_group_label"] = pred_labels
     df["predicted_component_group"] = pred_group
 
-    #df["skey"] = 
+    #df["skey_prefix"] = 
 
     component_df = df[["source_file", "skey", "predicted_component_group"]]
 
@@ -56,7 +57,7 @@ def predict_data():
         on="source_file",
         how="left"
     )
-    
+
     report_accuracy(component_df)
 
 def predict_valves(df):
