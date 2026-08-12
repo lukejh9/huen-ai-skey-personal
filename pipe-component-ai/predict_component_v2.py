@@ -53,18 +53,8 @@ if str(_ROOT) not in sys.path:
 from src.feature_extractor import extract_features_from_file
 
 # ── 신뢰도 규칙 (predict.py와 동일한 임계값) ──
-CONFIDENCE_AUTO = 0.85
-CONFIDENCE_REVIEW = 0.65
-
-
-def _confidence_status(conf: float) -> str:
-    if conf >= CONFIDENCE_AUTO:
-        return "auto"
-    elif conf >= CONFIDENCE_REVIEW:
-        return "review"
-    else:
-        return "unknown"
-
+CONFIDENCE_AUTO = 0.90
+CONFIDENCE_REVIEW = 0.75
 
 class ComponentPredictor:
     """group_classifier + (선택) valve_type_classifier + (선택) skey_classifier
@@ -167,8 +157,9 @@ class ComponentPredictor:
         }
 
         review_reasons = []
-        if group_conf < CONFIDENCE_REVIEW:
-            review_reasons.append(f"group confidence low ({group_conf:.2f})")
+        if group_conf < CONFIDENCE_AUTO:
+            tier = "low" if group_conf < CONFIDENCE_REVIEW else "borderline"
+            review_reasons.append(f"group confidence {tier} ({group_conf:.2f})")
 
         # 2단계: VALVE로 예측된 경우에만 세부 타입 추가 예측
         if group == "VALVE" and self.valve_model is not None:
@@ -178,8 +169,9 @@ class ComponentPredictor:
             vtype_conf = float(vtype_proba.max())  # 위 group_conf와 동일한 이유로 max() 사용
             result["valve_type"] = self.int_to_vtype.get(vtype_int, "UNKNOWN")
             result["valve_type_confidence"] = round(vtype_conf, 4)
-            if vtype_conf < CONFIDENCE_REVIEW:
-                review_reasons.append(f"valve_type confidence low ({vtype_conf:.2f})")
+            if vtype_conf < CONFIDENCE_AUTO:
+                tier = "low" if vtype_conf < CONFIDENCE_REVIEW else "borderline"
+                review_reasons.append(f"valve_type confidence {tier} ({vtype_conf:.2f})")
 
         # 3단계: VALVE로 예측된 경우에만 개별 SKEY 추가 예측
         if group == "VALVE" and self.skey_model is not None:
@@ -198,10 +190,15 @@ class ComponentPredictor:
             result["skey_prefix"] = skey_prefix(raw_skey) if raw_skey != "UNKNOWN" else "UNKNOWN"
             result["skey_confidence"] = round(skey_conf, 4)
             
-            if skey_conf < CONFIDENCE_REVIEW:
-                review_reasons.append(f"skey confidence low ({skey_conf:.2f})")
+            if skey_conf < CONFIDENCE_AUTO:
+                tier = "low" if skey_conf < CONFIDENCE_REVIEW else "borderline"
+                review_reasons.append(f"skey confidence {tier} ({skey_conf:.2f})")
 
-        result["review_required"] = group_conf < CONFIDENCE_AUTO
+        result["review_required"] = (
+                group_conf < CONFIDENCE_AUTO
+                or (result["valve_type_confidence"] is not None and result["valve_type_confidence"] < CONFIDENCE_AUTO)
+                or (result["skey_confidence"] is not None and result["skey_confidence"] < CONFIDENCE_AUTO)
+            )
         result["review_reason"] = "; ".join(review_reasons)
         return result
 
@@ -287,7 +284,7 @@ def main():
 
     if "review_required" in df.columns:
         n_review = df["review_required"].sum()
-        print(f"\n검토 필요: {n_review}개 ({(1-(n_review/len(df)))*100:.1f}%)")
+        print(f"\n검토 필요: {n_review}개 ({(n_review/len(df))*100:.1f}%)")
 
     if args.out:
         df.to_csv(args.out, index=False, encoding="utf-8-sig")
