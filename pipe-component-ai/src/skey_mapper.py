@@ -191,6 +191,9 @@ def _skey_prefix(skey: str) -> str:
     prefix = re.sub(r"\*+$", "", skey).strip()
     return prefix
 
+def skey_prefix(skey: str) -> str:
+    return _skey_prefix(skey)
+
 
 def _derive_labels(skey: str, category: str, description: str, pcf_id: str) -> tuple[str, str]:
     """
