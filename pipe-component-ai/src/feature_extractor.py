@@ -524,6 +524,18 @@ FEATURE_GROUPS = {
     "metadata": [
         "meta_max_size_mm", "meta_min_size_mm", "meta_size_available",
     ],
+    # run_pipeline_v2.py Step 4/5 (valve_type / skey stages only) uses these
+    # as pandas categorical features alongside the pure-geometry columns.
+    # NOTE: this key was missing from the feature_extractor.py you uploaded,
+    # which would make `FEATURE_GROUPS["metadata_categorical"]` in
+    # run_pipeline_v2.py line 126 raise KeyError at import time. Since
+    # dataset.csv / valve_classification_report.csv / skey_classification_report.csv
+    # were clearly produced with meta_category/meta_system_class in play,
+    # the file that actually ran your pipeline must already define this -
+    # please diff this against your real local copy before relying on it.
+    "metadata_categorical": [
+        "meta_category", "meta_system_class",
+    ],
 }
 
 

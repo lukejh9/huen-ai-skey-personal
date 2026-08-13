@@ -202,11 +202,63 @@ NUM_VTYPE_CLASSES = len(VALVE_TYPE_CLASSES)
 #  symbol.xml 파서
 # ─────────────────────────────────────────────
 
+# symbol.xml의 Category="End Types" 심볼에서 추출한 접속(EndType) 접미어.
+# 예: SKEY="**FL" (Flanged), "**SW" (Socket Weld) 등 - 베이스 타입(VT/VG/VB/...)
+# 뒤에 이 코드가 wildcard 없이 그대로 붙어 나오는 경우가 있다 (예: "VTFL").
+# 이런 "이미 EndType이 resolve된" SKEY를 wildcard 없이 그대로 남겨두면
+# "VT**"(→"VT")와 "VTFL"(→"VTFL", 접미어 제거 안 됨)이 서로 다른 클래스로
+# 갈라져 학습 표본이 불필요하게 쪼개진다 (실사례: run_pipeline_v2.py Step 5,
+# VTFL/VGFL이 2개 프로젝트에서만 나온 9개/3개짜리 거의 학습 불가능한
+# 별도 클래스가 되어 VTFL은 CV에서 precision/recall/f1 전부 0.0을 기록함).
+# 아래 길이 내림차순 정렬은 "JT"가 "J"보다, 이런 코드가 실제 베이스 타입의
+# 마지막 글자와 우연히 겹치는 사고를 줄이기 위함 (현재 코드 자체는 전부
+# 2글자라 순서 영향은 없지만, 향후 symbol.xml에 더 긴 코드가 추가돼도
+# 안전하도록 유지).
+_END_TYPE_SUFFIXES: tuple[str, ...] = tuple(
+    sorted(["SW", "CP", "FL", "GL", "CL", "SC", "JT", "FS"], key=len, reverse=True)
+)
+
+
+# symbol.xml에 동일한 밸브를 가리키는 서로 다른 SKEY 접두어가 명시적으로
+# "(alternative)"로 나란히 정의된 경우가 있다:
+#   SKEY="VC**" Description="Valve - Check"
+#   SKEY="CK**" Description="Valve - Check (alternative)"
+# 둘 다 PCF_Identification="VALVE", IDF_Record="130/0"로 완전히 동일한
+# 물리적 밸브를 가리키는 진짜 동의어다 (symbol.xml 자체가 확인해줌 - 다른
+# 카탈로그의 명명 관례 차이가 아니라 같은 카탈로그 안의 중복 표기). 정규화
+# 하지 않으면 프로젝트마다 둘 중 아무거나 써서 VTFL/VGFL과 같은 방식으로
+# 같은 밸브 타입이 서로 다른 학습 클래스로 쪼개진다. VC를 대표 표기로
+# 삼는다 (symbol.xml에서 "(alternative)"가 아닌 쪽이자, 사내 Ez-ISO v2
+# SKEY 표기와도 일치함).
+_SKEY_PREFIX_ALIASES: dict[str, str] = {
+    "CK": "VC",
+}
+
+
 def _skey_prefix(skey: str) -> str:
-    """SKEY에서 와일드카드(**) 및 EndType 부분을 제거한 순수 접두어 반환."""
-    # "VB**" → "VB", "01HG" → "01HG", "_G" → "_G"
+    """SKEY에서 와일드카드(**) 및 (resolve된 경우) EndType 접미어를 제거하고,
+    symbol.xml상의 동의어 표기(_SKEY_PREFIX_ALIASES)까지 대표 표기로 통일한
+    순수 베이스 타입 접두어 반환.
+
+    예:
+      "VB**"  → "VB"    (표준 wildcard 형식)
+      "VT**"  → "VT"
+      "VTFL"  → "VT"    (EndType이 wildcard 없이 그대로 resolve된 형식 -
+                          symbol.xml에 "VTFL"이라는 별도 심볼은 존재하지
+                          않으며 "VT**" + EndType="FL"의 결합일 뿐이므로
+                          "VT"로 정규화한다)
+      "CK**"  → "VC"    ("Valve - Check (alternative)" - symbol.xml이
+                          "VC**"("Valve - Check")와 동일한 밸브라고 명시)
+      "01HG"  → "01HG"  (알려진 EndType 접미어로 끝나지 않으면 그대로 둠)
+      "_G"    → "_G"
+    """
     prefix = re.sub(r"\*+$", "", skey).strip()
-    return prefix
+    if not prefix.endswith("*"):
+        for suf in _END_TYPE_SUFFIXES:
+            if len(prefix) > len(suf) and prefix.endswith(suf):
+                prefix = prefix[: -len(suf)]
+                break
+    return _SKEY_PREFIX_ALIASES.get(prefix, prefix)
 
 
 def skey_prefix(skey: str) -> str:

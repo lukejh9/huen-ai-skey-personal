@@ -22,6 +22,24 @@ predict_component.py 대비 변경점:
     0.9(auto)/0.7(review) 규칙을 이식 - group과, VALVE인 경우 valve_type/skey
     신뢰도까지 반영)
 
+버그 수정 (이번 패치):
+  - [치명적] valve_type/skey 단계는 meta_category/meta_system_class를
+    범주형 피처로 쓰도록 학습됐는데(run_pipeline_v2.py Step 4/5,
+    ENABLE_VALVE_METADATA=True), _build_feature_row()는 group 단계의
+    categorical_features.pkl(빈 리스트)만 참조해서 이 두 컬럼을 아예
+    만들지 않았다. 그 결과 VALVE로 분류된 모든 행에서
+    "X[self.valve_feature_cols]" 가 KeyError("['meta_category',
+    'meta_system_class'] not in index")로 죽었고, predict_many()가
+    예외 전체를 삼켜버려서 이미 계산된 component_group까지 통째로
+    유실됐다 (실사용 데이터에서 VALVE 434개 중 skey_prefix/valve_type이
+    단 하나도 채워지지 않은 원인). _build_feature_row()가 이제
+    feature_cols/categorical_cols/category_values를 인자로 받아 단계별로
+    다른 범주형 어휘(valve_category_values.pkl / skey_category_values.pkl)
+    로 인코딩하도록 고쳤다.
+  - predict_one()이 이제 2단계/3단계 실패를 각각 try/except로 감싸서,
+    valve_type이나 skey 단계가 실패해도 이미 계산된 component_group은
+    항상 결과에 남는다 (부분 실패가 전체 실패로 전파되지 않음).
+
 run_pipeline_v2.py 실행 후 models_v2/ 에 아래 파일들이 있어야 함:
   group_classifier.pkl, feature_cols.pkl, categorical_features.pkl,
   category_values.pkl, int_to_group.pkl
@@ -94,6 +112,20 @@ class ComponentPredictor:
             self.valve_feature_cols = joblib.load(model_dir / "valve_feature_cols.pkl")
             self.valve_categorical_cols = joblib.load(model_dir / "valve_categorical_features.pkl")
             self.int_to_vtype = joblib.load(model_dir / "int_to_vtype.pkl")
+            # 학습 시 저장된 카테고리 어휘 (run_pipeline_v2.py _run_cv_stage가
+            # category_values_file="valve_category_values.pkl"로 저장). 이게
+            # 없으면 meta_category/meta_system_class를 학습 때와 다른 코드로
+            # 인코딩하게 되어 예측이 조용히 어긋날 수 있으므로, 구버전
+            # models_v2/ 대비 명시적으로 경고하고 빈 어휘로 대체한다
+            # (빈 어휘 → 전부 NaN/"MISSING" 취급되어 최소한 죽지는 않음).
+            vcv_path = model_dir / "valve_category_values.pkl"
+            if vcv_path.exists():
+                self.valve_category_values = joblib.load(vcv_path)
+            else:
+                print("  [경고] valve_category_values.pkl 없음 - "
+                      "meta_category/meta_system_class를 전부 MISSING으로 취급합니다 "
+                      "(run_pipeline_v2.py를 다시 실행해 최신 models_v2/를 생성하세요).")
+                self.valve_category_values = {c: [] for c in self.valve_categorical_cols}
 
         # ── 3단계: 개별 skey (선택 - 학습이 스킵됐으면 파일이 없음) ──
         self.skey_model = None
@@ -103,14 +135,40 @@ class ComponentPredictor:
             self.skey_feature_cols = joblib.load(model_dir / "skey_feature_cols.pkl")
             self.skey_categorical_cols = joblib.load(model_dir / "skey_categorical_features.pkl")
             self.int_to_skey = joblib.load(model_dir / "int_to_skey.pkl")
+            scv_path = model_dir / "skey_category_values.pkl"
+            if scv_path.exists():
+                self.skey_category_values = joblib.load(scv_path)
+            else:
+                print("  [경고] skey_category_values.pkl 없음 - "
+                      "meta_category/meta_system_class를 전부 MISSING으로 취급합니다 "
+                      "(run_pipeline_v2.py를 다시 실행해 최신 models_v2/를 생성하세요).")
+                self.skey_category_values = {c: [] for c in self.skey_categorical_cols}
 
         print(f"[PREDICT] group ✓  valve_type {'✓' if self.valve_model else '✗ (파일 없음, 스킵)'}  "
               f"skey {'✓' if self.skey_model else '✗ (파일 없음, 스킵)'}")
 
     # ── 피처 딕셔너리 → 학습 시와 동일한 형태의 1행 DataFrame ──
-    def _build_feature_row(self, feat: dict) -> pd.DataFrame:
-        row = {col: feat.get(col, 0.0) for col in self.feature_cols
-               if col not in self.categorical_cols and not col.startswith("kw_")}
+    # feature_cols/categorical_cols/category_values를 인자로 받는다 - group
+    # 단계는 순수 geometry(범주형 없음)이지만, valve_type/skey 단계는
+    # meta_category/meta_system_class 두 범주형 컬럼이 feature_cols에 추가로
+    # 들어있고(run_pipeline_v2.py Step 4/5, ENABLE_VALVE_METADATA=True) 그
+    # 컬럼들은 각 단계 전용 어휘(valve_category_values.pkl / skey_category_values.pkl)
+    # 로 인코딩되어야 학습 시와 동일한 카테고리 코드가 나온다. 인자를 생략하면
+    # group 단계(self.feature_cols/self.categorical_cols/self.category_values,
+    # categorical_cols가 빈 리스트) 기준으로 만든다.
+    def _build_feature_row(
+        self,
+        feat: dict,
+        feature_cols: list[str] | None = None,
+        categorical_cols: list[str] | None = None,
+        category_values: dict | None = None,
+    ) -> pd.DataFrame:
+        feature_cols = self.feature_cols if feature_cols is None else feature_cols
+        categorical_cols = self.categorical_cols if categorical_cols is None else categorical_cols
+        category_values = self.category_values if category_values is None else category_values
+
+        row = {col: feat.get(col, 0.0) for col in feature_cols
+               if col not in categorical_cols and not col.startswith("kw_")}
 
         combined_name = (
             str(feat.get("meta_family_name", "")) + " " +
@@ -118,17 +176,33 @@ class ComponentPredictor:
         ).upper()
         for kw in self.keyword_features:
             col = f"kw_{kw}"
-            if col in self.feature_cols:
+            if col in feature_cols:
                 row[col] = int(kw in combined_name)
 
-        for col in self.categorical_cols:
-            val = feat.get(col, "")
-            row[col] = val if val in self.category_values.get(col, []) else ""
+        # run_pipeline_v2.py의 _fill_missing_categorical()과 동일한 규칙:
+        # 결측(빈 문자열/NaN/None)은 명시적으로 "MISSING" 카테고리로 채운다
+        # (학습 시 category_values에 "MISSING"이 항상 포함되어 있음). 학습
+        # 때 못 본 값(어휘에 없는 값)은 pd.Categorical에 넘기기 전에 우리가
+        # 직접 NaN으로 바꿔둔다 - 예전에는 pd.Categorical(...)이 카테고리에
+        # 없는 값을 알아서 NaN 처리해줬지만, 최신 pandas(Pandas4Warning)는
+        # 이 암묵적 동작을 지원 중단(deprecated) 처리했고 향후 버전에서는
+        # 아예 에러를 낸다. 그래서 여기서 미리 명시적으로 걸러준다.
+        for col in categorical_cols:
+            raw_val = feat.get(col, "")
+            if raw_val is None or (isinstance(raw_val, float) and pd.isna(raw_val)) or str(raw_val).strip() == "":
+                row[col] = "MISSING"
+            else:
+                row[col] = str(raw_val)
 
         df = pd.DataFrame([row])
-        for col in self.categorical_cols:
-            df[col] = pd.Categorical(df[col], categories=self.category_values[col])
-        return df[self.feature_cols]
+        for col in categorical_cols:
+            cats = category_values.get(col, [])
+            # 카테고리 어휘에 없는 값은 pd.Categorical에 넘기기 전에 NaN으로
+            # 명시 치환 (위 주석 참고) - .where(조건, NaN)이 조건이 False인
+            # 자리를 NaN으로 채운다.
+            safe_vals = df[col].where(df[col].isin(cats))
+            df[col] = pd.Categorical(safe_vals, categories=cats)
+        return df[feature_cols]
 
     def predict_one(self, json_path: str | Path, source_subfolder: str = "") -> dict:
         feat = extract_features_from_file(json_path)
@@ -163,38 +237,59 @@ class ComponentPredictor:
             tier = "low" if group_conf < CONFIDENCE_REVIEW else "borderline"
             review_reasons.append(f"group confidence {tier} ({group_conf:.2f})")
 
-        # 2단계: VALVE로 예측된 경우에만 세부 타입 추가 예측
+        # 2단계: VALVE로 예측된 경우에만 세부 타입 추가 예측.
+        # 이 단계 전용 feature_cols/categorical_cols/category_values로 X를
+        # 다시 만든다 (X[self.valve_feature_cols]로 group 단계 X를 그냥
+        # 슬라이싱하면 meta_category/meta_system_class 컬럼 자체가 없어서
+        # KeyError가 난다 - 이번에 고친 버그).
+        # 이 단계가 실패해도 이미 계산된 component_group은 잃지 않도록
+        # try/except로 감싸서 review_reason에만 기록한다.
         if group == "VALVE" and self.valve_model is not None:
-            X_v = X[self.valve_feature_cols]
-            vtype_int = int(self.valve_model.predict(X_v)[0])
-            vtype_proba = self.valve_model.predict_proba(X_v)[0]
-            vtype_conf = float(vtype_proba.max())  # 위 group_conf와 동일한 이유로 max() 사용
-            result["valve_type"] = self.int_to_vtype.get(vtype_int, "UNKNOWN")
-            result["valve_type_confidence"] = round(vtype_conf, 4)
-            if vtype_conf < CONFIDENCE_AUTO:
-                tier = "low" if vtype_conf < CONFIDENCE_REVIEW else "borderline"
-                review_reasons.append(f"valve_type confidence {tier} ({vtype_conf:.2f})")
+            try:
+                X_v = self._build_feature_row(
+                    feat,
+                    feature_cols=self.valve_feature_cols,
+                    categorical_cols=self.valve_categorical_cols,
+                    category_values=self.valve_category_values,
+                )
+                vtype_int = int(self.valve_model.predict(X_v)[0])
+                vtype_proba = self.valve_model.predict_proba(X_v)[0]
+                vtype_conf = float(vtype_proba.max())  # 위 group_conf와 동일한 이유로 max() 사용
+                result["valve_type"] = self.int_to_vtype.get(vtype_int, "UNKNOWN")
+                result["valve_type_confidence"] = round(vtype_conf, 4)
+                if vtype_conf < CONFIDENCE_AUTO:
+                    tier = "low" if vtype_conf < CONFIDENCE_REVIEW else "borderline"
+                    review_reasons.append(f"valve_type confidence {tier} ({vtype_conf:.2f})")
+            except Exception as e:
+                review_reasons.append(f"valve_type stage failed: {e}")
 
-        # 3단계: VALVE로 예측된 경우에만 개별 SKEY 추가 예측
+        # 3단계: VALVE로 예측된 경우에만 개별 SKEY 추가 예측 (2단계와 동일한
+        # 이유로 skey 전용 feature_cols/categorical_cols/category_values 사용,
+        # 실패해도 component_group/valve_type은 유지).
         if group == "VALVE" and self.skey_model is not None:
-            # SKEY feature tracking mirrors the general feature columns layout 
-            # as saved by skey_feature_cols.pkl
-            X_s = X[self.skey_feature_cols]
-            
-            skey_int = int(self.skey_model.predict(X_s)[0])
-            skey_proba = self.skey_model.predict_proba(X_s)[0]
-            skey_conf = float(skey_proba.max())  
-            
-            # Map the integer array index directly back to the dynamic string token
-            raw_skey = self.int_to_skey.get(skey_int, "UNKNOWN")
-            
-            # Apply the exact prefix formatter used in Step 5 of the pipeline
-            result["skey_prefix"] = skey_prefix(raw_skey) if raw_skey != "UNKNOWN" else "UNKNOWN"
-            result["skey_confidence"] = round(skey_conf, 4)
-            
-            if skey_conf < CONFIDENCE_AUTO:
-                tier = "low" if skey_conf < CONFIDENCE_REVIEW else "borderline"
-                review_reasons.append(f"skey confidence {tier} ({skey_conf:.2f})")
+            try:
+                X_s = self._build_feature_row(
+                    feat,
+                    feature_cols=self.skey_feature_cols,
+                    categorical_cols=self.skey_categorical_cols,
+                    category_values=self.skey_category_values,
+                )
+                skey_int = int(self.skey_model.predict(X_s)[0])
+                skey_proba = self.skey_model.predict_proba(X_s)[0]
+                skey_conf = float(skey_proba.max())
+
+                # Map the integer array index directly back to the dynamic string token
+                raw_skey = self.int_to_skey.get(skey_int, "UNKNOWN")
+
+                # Apply the exact prefix formatter used in Step 5 of the pipeline
+                result["skey_prefix"] = skey_prefix(raw_skey) if raw_skey != "UNKNOWN" else "UNKNOWN"
+                result["skey_confidence"] = round(skey_conf, 4)
+
+                if skey_conf < CONFIDENCE_AUTO:
+                    tier = "low" if skey_conf < CONFIDENCE_REVIEW else "borderline"
+                    review_reasons.append(f"skey confidence {tier} ({skey_conf:.2f})")
+            except Exception as e:
+                review_reasons.append(f"skey stage failed: {e}")
 
         result["review_required"] = (
                 group_conf < CONFIDENCE_AUTO

@@ -723,9 +723,19 @@ def run_pipeline():
     # "MULTILINGUAL:<키워드>" placeholder다 - 어떤 개별 SKEY였는지는 원래
     # 알 수 없다. 따라서 이 단계의 학습 표본은 Step 4(valve_type)보다 훨씬
     # 적어질 수 있다 (특히 BALL/BUTTERFLY처럼 다국어 복구 비중이 큰 타입).
+    #
+    # 추가 - match_tier가 "fuzzy"인 행도 이 단계에서는 제외한다. fuzzy는
+    # family/type 이름의 부분/유사 문자열 매칭이라 오매칭 위험이 실제로
+    # 있고(위 "fuzzy 매칭 항목 ... 학습엔 포함 - 검토 권장, 오매칭 가능성
+    # 있음" 로그가 이미 그 위험을 인지하고 있었음), Step 4(valve_type,
+    # ~7클래스)보다 이 단계(개별 SKEY, ~6클래스 세분류)가 라벨 노이즈에
+    # 훨씬 민감하다. group/valve_type 단계는 클래스가 더 넓어 오매칭 한
+    # 건의 영향이 상대적으로 작으므로 그대로 둔다 - fuzzy 제외는 skey
+    # 단계 전용이다.
     print("\n[STEP 5] 개별 SKEY 단위(VB/BVA/VT/KG/...) 분류기 학습")
 
-    skey_df = valve_df[~valve_df["match_tier"].str.startswith("multilingual")].copy() \
+    _skey_excluded_tiers = ("multilingual", "fuzzy")
+    skey_df = valve_df[~valve_df["match_tier"].str.startswith(_skey_excluded_tiers)].copy() \
         if valve_result is not None else pd.DataFrame()
     skey_result = None
 
@@ -733,9 +743,9 @@ def run_pipeline():
         print("  [정보] 개별 SKEY 분류 학습에 필요한 데이터가 없어 이 단계를 건너뜁니다.")
     else:
         skey_df["skey_prefix"] = skey_df["skey"].apply(skey_prefix)
-        n_multilingual_dropped = len(valve_df) - len(skey_df)
-        print(f"  multilingual 추정 레이블 제외: {n_multilingual_dropped}개 "
-              f"(진짜 SKEY 표본 {len(skey_df)}개만 사용)")
+        n_excluded = len(valve_df) - len(skey_df)
+        print(f"  multilingual/fuzzy 추정 레이블 제외: {n_excluded}개 "
+              f"(exact/normalized SKEY 표본 {len(skey_df)}개만 사용)")
 
         if skey_df["skey_prefix"].nunique() < 2:
             print("  [정보] 진짜 SKEY 종류가 1개뿐이라 이 단계를 건너뜁니다.")
@@ -807,7 +817,7 @@ def run_pipeline():
                     categorical_feature_cols=skey_meta_cols,
                 )
                 skey_result["n_skeys"] = skey_df["skey_prefix"].nunique()
-                skey_result["n_multilingual_dropped"] = n_multilingual_dropped
+                skey_result["n_multilingual_or_fuzzy_dropped"] = n_excluded
                 if skey_baseline is not None:
                     delta = skey_result["cv_accuracy"] - skey_baseline["cv_accuracy"]
                     sign = "+" if delta >= 0 else ""
