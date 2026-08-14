@@ -91,8 +91,8 @@ _PCF_TO_GROUP: dict[str, str] = {
     "TRAP-RETURN":              "TRAP",
     "PIPE":                     "PIPE",
     "PIPE-FIXED":               "PIPE",
-    "WELD":                     "JOINT",
-    "BOLT":                     "JOINT",
+    "WELD":                     "WELD",
+    "BOLT":                     "BOLT",
     "FLOW-ARROW":               "INSTRUMENT",
     "MISC-COMPONENT":           "ACCESSORY",   # 기본값, 아래에서 세분화
     "MISC-COMPONENT-OFFSET":    "ACCESSORY",
@@ -101,6 +101,9 @@ _PCF_TO_GROUP: dict[str, str] = {
 
 # SKEY 패턴 → 세분화 (PCF_ID 가 MISC-COMPONENT 등 애매한 경우)
 _SKEY_OVERRIDE: dict[str, str] = {
+    "SK":   "OLET",
+    "TH":   "OLET",
+    "SW":   "OLET",
     "EX":   "FLEXIBLE_JOINT",   # Expansion Bellows
     "FX":   "FLEXIBLE_JOINT",   # Flexible Hose
     "SG":   "INSTRUMENT",       # Sight Glass
@@ -115,10 +118,10 @@ _SKEY_OVERRIDE: dict[str, str] = {
     "OB":   "ACCESSORY",        # Spectacle Blind (open)
     "SB":   "ACCESSORY",        # Spectacle Blind (closed)
     "SS":   "SUPPORT",          # Puddle Pipe
-    "_B":   "JOINT",            # Bolt
+    "_B":   "BOLT",           # Bolt
     "_G":   "GASKET",           # Gasket
-    "WW":   "JOINT",            # Weld
-    "SC":   "JOINT",            # Thread
+    "WW":   "WELD",
+    "SC":   "THREAD",          # Thread
     "PTRP": "TRAP",             # P-Trap
 }
 
@@ -153,6 +156,19 @@ _SKEY_TO_VALVE_TYPE: dict[str, str] = {
     "AV":    "ANGLE",
 }
 
+# ── 접두어(prefix) startswith 매칭용 - 길이 내림차순 정렬 ──
+# dict의 순회 순서(삽입 순서)에 의존하면, 짧은 코드가 긴 코드보다 먼저
+# 매칭되어 잘못된 그룹/타입이 선택될 수 있다 (예: "AB" 항목이 "ABC" 항목보다
+# 먼저 정의되어 있으면 실제 SKEY "ABCxx"가 "AB"에 먼저 걸려버림).
+# 항상 가장 구체적인(긴) 접두어가 우선하도록 정렬된 리스트를 별도로 유지한다.
+# _get_wildcard_bases()가 symbol.xml 기반 매핑에 이미 적용 중인 것과 동일한 원칙.
+_SKEY_OVERRIDE_SORTED: list[tuple[str, str]] = sorted(
+    _SKEY_OVERRIDE.items(), key=lambda kv: -len(kv[0])
+)
+_SKEY_TO_VALVE_TYPE_SORTED: list[tuple[str, str]] = sorted(
+    _SKEY_TO_VALVE_TYPE.items(), key=lambda kv: -len(kv[0])
+)
+
 
 # ─────────────────────────────────────────────
 #  레이블 클래스 정의 (학습용)
@@ -162,7 +178,8 @@ GROUP_CLASSES = [
     "VALVE", "FITTING", "FLANGE", "GASKET",
     "SLEEVE", "SUPPORT", "INSTRUMENT",
     "FLEXIBLE_JOINT", "ACCESSORY", "OLET",
-    "CAP", "COUPLING", "TRAP", "PIPE", "UNKNOWN",
+    "CAP", "COUPLING", "TRAP", "PIPE",
+    "BOLT", "WELD", "THREAD", "UNKNOWN",
 ]
 
 VALVE_TYPE_CLASSES = [
@@ -185,11 +202,69 @@ NUM_VTYPE_CLASSES = len(VALVE_TYPE_CLASSES)
 #  symbol.xml 파서
 # ─────────────────────────────────────────────
 
+# symbol.xml의 Category="End Types" 심볼에서 추출한 접속(EndType) 접미어.
+# 예: SKEY="**FL" (Flanged), "**SW" (Socket Weld) 등 - 베이스 타입(VT/VG/VB/...)
+# 뒤에 이 코드가 wildcard 없이 그대로 붙어 나오는 경우가 있다 (예: "VTFL").
+# 이런 "이미 EndType이 resolve된" SKEY를 wildcard 없이 그대로 남겨두면
+# "VT**"(→"VT")와 "VTFL"(→"VTFL", 접미어 제거 안 됨)이 서로 다른 클래스로
+# 갈라져 학습 표본이 불필요하게 쪼개진다 (실사례: run_pipeline_v2.py Step 5,
+# VTFL/VGFL이 2개 프로젝트에서만 나온 9개/3개짜리 거의 학습 불가능한
+# 별도 클래스가 되어 VTFL은 CV에서 precision/recall/f1 전부 0.0을 기록함).
+# 아래 길이 내림차순 정렬은 "JT"가 "J"보다, 이런 코드가 실제 베이스 타입의
+# 마지막 글자와 우연히 겹치는 사고를 줄이기 위함 (현재 코드 자체는 전부
+# 2글자라 순서 영향은 없지만, 향후 symbol.xml에 더 긴 코드가 추가돼도
+# 안전하도록 유지).
+_END_TYPE_SUFFIXES: tuple[str, ...] = tuple(
+    sorted(["SW", "CP", "FL", "GL", "CL", "SC", "JT", "FS"], key=len, reverse=True)
+)
+
+
+# symbol.xml에 동일한 밸브를 가리키는 서로 다른 SKEY 접두어가 명시적으로
+# "(alternative)"로 나란히 정의된 경우가 있다:
+#   SKEY="VC**" Description="Valve - Check"
+#   SKEY="CK**" Description="Valve - Check (alternative)"
+# 둘 다 PCF_Identification="VALVE", IDF_Record="130/0"로 완전히 동일한
+# 물리적 밸브를 가리키는 진짜 동의어다 (symbol.xml 자체가 확인해줌 - 다른
+# 카탈로그의 명명 관례 차이가 아니라 같은 카탈로그 안의 중복 표기). 정규화
+# 하지 않으면 프로젝트마다 둘 중 아무거나 써서 VTFL/VGFL과 같은 방식으로
+# 같은 밸브 타입이 서로 다른 학습 클래스로 쪼개진다. VC를 대표 표기로
+# 삼는다 (symbol.xml에서 "(alternative)"가 아닌 쪽이자, 사내 Ez-ISO v2
+# SKEY 표기와도 일치함).
+_SKEY_PREFIX_ALIASES: dict[str, str] = {
+    "CK": "VC",
+}
+
+
 def _skey_prefix(skey: str) -> str:
-    """SKEY에서 와일드카드(**) 및 EndType 부분을 제거한 순수 접두어 반환."""
-    # "VB**" → "VB", "01HG" → "01HG", "_G" → "_G"
+    """SKEY에서 와일드카드(**) 및 (resolve된 경우) EndType 접미어를 제거하고,
+    symbol.xml상의 동의어 표기(_SKEY_PREFIX_ALIASES)까지 대표 표기로 통일한
+    순수 베이스 타입 접두어 반환.
+
+    예:
+      "VB**"  → "VB"    (표준 wildcard 형식)
+      "VT**"  → "VT"
+      "VTFL"  → "VT"    (EndType이 wildcard 없이 그대로 resolve된 형식 -
+                          symbol.xml에 "VTFL"이라는 별도 심볼은 존재하지
+                          않으며 "VT**" + EndType="FL"의 결합일 뿐이므로
+                          "VT"로 정규화한다)
+      "CK**"  → "VC"    ("Valve - Check (alternative)" - symbol.xml이
+                          "VC**"("Valve - Check")와 동일한 밸브라고 명시)
+      "01HG"  → "01HG"  (알려진 EndType 접미어로 끝나지 않으면 그대로 둠)
+      "_G"    → "_G"
+    """
     prefix = re.sub(r"\*+$", "", skey).strip()
-    return prefix
+    if not prefix.endswith("*"):
+        for suf in _END_TYPE_SUFFIXES:
+            if len(prefix) > len(suf) and prefix.endswith(suf):
+                prefix = prefix[: -len(suf)]
+                break
+    return _SKEY_PREFIX_ALIASES.get(prefix, prefix)
+
+
+def skey_prefix(skey: str) -> str:
+    """공개 래퍼: _skey_prefix()와 동일 - 개별 SKEY 단위 분류기(run_pipeline_v2.py
+    Step 7)의 레이블 생성에 사용. 예: "VB**" → "VB", "BVA2**" → "BVA2"."""
+    return _skey_prefix(skey)
 
 
 def _derive_labels(skey: str, category: str, description: str, pcf_id: str) -> tuple[str, str]:
@@ -197,6 +272,14 @@ def _derive_labels(skey: str, category: str, description: str, pcf_id: str) -> t
     SKEY / Category / PCF_Identification → (component_group, valve_type) 반환.
     """
     prefix = _skey_prefix(skey)
+        # OLET special cases
+    if (
+        prefix.startswith("SK")
+        or prefix.startswith("TH")
+        or "OLET" in description.upper()
+        or "OLET" in category.upper()
+    ):
+        return "OLET", "NON_VALVE"
 
     # ── SKEY 오버라이드 우선 ─────────────────
     # 정확 매칭
@@ -206,7 +289,8 @@ def _derive_labels(skey: str, category: str, description: str, pcf_id: str) -> t
         return group, vtype
 
     # prefix 앞부분으로 오버라이드 검사 (ex: "EX" matches "EX**")
-    for key, grp in _SKEY_OVERRIDE.items():
+    # 길이 내림차순으로 검사하므로 가장 구체적인(긴) 접두어가 항상 우선한다.
+    for key, grp in _SKEY_OVERRIDE_SORTED:
         if prefix.startswith(key):
             vtype = _derive_valve_type(prefix, grp)
             return grp, vtype
@@ -291,8 +375,8 @@ def _derive_valve_type(prefix: str, group: str) -> str:
     if prefix in _SKEY_TO_VALVE_TYPE:
         return _SKEY_TO_VALVE_TYPE[prefix]
 
-    # prefix 시작 매칭
-    for key, vtype in _SKEY_TO_VALVE_TYPE.items():
+    # prefix 시작 매칭 - 길이 내림차순으로 검사 (가장 구체적인 접두어 우선)
+    for key, vtype in _SKEY_TO_VALVE_TYPE_SORTED:
         if prefix.startswith(key):
             return vtype
 
@@ -340,6 +424,27 @@ def parse_symbol_xml(xml_path: str | Path) -> dict[str, SkeyInfo]:
 
     return result
 
+# 와일드카드 접두어 매칭용 캐시 (성능 최적화)
+_WILDCARD_CACHE: dict[int, list[tuple[str, "SkeyInfo"]]] = {}
+
+
+def _get_wildcard_bases(skey_map: dict[str, SkeyInfo]) -> list[tuple[str, SkeyInfo]]:
+    """
+    symbol.xml의 와일드카드 SKEY(예: "SK**")에서 '**' 앞부분만 추출.
+    실제 데이터의 SKEY(예: "SKSW")는 이미 와일드카드가 구체적인
+    EndType 코드로 채워져 있으므로, 접두어가 일치하는지 startswith로 검사.
+    긴 접두어부터 매칭해야 "BVA**" vs "BVA2**" 같은 충돌을 올바르게 처리함.
+    """
+    cache_key = id(skey_map)
+    if cache_key not in _WILDCARD_CACHE:
+        bases = []
+        for k, v in skey_map.items():
+            idx = k.find("**")
+            if idx > 0:
+                bases.append((k[:idx], v))
+        bases.sort(key=lambda x: -len(x[0]))  # 긴 접두어 우선
+        _WILDCARD_CACHE[cache_key] = bases
+    return _WILDCARD_CACHE[cache_key]
 
 def get_labels_from_skey(
     skey_value: str,
@@ -371,20 +476,17 @@ def get_labels_from_skey(
             "skey":            skey_clean,
         }
 
-    # 2) prefix 매칭 (와일드카드 제거 후)
-    prefix = _skey_prefix(skey_clean)
+    # 2) 와일드카드 접두어 매칭 (예: "SKSW" → "SK**" 매칭)
     if skey_map:
-        # 가장 긴 prefix match 우선
-        candidates = {k: v for k, v in skey_map.items()
-                      if _skey_prefix(k) == prefix}
-        if candidates:
-            info = next(iter(candidates.values()))
-            return {
-                "component_group": info.component_group,
-                "valve_type":      info.valve_type,
-                "is_valve":        info.component_group == "VALVE",
-                "skey":            skey_clean,
-            }
+        skey_upper = skey_clean.upper()
+        for base, info in _get_wildcard_bases(skey_map):
+            if skey_upper.startswith(base.upper()):
+                return {
+                    "component_group": info.component_group,
+                    "valve_type":      info.valve_type,
+                    "is_valve":        info.component_group == "VALVE",
+                    "skey":            skey_clean,
+                }
 
     # 3) 규칙 기반 fallback
     group, vtype = _derive_labels(

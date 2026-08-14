@@ -2005,7 +2005,7 @@
 			<Node nodetype="1" x="800" y="200" />
 		</Nodes>
 	</Symbol>
-	<Symbol SKEY="FIST" Spindle="90SP" Scale="100" Category="Filters" Description="Strainer" PCF_Identification="VALVE" IDF_Record="" Use="COMMON" Program="" Annotation="" EndType="-">
+	<Symbol SKEY="FIST" Spindle="90SP" Scale="100" Category="Filters" Description="Strainer" PCF_Identification="FILTER" IDF_Record="" Use="COMMON" Program="" Annotation="" EndType="-">
 		<Nodes>
 			<Node nodetype="1" x="0" y="200" />
 			<Node nodetype="1" x="0" y="200" />
@@ -2014,7 +2014,7 @@
 			<Node nodetype="1" x="1000" y="200" />
 		</Nodes>
 	</Symbol>
-	<Symbol SKEY="FISTL" Spindle="90SP" Scale="100" Category="Filters" Description="Strainer (Flanged)" PCF_Identification="VALVE" IDF_Record="" Use="COMMON" Program="" Annotation="" EndType="FL">
+	<Symbol SKEY="FISTL" Spindle="90SP" Scale="100" Category="Filters" Description="Strainer (Flanged)" PCF_Identification="FILTER" IDF_Record="" Use="COMMON" Program="" Annotation="" EndType="FL">
 		<Nodes>
 			<Node nodetype="1" x="0" y="200" />
 			<Node nodetype="1" x="0" y="0" />
